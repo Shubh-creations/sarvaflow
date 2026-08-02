@@ -40,7 +40,6 @@ def test_master_optimization() -> None:
 
 
 def test_ingest_custom_document_classification() -> None:
-    # Test Manufacturing BOM Classification
     payload_bom = {
         "file_name": "bom_assembly.csv",
         "file_content": "Component_Part_ID,Description,Quantity_Required,Unit_Cost_USD\nCMP-8819,Anodized Casing,1,18.50"
@@ -52,7 +51,6 @@ def test_ingest_custom_document_classification() -> None:
     assert len(data_bom["fields"]) == 4
     assert len(data_bom["bounding_box_legend"]) == 4
 
-    # Test AI Compute Classification
     payload_gpu = {
         "file_name": "gpu_cluster.json",
         "file_content": "10,240x H100 SXM5 GPU Hours (Model Fine-Tuning) @ $2.40/hour = $24,576.00"
@@ -85,3 +83,11 @@ def test_accuracy_dashboard() -> None:
     assert "overall_accuracy_rate_pct" in data
     assert "recalibrated_field_weights" in data
     assert len(data["accuracy_by_category"]) == 4
+
+
+def test_unified_workflow_trace() -> None:
+    res = client.get("/api/v1/sample-data/unified-trace")
+    assert res.status_code == 200
+    data = res.json()
+    assert len(data["active_traces"]) == 2
+    assert data["bank_connectivity_latency"]["status"] == "ONLINE_LOW_LATENCY"
