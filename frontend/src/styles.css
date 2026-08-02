@@ -227,17 +227,116 @@ h1 {
 }
 .button.success:hover { background: #00ff9d; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0, 255, 157, 0.6); }
 
-/* Vibrant Score Typography (Fixes User Uploaded Image) */
-.vibrant-score {
-  color: var(--accent-emerald) !important;
+/* High-End Executive Metric Cards (Wall Street CFO Aesthetic - Zero Cringe Neon) */
+.health-scorecard-card {
+  position: relative;
+  overflow: hidden;
+  background: var(--card-bg);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: var(--shadow-elevated);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.health-scorecard-card:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -6px rgba(16, 185, 129, 0.12);
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.icon.emerald {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.metric-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.metric-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.score-number {
   font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 26px;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-main);
   letter-spacing: -0.03em;
-  text-shadow: 0 0 16px rgba(0, 255, 157, 0.5);
+  line-height: 1;
+}
+
+.score-denom {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-right: 6px;
+}
+
+.score-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: rgba(16, 185, 129, 0.14);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.score-badge.blue {
+  background: rgba(59, 130, 246, 0.14);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.score-badge.indigo {
+  background: rgba(99, 102, 241, 0.14);
+  color: #6366f1;
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.score-badge.amber {
+  background: rgba(245, 158, 11, 0.14);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.metric-progress-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: auto;
+}
+
+.metric-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1 0%, #10b981 100%);
+  border-radius: 2px;
 }
 
 /* Metric Cards Grid */

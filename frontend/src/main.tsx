@@ -1293,35 +1293,69 @@ function DashboardApp() {
 
           {/* Top Metric Cards & Health Scorecard */}
           <div className="cards">
-            <div className="metric" style={{ borderLeft: '4px solid #00ff9d', background: 'linear-gradient(145deg, #0d1322 0%, #092e20 100%)' }}>
-              <div className="icon green">
-                <Sparkles size={20} />
+            <div className="health-scorecard-card">
+              <div className="metric-header">
+                <div className="icon emerald">
+                  <Sparkles size={18} />
+                </div>
+                <span className="metric-label">AI Health Scorecard</span>
               </div>
-              <span>AI Health Scorecard</span>
-              <strong className="vibrant-score">
-                {healthScorecard ? `${healthScorecard.overall_health_score}/100 EXCELLENT` : '94/100 EXCELLENT'}
-              </strong>
+              <div className="metric-value-row">
+                <span className="score-number">{healthScorecard?.overall_health_score || 94}</span>
+                <span className="score-denom">/100</span>
+                <span className="score-badge">{healthScorecard?.rating || 'EXCELLENT'}</span>
+              </div>
+              <div className="metric-progress-track">
+                <div className="metric-progress-bar" style={{ width: `${healthScorecard?.overall_health_score || 94}%` }} />
+              </div>
             </div>
-            <div className="metric">
-              <div className="icon green">
-                <Building2 size={20} />
+
+            <div className="health-scorecard-card">
+              <div className="metric-header">
+                <div className="icon blue" style={{ background: 'rgba(59, 130, 246, 0.12)', color: '#3b82f6', border: '1px solid rgba(59, 130, 246, 0.25)' }}>
+                  <Building2 size={18} />
+                </div>
+                <span className="metric-label">Liquid Cash Reserves</span>
               </div>
-              <span>Liquid Cash Reserves</span>
-              <strong>{formatCurrency(42500000)}</strong>
+              <div className="metric-value-row">
+                <span className="score-number" style={{ fontSize: '24px' }}>{formatCurrency(42950000)}</span>
+                <span className="score-badge blue">+$412.5k Yield</span>
+              </div>
+              <div className="metric-progress-track">
+                <div className="metric-progress-bar" style={{ width: '85%', background: 'linear-gradient(90deg, #6366f1 0%, #3b82f6 100%)' }} />
+              </div>
             </div>
-            <div className="metric">
-              <div className="icon">
-                <TrendingUp size={20} />
+
+            <div className="health-scorecard-card">
+              <div className="metric-header">
+                <div className="icon indigo" style={{ background: 'rgba(99, 102, 241, 0.12)', color: '#6366f1', border: '1px solid rgba(99, 102, 241, 0.25)' }}>
+                  <TrendingUp size={18} />
+                </div>
+                <span className="metric-label">Est. Cash Runway</span>
               </div>
-              <span>Est. Cash Runway</span>
-              <strong>{forecastData?.estimated_runway_days ? `${forecastData.estimated_runway_days} Days` : '18.4 Months'}</strong>
+              <div className="metric-value-row">
+                <span className="score-number" style={{ fontSize: '24px' }}>{forecastData?.estimated_runway_days ? `${forecastData.estimated_runway_days} Days` : '18.4 Months'}</span>
+                <span className="score-badge indigo">p50 Model</span>
+              </div>
+              <div className="metric-progress-track">
+                <div className="metric-progress-bar" style={{ width: '75%', background: 'linear-gradient(90deg, #6366f1 0%, #a855f7 100%)' }} />
+              </div>
             </div>
-            <div className="metric">
-              <div className="icon red">
-                <AlertTriangle size={20} />
+
+            <div className="health-scorecard-card">
+              <div className="metric-header">
+                <div className="icon red" style={{ background: 'rgba(239, 68, 68, 0.12)', color: '#ef4444', border: '1px solid rgba(239, 68, 68, 0.25)' }}>
+                  <AlertTriangle size={18} />
+                </div>
+                <span className="metric-label">Active Risk Flags</span>
               </div>
-              <span>Active Risk Flags</span>
-              <strong>{alerts.length} Critical Flags</strong>
+              <div className="metric-value-row">
+                <span className="score-number" style={{ fontSize: '24px' }}>{alerts.length} Critical Flags</span>
+                <span className="score-badge amber">Audited</span>
+              </div>
+              <div className="metric-progress-track">
+                <div className="metric-progress-bar" style={{ width: '30%', background: 'linear-gradient(90deg, #f59e0b 0%, #ef4444 100%)' }} />
+              </div>
             </div>
           </div>
 
