@@ -40,7 +40,19 @@ def create_app() -> FastAPI:
     app.add_middleware(ProductionSecurityHeadersMiddleware)
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=settings.allowed_hosts)
     app.add_middleware(GZipMiddleware, minimum_size=1024)
-    app.add_middleware(CORSMiddleware, allow_origins=[str(origin) for origin in settings.cors_origins], allow_credentials=True, allow_methods=["GET", "POST", "PATCH", "PUT", "DELETE"], allow_headers=["Authorization", "Content-Type", "X-Request-ID"])
+    origins = [str(origin).rstrip('/') for origin in settings.cors_origins] + [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ]
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=list(set(origins)),
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
     app.add_middleware(RequestContextMiddleware)
     install_exception_handlers(app)
     app.include_router(v1_router, prefix="/api/v1")
