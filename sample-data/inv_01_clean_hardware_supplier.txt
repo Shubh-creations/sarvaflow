@@ -1,0 +1,17 @@
+INVOICE # HW-2026-90412
+Date: 2026-07-28
+Vendor: Global Precision Components Corp
+Tax ID: US99-4182910
+Billing Address: 800 Semiconductor Way, Austin TX 78701
+Payment Terms: 2/10 Net 30
+
+Line Items:
+1. Microcontroller Chips ARM-Cortex M4 (Qty: 5000) @ $4.20/unit = $21,000.00
+2. Power Management IC Array (Qty: 2500) @ $2.80/unit = $7,000.00
+3. Surface Mount Resistors (Qty: 50000) @ $0.04/unit = $2,000.00
+
+Subtotal: $30,000.00
+Tax (0.0% Wholesale Exemption): $0.00
+Shipping & Freight: $450.00
+TOTAL DUE: $30,450.00
+Early Discount Date (2%): 2026-08-07 (Pay $29,841.00)

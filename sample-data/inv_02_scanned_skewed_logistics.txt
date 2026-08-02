@@ -1,0 +1,21 @@
+*** SCANNED FREIGHT BILLING STATEMENT ***
+[OCR Tilt Angle: 2.4deg] [Scan Quality: Medium]
+
+BOL / Tracking #: FRT-99218-X
+Vendor: TransGlobal Freight & Freight Services Inc
+Date of Freight: 2026-07-22
+Invoice Date: 2026-07-25
+
+Cargo Details:
+- 4x 40ft Shipping Containers (Silicon Wafers & Raw Metals)
+- Origin: Port of Oakland | Destination: Austin Distribution Center
+
+Charges:
+- Ocean Freight Line Haul: $8,400.00
+- Port Terminal Handling Charges: $1,250.00
+- Customs Brokerage & Tariff Clearance: $980.00
+- Fuel Surcharge (12.4%): $1,041.60
+
+TOTAL AMOUNT DUE: $11,671.60
+Due Date: 2026-08-24
+Remit Wire: Chase Bank ABA# 021000021 Acc# 884192019

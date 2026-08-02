@@ -1,0 +1,33 @@
+{
+  "invoice_number": "NV-COMPUTE-2026-881",
+  "billing_period": "2026-07-01 to 2026-07-31",
+  "industry_context": "AI / Compute-Intensive",
+  "vendor": "Hyperscale GPU Compute Provider",
+  "pricing_model": "Reserved Cluster Capacity + On-Demand Spot Instances",
+  "line_items": [
+    {
+      "tier": "Reserved 3-Year Instance",
+      "resource": "10,240x H100 SXM5 GPU Hours (Model Fine-Tuning)",
+      "hours": 10240,
+      "rate_per_hour_usd": 2.40,
+      "total_usd": 24576.00
+    },
+    {
+      "tier": "Interconnect",
+      "resource": "800Gbps InfiniBand High-Bandwidth Cluster Fabric",
+      "units": "31 Days",
+      "rate_per_day_usd": 100.00,
+      "total_usd": 3100.00
+    },
+    {
+      "tier": "Spot Discount Credit",
+      "resource": "Unutilized Nighttime Compute Rebate Credit",
+      "units": "Flat Credit",
+      "rate_usd": -1250.00,
+      "total_usd": -1250.00
+    }
+  ],
+  "gross_total_usd": 26426.00,
+  "confidence_score": 99.8,
+  "recommended_action": "Auto-post to GL 6040 (AI Compute CapEx/OpEx) & schedule 2/10 Net 30 float discount."
+}

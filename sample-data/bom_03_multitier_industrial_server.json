@@ -1,0 +1,35 @@
+{
+  "bom_id": "BOM-SERVER-SRK90",
+  "product_name": "Enterprise 4U High-Density Compute Server Rack",
+  "revision": "4.1",
+  "category": "Manufacturing / Hardware",
+  "total_bom_cost_usd": 48900.00,
+  "sub_assemblies": [
+    {
+      "assembly_id": "SUB-MOTHERBOARD-DUAL",
+      "name": "Dual-Socket Server Mainboard Sub-Assembly",
+      "cost_usd": 12500.00,
+      "components": [
+        { "part_id": "RAW-WAF-3NM", "name": "3nm Process Semiconductor Wafers", "qty": 2, "cost": 4200.00 },
+        { "part_id": "CHIP-SOCKET-SP5", "name": "Dual SP5 Socket Array", "qty": 2, "cost": 850.00 }
+      ]
+    },
+    {
+      "assembly_id": "SUB-COOLING-LIQUID",
+      "name": "Direct-to-Chip Liquid Cooling Coldplate Loop",
+      "cost_usd": 6400.00,
+      "components": [
+        { "part_id": "PUMP-MAG-12V", "name": "Magnetic Liquid Circulation Pump", "qty": 2, "cost": 1200.00 },
+        { "part_id": "BLOCK-COPPER-99", "name": "Oxygen-Free Copper Heat Sink Block", "qty": 8, "cost": 450.00 }
+      ]
+    },
+    {
+      "assembly_id": "SUB-POWER-REDUNDANT",
+      "name": "3000W 80-Plus Titanium Power Supply Module",
+      "cost_usd": 3000.00,
+      "components": [
+        { "part_id": "PSU-MOD-1500W", "name": "1500W Power Module Unit", "qty": 2, "cost": 1500.00 }
+      ]
+    }
+  ]
+}

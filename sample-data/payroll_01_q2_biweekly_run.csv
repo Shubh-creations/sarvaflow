@@ -1,0 +1,7 @@
+Employee_ID,Employee_Name,Department,Employment_Type,Gross_Pay_USD,Tax_Withholding_USD,Net_Pay_USD
+EMP-101,Sarah Jensen,Executive,Salaried FTE,12500.00,3850.00,8650.00
+EMP-102,Michael Chen,Treasury & Finance,Salaried FTE,8500.00,2450.00,6050.00
+EMP-103,Elena Rostova,Accounting & GL,Salaried FTE,7200.00,2050.00,5150.00
+CON-401,David Miller,AI Engineering,1099 Contractor,9400.00,0.00,9400.00
+CON-402,Sophia Zhao,DevOps Cloud Infra,1099 Contractor,8200.00,0.00,8200.00
+SUMMARY,Biweekly Payroll Run Q3-2026,,,45800.00,8350.00,37450.00

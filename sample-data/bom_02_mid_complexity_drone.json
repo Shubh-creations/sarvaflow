@@ -1,0 +1,44 @@
+{
+  "bom_id": "BOM-DRONE-v2.4",
+  "product_name": "Autonomous Survey Drone Model X4",
+  "revision": "2.4",
+  "category": "Manufacturing / Hardware",
+  "total_bom_cost_usd": 1280.50,
+  "components": [
+    {
+      "part_number": "DRN-FRAME-01",
+      "name": "Carbon Fiber Frame Chassis",
+      "quantity": 1,
+      "unit_cost_usd": 240.00,
+      "supplier": "Composite Aerospace Materials"
+    },
+    {
+      "part_number": "DRN-MOTOR-99",
+      "name": "Brushless DC Motor 920KV",
+      "quantity": 4,
+      "unit_cost_usd": 68.50,
+      "supplier": "AeroMotion Dynamics"
+    },
+    {
+      "part_number": "DRN-ESC-40A",
+      "name": "40A Electronic Speed Controller",
+      "quantity": 4,
+      "unit_cost_usd": 32.00,
+      "supplier": "AeroMotion Dynamics"
+    },
+    {
+      "part_number": "DRN-OPTICS-4K",
+      "name": "4K Optical Gimbal Camera Module",
+      "quantity": 1,
+      "unit_cost_usd": 485.00,
+      "supplier": "VisionTech Photonics"
+    },
+    {
+      "part_number": "DRN-BATT-6S",
+      "name": "6S 5000mAh High-Discharge LiPo",
+      "quantity": 1,
+      "unit_cost_usd": 153.50,
+      "supplier": "EnergyCell Global"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "invoice_number": "DATA-ANNOTATE-2026-07",
+  "billing_period": "2026-07-01 to 2026-07-31",
+  "industry_context": "AI / Compute-Intensive",
+  "vendor": "Dataset Annotation & RLHF Services Inc",
+  "line_items": [
+    {
+      "task": "RLHF Expert Annotations (Multimodal Reasoning)",
+      "volume": "12,500 Prompts",
+      "rate_usd": 1.20,
+      "total_usd": 15000.00
+    },
+    {
+      "task": "Bounding Box Image Masking (Autonomous Vision)",
+      "volume": "50,000 Frames",
+      "rate_usd": 0.15,
+      "total_usd": 7500.00
+    },
+    {
+      "task": "Cold Tier Blob Storage (100 Terabytes)",
+      "volume": "100 TB/Month",
+      "rate_usd": 12.00,
+      "total_usd": 1200.00
+    }
+  ],
+  "total_invoice_usd": 23700.00,
+  "confidence_score": 99.5
+}

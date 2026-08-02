@@ -1,0 +1,25 @@
+{
+  "purchase_order_number": "PO-2026-8819",
+  "issue_date": "2026-07-15",
+  "vendor_name": "Apex Metals & Alloys Corp",
+  "ship_to": "Acme Manufacturing Facility #1, Austin TX",
+  "payment_terms": "Net 30",
+  "items": [
+    {
+      "item_id": "MET-ALU-6061",
+      "description": "6061-T6 Aluminum Billet Stock (20,000 lbs)",
+      "ordered_quantity": 20000,
+      "unit_price_usd": 3.80,
+      "total_expected_usd": 76000.00
+    },
+    {
+      "item_id": "MET-COP-C110",
+      "description": "C110 Copper Sheet Plate 1/4 inch (5,000 lbs)",
+      "ordered_quantity": 5000,
+      "unit_price_usd": 4.50,
+      "total_expected_usd": 22500.00
+    }
+  ],
+  "total_po_amount_usd": 98500.00,
+  "status": "APPROVED_OPEN"
+}

@@ -39,16 +39,49 @@ def test_master_optimization() -> None:
     assert len(data["executed_actions"]) == 4
 
 
-def test_ingest_custom_document() -> None:
-    payload = {
-        "file_name": "sample_invoice.csv",
-        "file_content": "Line1,100.00\nLine2,250.50\nLine3,300.00",
-        "industry_domain": "AI & Tech Giants"
+def test_ingest_custom_document_classification() -> None:
+    # Test Manufacturing BOM Classification
+    payload_bom = {
+        "file_name": "bom_assembly.csv",
+        "file_content": "Component_Part_ID,Description,Quantity_Required,Unit_Cost_USD\nCMP-8819,Anodized Casing,1,18.50"
     }
-    response = client.post("/api/v1/sample-data/ingest-document", json=payload)
-    assert response.status_code == 200
-    data = response.json()
-    assert data["status"] == "SUCCESS"
-    assert data["file_name"] == "sample_invoice.csv"
-    assert len(data["line_items"]) == 3
-    assert data["total_audited_usd"] == 650.50
+    res_bom = client.post("/api/v1/sample-data/ingest-document", json=payload_bom)
+    assert res_bom.status_code == 200
+    data_bom = res_bom.json()
+    assert data_bom["industry_domain"] == "MANUFACTURING / HARDWARE"
+    assert len(data_bom["fields"]) == 4
+    assert len(data_bom["bounding_box_legend"]) == 4
+
+    # Test AI Compute Classification
+    payload_gpu = {
+        "file_name": "gpu_cluster.json",
+        "file_content": "10,240x H100 SXM5 GPU Hours (Model Fine-Tuning) @ $2.40/hour = $24,576.00"
+    }
+    res_gpu = client.post("/api/v1/sample-data/ingest-document", json=payload_gpu)
+    assert res_gpu.status_code == 200
+    data_gpu = res_gpu.json()
+    assert data_gpu["industry_domain"] == "AI / COMPUTE-INTENSIVE"
+
+
+def test_log_user_field_correction() -> None:
+    payload_corr = {
+        "document_type": "Manufacturing Supplier Invoice",
+        "field_key": "vendor_name",
+        "original_ai_value": "Global Precision Comp",
+        "corrected_value": "Global Precision Components Corp",
+        "confidence_at_extraction": 0.82
+    }
+    res_corr = client.post("/api/v1/sample-data/log-correction", json=payload_corr)
+    assert res_corr.status_code == 200
+    data_corr = res_corr.json()
+    assert data_corr["status"] == "CORRECTION_LOGGED"
+    assert data_corr["total_corrections_recorded"] >= 1
+
+
+def test_accuracy_dashboard() -> None:
+    res = client.get("/api/v1/sample-data/accuracy-dashboard")
+    assert res.status_code == 200
+    data = res.json()
+    assert "overall_accuracy_rate_pct" in data
+    assert "recalibrated_field_weights" in data
+    assert len(data["accuracy_by_category"]) == 4

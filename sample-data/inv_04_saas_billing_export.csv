@@ -1,0 +1,5 @@
+Invoice_ID,Vendor_Name,Billing_Period,Plan_Name,Seats_Count,Unit_Price_USD,Discount_USD,Total_Amount_USD
+INV-SaaS-2026-07,CloudScale Infrastructure Solutions,2026-07-01 to 2026-07-31,Enterprise Pro Tier,150,45.00,675.00,6075.00
+INV-SaaS-2026-07,CloudScale Infrastructure Solutions,2026-07-01 to 2026-07-31,Developer API Tokens Add-On,1,1250.00,0.00,1250.00
+INV-SaaS-2026-07,CloudScale Infrastructure Solutions,2026-07-01 to 2026-07-31,Data Retention Audit Storage (5TB),5,80.00,0.00,400.00
+SUMMARY,CloudScale Infrastructure Solutions,2026-07-31,COMBINED TOTAL,,,7725.00

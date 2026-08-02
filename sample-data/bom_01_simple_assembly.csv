@@ -1,0 +1,6 @@
+Component_Part_ID,Description,Quantity_Required,Unit_Cost_USD,Subtotal_USD,Supplier_Name
+CMP-8819,M2 Stainless Steel Machine Screws,24,0.08,1.92,Fastener Supply Co
+CMP-4412,Anodized Aluminum Outer Casing Shell,1,18.50,18.50,Precision Metalworks
+CMP-9901,4-Layer Main Board PCB Assembly,1,42.00,42.00,CircuitTech Assembly
+CMP-1029,Lithium Polymer Battery Cell 3.7V 2500mAh,1,12.30,12.30,EnergyCell Global
+SUMMARY,1-Tier Hardware Controller Assembly,27,,74.72,

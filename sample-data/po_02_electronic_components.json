@@ -1,0 +1,24 @@
+{
+  "purchase_order_number": "PO-2026-9912",
+  "issue_date": "2026-07-20",
+  "vendor_name": "Global Precision Components Corp",
+  "payment_terms": "2/10 Net 30",
+  "items": [
+    {
+      "item_id": "CMP-ARM-M4",
+      "description": "Microcontroller Chips ARM-Cortex M4",
+      "ordered_quantity": 5000,
+      "unit_price_usd": 4.20,
+      "total_expected_usd": 21000.00
+    },
+    {
+      "item_id": "CMP-PWR-IC",
+      "description": "Power Management IC Array",
+      "ordered_quantity": 2500,
+      "unit_price_usd": 2.80,
+      "total_expected_usd": 7000.00
+    }
+  ],
+  "total_po_amount_usd": 28000.00,
+  "status": "MATCHED_TO_INVOICE_HW-2026-90412"
+}

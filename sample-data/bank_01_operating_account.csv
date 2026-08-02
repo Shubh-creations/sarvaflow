@@ -1,0 +1,6 @@
+Transaction_Date,Check_Wire_Ref,Payer_Payee_Entity,Transaction_Type,Amount_USD,Running_Balance_USD
+2026-07-01,WIRE-IN-88912,Acme Client Subscriptions,CREDIT,450000.00,42950000.00
+2026-07-05,CHK-001928,Global Precision Components,DEBIT,-30450.00,42919550.00
+2026-07-12,WIRE-OUT-10291,Apex Metals & Alloys Corp,DEBIT,-98500.00,42821050.00
+2026-07-15,ACH-PAYROLL-881,Biweekly Payroll Clearing,DEBIT,-185000.00,42636050.00
+2026-07-28,WIRE-OUT-99128,Hyperscale GPU Provider,DEBIT,-26426.00,42609624.00
