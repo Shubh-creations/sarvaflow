@@ -149,3 +149,11 @@ def get_unified_workflow_trace() -> Dict[str, Any]:
             "status": "ONLINE_LOW_LATENCY"
         }
     }
+
+
+@router.get("/validate-100")
+def run_sample_data_100_validation() -> Dict[str, Any]:
+    """Executes full end-to-end mathematical precision validation on sample-data-100 volume dataset."""
+    from app.domain.connectors.sample_data_100_engine import SampleData100ValidationEngine
+    val_engine = SampleData100ValidationEngine()
+    return val_engine.run_full_validation()

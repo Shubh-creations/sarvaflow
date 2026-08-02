@@ -1,0 +1,902 @@
+[
+  {
+    "receivable_id": "AR-2026-001",
+    "customer_name": "Enterprise Customer 001",
+    "invoice_number": "INV-AR-2026-001",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 14560.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-001 for $142,500.00 bundled settlement"
+  },
+  {
+    "receivable_id": "AR-2026-002",
+    "customer_name": "Enterprise Customer 002",
+    "invoice_number": "INV-AR-2026-002",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 14870.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-002"
+  },
+  {
+    "receivable_id": "AR-2026-003",
+    "customer_name": "Enterprise Customer 003",
+    "invoice_number": "INV-AR-2026-003",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 15180.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-003"
+  },
+  {
+    "receivable_id": "AR-2026-004",
+    "customer_name": "Enterprise Customer 004",
+    "invoice_number": "INV-AR-2026-004",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 15490.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-004"
+  },
+  {
+    "receivable_id": "AR-2026-005",
+    "customer_name": "Enterprise Customer 005",
+    "invoice_number": "INV-AR-2026-005",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 15800.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-005"
+  },
+  {
+    "receivable_id": "AR-2026-006",
+    "customer_name": "Enterprise Customer 006",
+    "invoice_number": "INV-AR-2026-006",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 16110.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-006"
+  },
+  {
+    "receivable_id": "AR-2026-007",
+    "customer_name": "Enterprise Customer 007",
+    "invoice_number": "INV-AR-2026-007",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 16420.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-007"
+  },
+  {
+    "receivable_id": "AR-2026-008",
+    "customer_name": "Enterprise Customer 008",
+    "invoice_number": "INV-AR-2026-008",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 16730.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-008"
+  },
+  {
+    "receivable_id": "AR-2026-009",
+    "customer_name": "Enterprise Customer 009",
+    "invoice_number": "INV-AR-2026-009",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 17040.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-009"
+  },
+  {
+    "receivable_id": "AR-2026-010",
+    "customer_name": "Enterprise Customer 010",
+    "invoice_number": "INV-AR-2026-010",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 17350.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-010"
+  },
+  {
+    "receivable_id": "AR-2026-011",
+    "customer_name": "Enterprise Customer 011",
+    "invoice_number": "INV-AR-2026-011",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 17660.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-011"
+  },
+  {
+    "receivable_id": "AR-2026-012",
+    "customer_name": "Enterprise Customer 012",
+    "invoice_number": "INV-AR-2026-012",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 17970.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-012"
+  },
+  {
+    "receivable_id": "AR-2026-013",
+    "customer_name": "Enterprise Customer 013",
+    "invoice_number": "INV-AR-2026-013",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 18280.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-013"
+  },
+  {
+    "receivable_id": "AR-2026-014",
+    "customer_name": "Enterprise Customer 014",
+    "invoice_number": "INV-AR-2026-014",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 18590.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-014"
+  },
+  {
+    "receivable_id": "AR-2026-015",
+    "customer_name": "Enterprise Customer 015",
+    "invoice_number": "INV-AR-2026-015",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 18900.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-015"
+  },
+  {
+    "receivable_id": "AR-2026-016",
+    "customer_name": "Enterprise Customer 016",
+    "invoice_number": "INV-AR-2026-016",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 19210.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-016"
+  },
+  {
+    "receivable_id": "AR-2026-017",
+    "customer_name": "Enterprise Customer 017",
+    "invoice_number": "INV-AR-2026-017",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 19520.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-017"
+  },
+  {
+    "receivable_id": "AR-2026-018",
+    "customer_name": "Enterprise Customer 018",
+    "invoice_number": "INV-AR-2026-018",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 19830.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-018"
+  },
+  {
+    "receivable_id": "AR-2026-019",
+    "customer_name": "Enterprise Customer 019",
+    "invoice_number": "INV-AR-2026-019",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 20140.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-019"
+  },
+  {
+    "receivable_id": "AR-2026-020",
+    "customer_name": "Enterprise Customer 020",
+    "invoice_number": "INV-AR-2026-020",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 20450.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-020"
+  },
+  {
+    "receivable_id": "AR-2026-021",
+    "customer_name": "Enterprise Customer 021",
+    "invoice_number": "INV-AR-2026-021",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 20760.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-021"
+  },
+  {
+    "receivable_id": "AR-2026-022",
+    "customer_name": "Enterprise Customer 022",
+    "invoice_number": "INV-AR-2026-022",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 21070.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-022"
+  },
+  {
+    "receivable_id": "AR-2026-023",
+    "customer_name": "Enterprise Customer 023",
+    "invoice_number": "INV-AR-2026-023",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 21380.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-023"
+  },
+  {
+    "receivable_id": "AR-2026-024",
+    "customer_name": "Enterprise Customer 024",
+    "invoice_number": "INV-AR-2026-024",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 21690.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-024"
+  },
+  {
+    "receivable_id": "AR-2026-025",
+    "customer_name": "Enterprise Customer 025",
+    "invoice_number": "INV-AR-2026-025",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 22000.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-025"
+  },
+  {
+    "receivable_id": "AR-2026-026",
+    "customer_name": "Enterprise Customer 026",
+    "invoice_number": "INV-AR-2026-026",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 22310.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-026"
+  },
+  {
+    "receivable_id": "AR-2026-027",
+    "customer_name": "Enterprise Customer 027",
+    "invoice_number": "INV-AR-2026-027",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 22620.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-027"
+  },
+  {
+    "receivable_id": "AR-2026-028",
+    "customer_name": "Enterprise Customer 028",
+    "invoice_number": "INV-AR-2026-028",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 22930.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-028"
+  },
+  {
+    "receivable_id": "AR-2026-029",
+    "customer_name": "Enterprise Customer 029",
+    "invoice_number": "INV-AR-2026-029",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 23240.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-029"
+  },
+  {
+    "receivable_id": "AR-2026-030",
+    "customer_name": "Enterprise Customer 030",
+    "invoice_number": "INV-AR-2026-030",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 23550.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-030"
+  },
+  {
+    "receivable_id": "AR-2026-031",
+    "customer_name": "Enterprise Customer 031",
+    "invoice_number": "INV-AR-2026-031",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 23860.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-031"
+  },
+  {
+    "receivable_id": "AR-2026-032",
+    "customer_name": "Enterprise Customer 032",
+    "invoice_number": "INV-AR-2026-032",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 24170.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-032"
+  },
+  {
+    "receivable_id": "AR-2026-033",
+    "customer_name": "Enterprise Customer 033",
+    "invoice_number": "INV-AR-2026-033",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 24480.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-033"
+  },
+  {
+    "receivable_id": "AR-2026-034",
+    "customer_name": "Enterprise Customer 034",
+    "invoice_number": "INV-AR-2026-034",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 24790.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-034"
+  },
+  {
+    "receivable_id": "AR-2026-035",
+    "customer_name": "Enterprise Customer 035",
+    "invoice_number": "INV-AR-2026-035",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 25100.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-035"
+  },
+  {
+    "receivable_id": "AR-2026-036",
+    "customer_name": "Enterprise Customer 036",
+    "invoice_number": "INV-AR-2026-036",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 25410.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-036"
+  },
+  {
+    "receivable_id": "AR-2026-037",
+    "customer_name": "Enterprise Customer 037",
+    "invoice_number": "INV-AR-2026-037",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 25720.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-037"
+  },
+  {
+    "receivable_id": "AR-2026-038",
+    "customer_name": "Enterprise Customer 038",
+    "invoice_number": "INV-AR-2026-038",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 26030.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-038"
+  },
+  {
+    "receivable_id": "AR-2026-039",
+    "customer_name": "Enterprise Customer 039",
+    "invoice_number": "INV-AR-2026-039",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 26340.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-039"
+  },
+  {
+    "receivable_id": "AR-2026-040",
+    "customer_name": "Enterprise Customer 040",
+    "invoice_number": "INV-AR-2026-040",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 26650.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-040"
+  },
+  {
+    "receivable_id": "AR-2026-041",
+    "customer_name": "Enterprise Customer 041",
+    "invoice_number": "INV-AR-2026-041",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 26960.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-041"
+  },
+  {
+    "receivable_id": "AR-2026-042",
+    "customer_name": "Enterprise Customer 042",
+    "invoice_number": "INV-AR-2026-042",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 27270.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-042"
+  },
+  {
+    "receivable_id": "AR-2026-043",
+    "customer_name": "Enterprise Customer 043",
+    "invoice_number": "INV-AR-2026-043",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 27580.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-043"
+  },
+  {
+    "receivable_id": "AR-2026-044",
+    "customer_name": "Enterprise Customer 044",
+    "invoice_number": "INV-AR-2026-044",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 27890.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-044"
+  },
+  {
+    "receivable_id": "AR-2026-045",
+    "customer_name": "Enterprise Customer 045",
+    "invoice_number": "INV-AR-2026-045",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 28200.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-045"
+  },
+  {
+    "receivable_id": "AR-2026-046",
+    "customer_name": "Enterprise Customer 046",
+    "invoice_number": "INV-AR-2026-046",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 28510.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-046"
+  },
+  {
+    "receivable_id": "AR-2026-047",
+    "customer_name": "Enterprise Customer 047",
+    "invoice_number": "INV-AR-2026-047",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 28820.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-047"
+  },
+  {
+    "receivable_id": "AR-2026-048",
+    "customer_name": "Enterprise Customer 048",
+    "invoice_number": "INV-AR-2026-048",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 29130.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-048"
+  },
+  {
+    "receivable_id": "AR-2026-049",
+    "customer_name": "Enterprise Customer 049",
+    "invoice_number": "INV-AR-2026-049",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 29440.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-049"
+  },
+  {
+    "receivable_id": "AR-2026-050",
+    "customer_name": "Enterprise Customer 050",
+    "invoice_number": "INV-AR-2026-050",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 29750.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-050"
+  },
+  {
+    "receivable_id": "AR-2026-051",
+    "customer_name": "Enterprise Customer 051",
+    "invoice_number": "INV-AR-2026-051",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 30060.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-051"
+  },
+  {
+    "receivable_id": "AR-2026-052",
+    "customer_name": "Enterprise Customer 052",
+    "invoice_number": "INV-AR-2026-052",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 30370.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-052"
+  },
+  {
+    "receivable_id": "AR-2026-053",
+    "customer_name": "Enterprise Customer 053",
+    "invoice_number": "INV-AR-2026-053",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 30680.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-053"
+  },
+  {
+    "receivable_id": "AR-2026-054",
+    "customer_name": "Enterprise Customer 054",
+    "invoice_number": "INV-AR-2026-054",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 30990.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-054"
+  },
+  {
+    "receivable_id": "AR-2026-055",
+    "customer_name": "Enterprise Customer 055",
+    "invoice_number": "INV-AR-2026-055",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 31300.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-055"
+  },
+  {
+    "receivable_id": "AR-2026-056",
+    "customer_name": "Enterprise Customer 056",
+    "invoice_number": "INV-AR-2026-056",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 31610.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-056"
+  },
+  {
+    "receivable_id": "AR-2026-057",
+    "customer_name": "Enterprise Customer 057",
+    "invoice_number": "INV-AR-2026-057",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 31920.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-057"
+  },
+  {
+    "receivable_id": "AR-2026-058",
+    "customer_name": "Enterprise Customer 058",
+    "invoice_number": "INV-AR-2026-058",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 32230.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-058"
+  },
+  {
+    "receivable_id": "AR-2026-059",
+    "customer_name": "Enterprise Customer 059",
+    "invoice_number": "INV-AR-2026-059",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 32540.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-059"
+  },
+  {
+    "receivable_id": "AR-2026-060",
+    "customer_name": "Enterprise Customer 060",
+    "invoice_number": "INV-AR-2026-060",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 32850.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-060"
+  },
+  {
+    "receivable_id": "AR-2026-061",
+    "customer_name": "Enterprise Customer 061",
+    "invoice_number": "INV-AR-2026-061",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 33160.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-061"
+  },
+  {
+    "receivable_id": "AR-2026-062",
+    "customer_name": "Enterprise Customer 062",
+    "invoice_number": "INV-AR-2026-062",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 33470.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-062"
+  },
+  {
+    "receivable_id": "AR-2026-063",
+    "customer_name": "Enterprise Customer 063",
+    "invoice_number": "INV-AR-2026-063",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 33780.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-063"
+  },
+  {
+    "receivable_id": "AR-2026-064",
+    "customer_name": "Enterprise Customer 064",
+    "invoice_number": "INV-AR-2026-064",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 34090.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-064"
+  },
+  {
+    "receivable_id": "AR-2026-065",
+    "customer_name": "Enterprise Customer 065",
+    "invoice_number": "INV-AR-2026-065",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 34400.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-065"
+  },
+  {
+    "receivable_id": "AR-2026-066",
+    "customer_name": "Enterprise Customer 066",
+    "invoice_number": "INV-AR-2026-066",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 34710.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-066"
+  },
+  {
+    "receivable_id": "AR-2026-067",
+    "customer_name": "Enterprise Customer 067",
+    "invoice_number": "INV-AR-2026-067",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 35020.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-067"
+  },
+  {
+    "receivable_id": "AR-2026-068",
+    "customer_name": "Enterprise Customer 068",
+    "invoice_number": "INV-AR-2026-068",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 35330.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-068"
+  },
+  {
+    "receivable_id": "AR-2026-069",
+    "customer_name": "Enterprise Customer 069",
+    "invoice_number": "INV-AR-2026-069",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 35640.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-069"
+  },
+  {
+    "receivable_id": "AR-2026-070",
+    "customer_name": "Enterprise Customer 070",
+    "invoice_number": "INV-AR-2026-070",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 35950.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-070"
+  },
+  {
+    "receivable_id": "AR-2026-071",
+    "customer_name": "Enterprise Customer 071",
+    "invoice_number": "INV-AR-2026-071",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 36260.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-071"
+  },
+  {
+    "receivable_id": "AR-2026-072",
+    "customer_name": "Enterprise Customer 072",
+    "invoice_number": "INV-AR-2026-072",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 36570.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-072"
+  },
+  {
+    "receivable_id": "AR-2026-073",
+    "customer_name": "Enterprise Customer 073",
+    "invoice_number": "INV-AR-2026-073",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 36880.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-073"
+  },
+  {
+    "receivable_id": "AR-2026-074",
+    "customer_name": "Enterprise Customer 074",
+    "invoice_number": "INV-AR-2026-074",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 37190.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-074"
+  },
+  {
+    "receivable_id": "AR-2026-075",
+    "customer_name": "Enterprise Customer 075",
+    "invoice_number": "INV-AR-2026-075",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 37500.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-075"
+  },
+  {
+    "receivable_id": "AR-2026-076",
+    "customer_name": "Enterprise Customer 076",
+    "invoice_number": "INV-AR-2026-076",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 37810.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-076"
+  },
+  {
+    "receivable_id": "AR-2026-077",
+    "customer_name": "Enterprise Customer 077",
+    "invoice_number": "INV-AR-2026-077",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 38120.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-077"
+  },
+  {
+    "receivable_id": "AR-2026-078",
+    "customer_name": "Enterprise Customer 078",
+    "invoice_number": "INV-AR-2026-078",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 38430.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-078"
+  },
+  {
+    "receivable_id": "AR-2026-079",
+    "customer_name": "Enterprise Customer 079",
+    "invoice_number": "INV-AR-2026-079",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 38740.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-079"
+  },
+  {
+    "receivable_id": "AR-2026-080",
+    "customer_name": "Enterprise Customer 080",
+    "invoice_number": "INV-AR-2026-080",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 39050.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-080"
+  },
+  {
+    "receivable_id": "AR-2026-081",
+    "customer_name": "Enterprise Customer 081",
+    "invoice_number": "INV-AR-2026-081",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 39360.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-081"
+  },
+  {
+    "receivable_id": "AR-2026-082",
+    "customer_name": "Enterprise Customer 082",
+    "invoice_number": "INV-AR-2026-082",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 39670.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-082"
+  },
+  {
+    "receivable_id": "AR-2026-083",
+    "customer_name": "Enterprise Customer 083",
+    "invoice_number": "INV-AR-2026-083",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 39980.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-083"
+  },
+  {
+    "receivable_id": "AR-2026-084",
+    "customer_name": "Enterprise Customer 084",
+    "invoice_number": "INV-AR-2026-084",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 40290.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-084"
+  },
+  {
+    "receivable_id": "AR-2026-085",
+    "customer_name": "Enterprise Customer 085",
+    "invoice_number": "INV-AR-2026-085",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 40600.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-085"
+  },
+  {
+    "receivable_id": "AR-2026-086",
+    "customer_name": "Enterprise Customer 086",
+    "invoice_number": "INV-AR-2026-086",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 40910.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-086"
+  },
+  {
+    "receivable_id": "AR-2026-087",
+    "customer_name": "Enterprise Customer 087",
+    "invoice_number": "INV-AR-2026-087",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 41220.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-087"
+  },
+  {
+    "receivable_id": "AR-2026-088",
+    "customer_name": "Enterprise Customer 088",
+    "invoice_number": "INV-AR-2026-088",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 41530.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-088"
+  },
+  {
+    "receivable_id": "AR-2026-089",
+    "customer_name": "Enterprise Customer 089",
+    "invoice_number": "INV-AR-2026-089",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 41840.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-089"
+  },
+  {
+    "receivable_id": "AR-2026-090",
+    "customer_name": "Enterprise Customer 090",
+    "invoice_number": "INV-AR-2026-090",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 42150.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-090"
+  },
+  {
+    "receivable_id": "AR-2026-091",
+    "customer_name": "Enterprise Customer 091",
+    "invoice_number": "INV-AR-2026-091",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 42460.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-091"
+  },
+  {
+    "receivable_id": "AR-2026-092",
+    "customer_name": "Enterprise Customer 092",
+    "invoice_number": "INV-AR-2026-092",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 42770.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-092"
+  },
+  {
+    "receivable_id": "AR-2026-093",
+    "customer_name": "Enterprise Customer 093",
+    "invoice_number": "INV-AR-2026-093",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 43080.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-093"
+  },
+  {
+    "receivable_id": "AR-2026-094",
+    "customer_name": "Enterprise Customer 094",
+    "invoice_number": "INV-AR-2026-094",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 43390.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-094"
+  },
+  {
+    "receivable_id": "AR-2026-095",
+    "customer_name": "Enterprise Customer 095",
+    "invoice_number": "INV-AR-2026-095",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 43700.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-095"
+  },
+  {
+    "receivable_id": "AR-2026-096",
+    "customer_name": "Enterprise Customer 096",
+    "invoice_number": "INV-AR-2026-096",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 44010.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-096"
+  },
+  {
+    "receivable_id": "AR-2026-097",
+    "customer_name": "Enterprise Customer 097",
+    "invoice_number": "INV-AR-2026-097",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 44320.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-097"
+  },
+  {
+    "receivable_id": "AR-2026-098",
+    "customer_name": "Enterprise Customer 098",
+    "invoice_number": "INV-AR-2026-098",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 44630.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-098"
+  },
+  {
+    "receivable_id": "AR-2026-099",
+    "customer_name": "Enterprise Customer 099",
+    "invoice_number": "INV-AR-2026-099",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 44940.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-099"
+  },
+  {
+    "receivable_id": "AR-2026-100",
+    "customer_name": "Enterprise Customer 100",
+    "invoice_number": "INV-AR-2026-100",
+    "due_date": "2026-08-15",
+    "total_amount_usd": 45250.0,
+    "status": "OPEN",
+    "remittance_advice": "REMIT-2026-100"
+  }
+]

@@ -1,0 +1,1902 @@
+[
+  {
+    "invoice_id": "INV-2026-CLN-001",
+    "invoice_number": "CLN-904001",
+    "invoice_date": "2026-07-02",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 1745.5,
+    "status": "Confirmed",
+    "confidence_score": 98.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #001",
+        "quantity": 11,
+        "unit_price": 158.68,
+        "total": 1745.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-002",
+    "invoice_number": "CLN-904002",
+    "invoice_date": "2026-07-03",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 1991.0,
+    "status": "Confirmed",
+    "confidence_score": 98.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #002",
+        "quantity": 12,
+        "unit_price": 165.92,
+        "total": 1991.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-003",
+    "invoice_number": "CLN-904003",
+    "invoice_date": "2026-07-04",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 2236.5,
+    "status": "Confirmed",
+    "confidence_score": 98.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #003",
+        "quantity": 13,
+        "unit_price": 172.04,
+        "total": 2236.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-004",
+    "invoice_number": "CLN-904004",
+    "invoice_date": "2026-07-05",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 2482.0,
+    "status": "Confirmed",
+    "confidence_score": 98.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #004",
+        "quantity": 14,
+        "unit_price": 177.29,
+        "total": 2482.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-005",
+    "invoice_number": "CLN-904005",
+    "invoice_date": "2026-07-06",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 2727.5,
+    "status": "Confirmed",
+    "confidence_score": 99.0,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #005",
+        "quantity": 15,
+        "unit_price": 181.83,
+        "total": 2727.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-006",
+    "invoice_number": "CLN-904006",
+    "invoice_date": "2026-07-07",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 2973.0,
+    "status": "Confirmed",
+    "confidence_score": 99.1,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #006",
+        "quantity": 16,
+        "unit_price": 185.81,
+        "total": 2973.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-007",
+    "invoice_number": "CLN-904007",
+    "invoice_date": "2026-07-08",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 3218.5,
+    "status": "Confirmed",
+    "confidence_score": 99.2,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #007",
+        "quantity": 17,
+        "unit_price": 189.32,
+        "total": 3218.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-008",
+    "invoice_number": "CLN-904008",
+    "invoice_date": "2026-07-09",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 3464.0,
+    "status": "Confirmed",
+    "confidence_score": 99.3,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #008",
+        "quantity": 18,
+        "unit_price": 192.44,
+        "total": 3464.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-009",
+    "invoice_number": "CLN-904009",
+    "invoice_date": "2026-07-10",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 3709.5,
+    "status": "Confirmed",
+    "confidence_score": 99.4,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #009",
+        "quantity": 19,
+        "unit_price": 195.24,
+        "total": 3709.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-010",
+    "invoice_number": "CLN-904010",
+    "invoice_date": "2026-07-11",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 3955.0,
+    "status": "Confirmed",
+    "confidence_score": 99.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #010",
+        "quantity": 20,
+        "unit_price": 197.75,
+        "total": 3955.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-011",
+    "invoice_number": "CLN-904011",
+    "invoice_date": "2026-07-12",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 4200.5,
+    "status": "Confirmed",
+    "confidence_score": 99.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #011",
+        "quantity": 21,
+        "unit_price": 200.02,
+        "total": 4200.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-012",
+    "invoice_number": "CLN-904012",
+    "invoice_date": "2026-07-13",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 4446.0,
+    "status": "Confirmed",
+    "confidence_score": 99.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #012",
+        "quantity": 22,
+        "unit_price": 202.09,
+        "total": 4446.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-013",
+    "invoice_number": "CLN-904013",
+    "invoice_date": "2026-07-14",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 4691.5,
+    "status": "Confirmed",
+    "confidence_score": 99.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #013",
+        "quantity": 23,
+        "unit_price": 203.98,
+        "total": 4691.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-014",
+    "invoice_number": "CLN-904014",
+    "invoice_date": "2026-07-15",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 4937.0,
+    "status": "Confirmed",
+    "confidence_score": 99.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #014",
+        "quantity": 24,
+        "unit_price": 205.71,
+        "total": 4937.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-015",
+    "invoice_number": "CLN-904015",
+    "invoice_date": "2026-07-16",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 5182.5,
+    "status": "Confirmed",
+    "confidence_score": 98.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #015",
+        "quantity": 25,
+        "unit_price": 207.3,
+        "total": 5182.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-016",
+    "invoice_number": "CLN-904016",
+    "invoice_date": "2026-07-17",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 5428.0,
+    "status": "Confirmed",
+    "confidence_score": 98.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #016",
+        "quantity": 26,
+        "unit_price": 208.77,
+        "total": 5428.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-017",
+    "invoice_number": "CLN-904017",
+    "invoice_date": "2026-07-18",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 5673.5,
+    "status": "Confirmed",
+    "confidence_score": 98.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #017",
+        "quantity": 27,
+        "unit_price": 210.13,
+        "total": 5673.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-018",
+    "invoice_number": "CLN-904018",
+    "invoice_date": "2026-07-19",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 5919.0,
+    "status": "Confirmed",
+    "confidence_score": 98.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #018",
+        "quantity": 28,
+        "unit_price": 211.39,
+        "total": 5919.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-019",
+    "invoice_number": "CLN-904019",
+    "invoice_date": "2026-07-20",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 6164.5,
+    "status": "Confirmed",
+    "confidence_score": 98.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #019",
+        "quantity": 29,
+        "unit_price": 212.57,
+        "total": 6164.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-020",
+    "invoice_number": "CLN-904020",
+    "invoice_date": "2026-07-21",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 6410.0,
+    "status": "Confirmed",
+    "confidence_score": 99.0,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #020",
+        "quantity": 30,
+        "unit_price": 213.67,
+        "total": 6410.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-021",
+    "invoice_number": "CLN-904021",
+    "invoice_date": "2026-07-22",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 6655.5,
+    "status": "Confirmed",
+    "confidence_score": 99.1,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #021",
+        "quantity": 31,
+        "unit_price": 214.69,
+        "total": 6655.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-022",
+    "invoice_number": "CLN-904022",
+    "invoice_date": "2026-07-23",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 6901.0,
+    "status": "Confirmed",
+    "confidence_score": 99.2,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #022",
+        "quantity": 32,
+        "unit_price": 215.66,
+        "total": 6901.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-023",
+    "invoice_number": "CLN-904023",
+    "invoice_date": "2026-07-24",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 7146.5,
+    "status": "Confirmed",
+    "confidence_score": 99.3,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #023",
+        "quantity": 33,
+        "unit_price": 216.56,
+        "total": 7146.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-024",
+    "invoice_number": "CLN-904024",
+    "invoice_date": "2026-07-25",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 7392.0,
+    "status": "Confirmed",
+    "confidence_score": 99.4,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #024",
+        "quantity": 34,
+        "unit_price": 217.41,
+        "total": 7392.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-025",
+    "invoice_number": "CLN-904025",
+    "invoice_date": "2026-07-26",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 7637.5,
+    "status": "Confirmed",
+    "confidence_score": 99.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #025",
+        "quantity": 35,
+        "unit_price": 218.21,
+        "total": 7637.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-026",
+    "invoice_number": "CLN-904026",
+    "invoice_date": "2026-07-27",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 7883.0,
+    "status": "Confirmed",
+    "confidence_score": 99.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #026",
+        "quantity": 36,
+        "unit_price": 218.97,
+        "total": 7883.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-027",
+    "invoice_number": "CLN-904027",
+    "invoice_date": "2026-07-28",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 8128.5,
+    "status": "Confirmed",
+    "confidence_score": 99.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #027",
+        "quantity": 37,
+        "unit_price": 219.69,
+        "total": 8128.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-028",
+    "invoice_number": "CLN-904028",
+    "invoice_date": "2026-07-01",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 8374.0,
+    "status": "Confirmed",
+    "confidence_score": 99.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #028",
+        "quantity": 38,
+        "unit_price": 220.37,
+        "total": 8374.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-029",
+    "invoice_number": "CLN-904029",
+    "invoice_date": "2026-07-02",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 8619.5,
+    "status": "Confirmed",
+    "confidence_score": 99.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #029",
+        "quantity": 39,
+        "unit_price": 221.01,
+        "total": 8619.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-030",
+    "invoice_number": "CLN-904030",
+    "invoice_date": "2026-07-03",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 8865.0,
+    "status": "Confirmed",
+    "confidence_score": 98.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #030",
+        "quantity": 40,
+        "unit_price": 221.62,
+        "total": 8865.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-031",
+    "invoice_number": "CLN-904031",
+    "invoice_date": "2026-07-04",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 9110.5,
+    "status": "Confirmed",
+    "confidence_score": 98.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #031",
+        "quantity": 41,
+        "unit_price": 222.21,
+        "total": 9110.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-032",
+    "invoice_number": "CLN-904032",
+    "invoice_date": "2026-07-05",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 9356.0,
+    "status": "Confirmed",
+    "confidence_score": 98.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #032",
+        "quantity": 42,
+        "unit_price": 222.76,
+        "total": 9356.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-033",
+    "invoice_number": "CLN-904033",
+    "invoice_date": "2026-07-06",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 9601.5,
+    "status": "Confirmed",
+    "confidence_score": 98.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #033",
+        "quantity": 43,
+        "unit_price": 223.29,
+        "total": 9601.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-034",
+    "invoice_number": "CLN-904034",
+    "invoice_date": "2026-07-07",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 9847.0,
+    "status": "Confirmed",
+    "confidence_score": 98.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #034",
+        "quantity": 44,
+        "unit_price": 223.8,
+        "total": 9847.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-035",
+    "invoice_number": "CLN-904035",
+    "invoice_date": "2026-07-08",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 10092.5,
+    "status": "Confirmed",
+    "confidence_score": 99.0,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #035",
+        "quantity": 45,
+        "unit_price": 224.28,
+        "total": 10092.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-036",
+    "invoice_number": "CLN-904036",
+    "invoice_date": "2026-07-09",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 10338.0,
+    "status": "Confirmed",
+    "confidence_score": 99.1,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #036",
+        "quantity": 46,
+        "unit_price": 224.74,
+        "total": 10338.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-037",
+    "invoice_number": "CLN-904037",
+    "invoice_date": "2026-07-10",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 10583.5,
+    "status": "Confirmed",
+    "confidence_score": 99.2,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #037",
+        "quantity": 47,
+        "unit_price": 225.18,
+        "total": 10583.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-038",
+    "invoice_number": "CLN-904038",
+    "invoice_date": "2026-07-11",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 10829.0,
+    "status": "Confirmed",
+    "confidence_score": 99.3,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #038",
+        "quantity": 48,
+        "unit_price": 225.6,
+        "total": 10829.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-039",
+    "invoice_number": "CLN-904039",
+    "invoice_date": "2026-07-12",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 11074.5,
+    "status": "Confirmed",
+    "confidence_score": 99.4,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #039",
+        "quantity": 49,
+        "unit_price": 226.01,
+        "total": 11074.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-040",
+    "invoice_number": "CLN-904040",
+    "invoice_date": "2026-07-13",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 11320.0,
+    "status": "Confirmed",
+    "confidence_score": 99.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #040",
+        "quantity": 50,
+        "unit_price": 226.4,
+        "total": 11320.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-041",
+    "invoice_number": "CLN-904041",
+    "invoice_date": "2026-07-14",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 11565.5,
+    "status": "Confirmed",
+    "confidence_score": 99.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #041",
+        "quantity": 51,
+        "unit_price": 226.77,
+        "total": 11565.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-042",
+    "invoice_number": "CLN-904042",
+    "invoice_date": "2026-07-15",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 11811.0,
+    "status": "Confirmed",
+    "confidence_score": 99.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #042",
+        "quantity": 52,
+        "unit_price": 227.13,
+        "total": 11811.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-043",
+    "invoice_number": "CLN-904043",
+    "invoice_date": "2026-07-16",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 12056.5,
+    "status": "Confirmed",
+    "confidence_score": 99.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #043",
+        "quantity": 53,
+        "unit_price": 227.48,
+        "total": 12056.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-044",
+    "invoice_number": "CLN-904044",
+    "invoice_date": "2026-07-17",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 12302.0,
+    "status": "Confirmed",
+    "confidence_score": 99.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #044",
+        "quantity": 54,
+        "unit_price": 227.81,
+        "total": 12302.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-045",
+    "invoice_number": "CLN-904045",
+    "invoice_date": "2026-07-18",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 12547.5,
+    "status": "Confirmed",
+    "confidence_score": 98.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #045",
+        "quantity": 55,
+        "unit_price": 228.14,
+        "total": 12547.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-046",
+    "invoice_number": "CLN-904046",
+    "invoice_date": "2026-07-19",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 12793.0,
+    "status": "Confirmed",
+    "confidence_score": 98.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #046",
+        "quantity": 56,
+        "unit_price": 228.45,
+        "total": 12793.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-047",
+    "invoice_number": "CLN-904047",
+    "invoice_date": "2026-07-20",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 13038.5,
+    "status": "Confirmed",
+    "confidence_score": 98.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #047",
+        "quantity": 57,
+        "unit_price": 228.75,
+        "total": 13038.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-048",
+    "invoice_number": "CLN-904048",
+    "invoice_date": "2026-07-21",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 13284.0,
+    "status": "Confirmed",
+    "confidence_score": 98.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #048",
+        "quantity": 58,
+        "unit_price": 229.03,
+        "total": 13284.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-049",
+    "invoice_number": "CLN-904049",
+    "invoice_date": "2026-07-22",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 13529.5,
+    "status": "Confirmed",
+    "confidence_score": 98.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #049",
+        "quantity": 59,
+        "unit_price": 229.31,
+        "total": 13529.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-050",
+    "invoice_number": "CLN-904050",
+    "invoice_date": "2026-07-23",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 13775.0,
+    "status": "Confirmed",
+    "confidence_score": 99.0,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #050",
+        "quantity": 60,
+        "unit_price": 229.58,
+        "total": 13775.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-051",
+    "invoice_number": "CLN-904051",
+    "invoice_date": "2026-07-24",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 14020.5,
+    "status": "Confirmed",
+    "confidence_score": 99.1,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #051",
+        "quantity": 61,
+        "unit_price": 229.84,
+        "total": 14020.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-052",
+    "invoice_number": "CLN-904052",
+    "invoice_date": "2026-07-25",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 14266.0,
+    "status": "Confirmed",
+    "confidence_score": 99.2,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #052",
+        "quantity": 62,
+        "unit_price": 230.1,
+        "total": 14266.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-053",
+    "invoice_number": "CLN-904053",
+    "invoice_date": "2026-07-26",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 14511.5,
+    "status": "Confirmed",
+    "confidence_score": 99.3,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #053",
+        "quantity": 63,
+        "unit_price": 230.34,
+        "total": 14511.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-054",
+    "invoice_number": "CLN-904054",
+    "invoice_date": "2026-07-27",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 14757.0,
+    "status": "Confirmed",
+    "confidence_score": 99.4,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #054",
+        "quantity": 64,
+        "unit_price": 230.58,
+        "total": 14757.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-055",
+    "invoice_number": "CLN-904055",
+    "invoice_date": "2026-07-28",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 15002.5,
+    "status": "Confirmed",
+    "confidence_score": 99.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #055",
+        "quantity": 65,
+        "unit_price": 230.81,
+        "total": 15002.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-056",
+    "invoice_number": "CLN-904056",
+    "invoice_date": "2026-07-01",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 15248.0,
+    "status": "Confirmed",
+    "confidence_score": 99.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #056",
+        "quantity": 66,
+        "unit_price": 231.03,
+        "total": 15248.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-057",
+    "invoice_number": "CLN-904057",
+    "invoice_date": "2026-07-02",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 15493.5,
+    "status": "Confirmed",
+    "confidence_score": 99.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #057",
+        "quantity": 67,
+        "unit_price": 231.25,
+        "total": 15493.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-058",
+    "invoice_number": "CLN-904058",
+    "invoice_date": "2026-07-03",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 15739.0,
+    "status": "Confirmed",
+    "confidence_score": 99.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #058",
+        "quantity": 68,
+        "unit_price": 231.46,
+        "total": 15739.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-059",
+    "invoice_number": "CLN-904059",
+    "invoice_date": "2026-07-04",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 15984.5,
+    "status": "Confirmed",
+    "confidence_score": 99.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #059",
+        "quantity": 69,
+        "unit_price": 231.66,
+        "total": 15984.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-060",
+    "invoice_number": "CLN-904060",
+    "invoice_date": "2026-07-05",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 16230.0,
+    "status": "Confirmed",
+    "confidence_score": 98.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #060",
+        "quantity": 70,
+        "unit_price": 231.86,
+        "total": 16230.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-061",
+    "invoice_number": "CLN-904061",
+    "invoice_date": "2026-07-06",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 16475.5,
+    "status": "Confirmed",
+    "confidence_score": 98.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #061",
+        "quantity": 71,
+        "unit_price": 232.05,
+        "total": 16475.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-062",
+    "invoice_number": "CLN-904062",
+    "invoice_date": "2026-07-07",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 16721.0,
+    "status": "Confirmed",
+    "confidence_score": 98.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #062",
+        "quantity": 72,
+        "unit_price": 232.24,
+        "total": 16721.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-063",
+    "invoice_number": "CLN-904063",
+    "invoice_date": "2026-07-08",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 16966.5,
+    "status": "Confirmed",
+    "confidence_score": 98.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #063",
+        "quantity": 73,
+        "unit_price": 232.42,
+        "total": 16966.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-064",
+    "invoice_number": "CLN-904064",
+    "invoice_date": "2026-07-09",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 17212.0,
+    "status": "Confirmed",
+    "confidence_score": 98.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #064",
+        "quantity": 74,
+        "unit_price": 232.59,
+        "total": 17212.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-065",
+    "invoice_number": "CLN-904065",
+    "invoice_date": "2026-07-10",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 17457.5,
+    "status": "Confirmed",
+    "confidence_score": 99.0,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #065",
+        "quantity": 75,
+        "unit_price": 232.77,
+        "total": 17457.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-066",
+    "invoice_number": "CLN-904066",
+    "invoice_date": "2026-07-11",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 17703.0,
+    "status": "Confirmed",
+    "confidence_score": 99.1,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #066",
+        "quantity": 76,
+        "unit_price": 232.93,
+        "total": 17703.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-067",
+    "invoice_number": "CLN-904067",
+    "invoice_date": "2026-07-12",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 17948.5,
+    "status": "Confirmed",
+    "confidence_score": 99.2,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #067",
+        "quantity": 77,
+        "unit_price": 233.1,
+        "total": 17948.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-068",
+    "invoice_number": "CLN-904068",
+    "invoice_date": "2026-07-13",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 18194.0,
+    "status": "Confirmed",
+    "confidence_score": 99.3,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #068",
+        "quantity": 78,
+        "unit_price": 233.26,
+        "total": 18194.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-069",
+    "invoice_number": "CLN-904069",
+    "invoice_date": "2026-07-14",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 18439.5,
+    "status": "Confirmed",
+    "confidence_score": 99.4,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #069",
+        "quantity": 79,
+        "unit_price": 233.41,
+        "total": 18439.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-070",
+    "invoice_number": "CLN-904070",
+    "invoice_date": "2026-07-15",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 18685.0,
+    "status": "Confirmed",
+    "confidence_score": 99.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #070",
+        "quantity": 80,
+        "unit_price": 233.56,
+        "total": 18685.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-071",
+    "invoice_number": "CLN-904071",
+    "invoice_date": "2026-07-16",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 18930.5,
+    "status": "Confirmed",
+    "confidence_score": 99.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #071",
+        "quantity": 81,
+        "unit_price": 233.71,
+        "total": 18930.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-072",
+    "invoice_number": "CLN-904072",
+    "invoice_date": "2026-07-17",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 19176.0,
+    "status": "Confirmed",
+    "confidence_score": 99.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #072",
+        "quantity": 82,
+        "unit_price": 233.85,
+        "total": 19176.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-073",
+    "invoice_number": "CLN-904073",
+    "invoice_date": "2026-07-18",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 19421.5,
+    "status": "Confirmed",
+    "confidence_score": 99.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #073",
+        "quantity": 83,
+        "unit_price": 233.99,
+        "total": 19421.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-074",
+    "invoice_number": "CLN-904074",
+    "invoice_date": "2026-07-19",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 19667.0,
+    "status": "Confirmed",
+    "confidence_score": 99.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #074",
+        "quantity": 84,
+        "unit_price": 234.13,
+        "total": 19667.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-075",
+    "invoice_number": "CLN-904075",
+    "invoice_date": "2026-07-20",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 19912.5,
+    "status": "Confirmed",
+    "confidence_score": 98.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #075",
+        "quantity": 85,
+        "unit_price": 234.26,
+        "total": 19912.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-076",
+    "invoice_number": "CLN-904076",
+    "invoice_date": "2026-07-21",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 20158.0,
+    "status": "Confirmed",
+    "confidence_score": 98.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #076",
+        "quantity": 86,
+        "unit_price": 234.4,
+        "total": 20158.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-077",
+    "invoice_number": "CLN-904077",
+    "invoice_date": "2026-07-22",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 20403.5,
+    "status": "Confirmed",
+    "confidence_score": 98.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #077",
+        "quantity": 87,
+        "unit_price": 234.52,
+        "total": 20403.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-078",
+    "invoice_number": "CLN-904078",
+    "invoice_date": "2026-07-23",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 20649.0,
+    "status": "Confirmed",
+    "confidence_score": 98.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #078",
+        "quantity": 88,
+        "unit_price": 234.65,
+        "total": 20649.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-079",
+    "invoice_number": "CLN-904079",
+    "invoice_date": "2026-07-24",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 20894.5,
+    "status": "Confirmed",
+    "confidence_score": 98.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #079",
+        "quantity": 89,
+        "unit_price": 234.77,
+        "total": 20894.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-080",
+    "invoice_number": "CLN-904080",
+    "invoice_date": "2026-07-25",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 21140.0,
+    "status": "Confirmed",
+    "confidence_score": 99.0,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #080",
+        "quantity": 90,
+        "unit_price": 234.89,
+        "total": 21140.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-081",
+    "invoice_number": "CLN-904081",
+    "invoice_date": "2026-07-26",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 21385.5,
+    "status": "Confirmed",
+    "confidence_score": 99.1,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #081",
+        "quantity": 91,
+        "unit_price": 235.01,
+        "total": 21385.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-082",
+    "invoice_number": "CLN-904082",
+    "invoice_date": "2026-07-27",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 21631.0,
+    "status": "Confirmed",
+    "confidence_score": 99.2,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #082",
+        "quantity": 92,
+        "unit_price": 235.12,
+        "total": 21631.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-083",
+    "invoice_number": "CLN-904083",
+    "invoice_date": "2026-07-28",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 21876.5,
+    "status": "Confirmed",
+    "confidence_score": 99.3,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #083",
+        "quantity": 93,
+        "unit_price": 235.23,
+        "total": 21876.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-084",
+    "invoice_number": "CLN-904084",
+    "invoice_date": "2026-07-01",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 22122.0,
+    "status": "Confirmed",
+    "confidence_score": 99.4,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #084",
+        "quantity": 94,
+        "unit_price": 235.34,
+        "total": 22122.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-085",
+    "invoice_number": "CLN-904085",
+    "invoice_date": "2026-07-02",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 22367.5,
+    "status": "Confirmed",
+    "confidence_score": 99.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #085",
+        "quantity": 95,
+        "unit_price": 235.45,
+        "total": 22367.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-086",
+    "invoice_number": "CLN-904086",
+    "invoice_date": "2026-07-03",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 22613.0,
+    "status": "Confirmed",
+    "confidence_score": 99.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #086",
+        "quantity": 96,
+        "unit_price": 235.55,
+        "total": 22613.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-087",
+    "invoice_number": "CLN-904087",
+    "invoice_date": "2026-07-04",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 22858.5,
+    "status": "Confirmed",
+    "confidence_score": 99.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #087",
+        "quantity": 97,
+        "unit_price": 235.65,
+        "total": 22858.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-088",
+    "invoice_number": "CLN-904088",
+    "invoice_date": "2026-07-05",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 23104.0,
+    "status": "Confirmed",
+    "confidence_score": 99.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #088",
+        "quantity": 98,
+        "unit_price": 235.76,
+        "total": 23104.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-089",
+    "invoice_number": "CLN-904089",
+    "invoice_date": "2026-07-06",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 23349.5,
+    "status": "Confirmed",
+    "confidence_score": 99.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #089",
+        "quantity": 99,
+        "unit_price": 235.85,
+        "total": 23349.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-090",
+    "invoice_number": "CLN-904090",
+    "invoice_date": "2026-07-07",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 23595.0,
+    "status": "Confirmed",
+    "confidence_score": 98.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #090",
+        "quantity": 100,
+        "unit_price": 235.95,
+        "total": 23595.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-091",
+    "invoice_number": "CLN-904091",
+    "invoice_date": "2026-07-08",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 23840.5,
+    "status": "Confirmed",
+    "confidence_score": 98.6,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #091",
+        "quantity": 101,
+        "unit_price": 236.04,
+        "total": 23840.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-092",
+    "invoice_number": "CLN-904092",
+    "invoice_date": "2026-07-09",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 24086.0,
+    "status": "Confirmed",
+    "confidence_score": 98.7,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #092",
+        "quantity": 102,
+        "unit_price": 236.14,
+        "total": 24086.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-093",
+    "invoice_number": "CLN-904093",
+    "invoice_date": "2026-07-10",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 24331.5,
+    "status": "Confirmed",
+    "confidence_score": 98.8,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #093",
+        "quantity": 103,
+        "unit_price": 236.23,
+        "total": 24331.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-094",
+    "invoice_number": "CLN-904094",
+    "invoice_date": "2026-07-11",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 24577.0,
+    "status": "Confirmed",
+    "confidence_score": 98.9,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #094",
+        "quantity": 104,
+        "unit_price": 236.32,
+        "total": 24577.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-095",
+    "invoice_number": "CLN-904095",
+    "invoice_date": "2026-07-12",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 24822.5,
+    "status": "Confirmed",
+    "confidence_score": 99.0,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #095",
+        "quantity": 105,
+        "unit_price": 236.4,
+        "total": 24822.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-096",
+    "invoice_number": "CLN-904096",
+    "invoice_date": "2026-07-13",
+    "vendor_name": "Global Precision Components",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 25068.0,
+    "status": "Confirmed",
+    "confidence_score": 99.1,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #096",
+        "quantity": 106,
+        "unit_price": 236.49,
+        "total": 25068.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-097",
+    "invoice_number": "CLN-904097",
+    "invoice_date": "2026-07-14",
+    "vendor_name": "CloudScale SaaS Inc",
+    "industry_domain": "MANUFACTURING / HARDWARE",
+    "total_amount_usd": 25313.5,
+    "status": "Confirmed",
+    "confidence_score": 99.2,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #097",
+        "quantity": 107,
+        "unit_price": 236.57,
+        "total": 25313.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-098",
+    "invoice_number": "CLN-904098",
+    "invoice_date": "2026-07-15",
+    "vendor_name": "Hyperscale GPU Compute",
+    "industry_domain": "SOFTWARE / SAAS",
+    "total_amount_usd": 25559.0,
+    "status": "Confirmed",
+    "confidence_score": 99.3,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #098",
+        "quantity": 108,
+        "unit_price": 236.66,
+        "total": 25559.0
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-099",
+    "invoice_number": "CLN-904099",
+    "invoice_date": "2026-07-16",
+    "vendor_name": "Atlas Logistics Ltd",
+    "industry_domain": "AI / COMPUTE-INTENSIVE",
+    "total_amount_usd": 25804.5,
+    "status": "Confirmed",
+    "confidence_score": 99.4,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #099",
+        "quantity": 109,
+        "unit_price": 236.74,
+        "total": 25804.5
+      }
+    ]
+  },
+  {
+    "invoice_id": "INV-2026-CLN-100",
+    "invoice_number": "CLN-904100",
+    "invoice_date": "2026-07-17",
+    "vendor_name": "Apex Tooling Corp",
+    "industry_domain": "GENERAL FINANCE",
+    "total_amount_usd": 26050.0,
+    "status": "Confirmed",
+    "confidence_score": 99.5,
+    "is_messy": false,
+    "line_items": [
+      {
+        "description": "Component Spec Part #100",
+        "quantity": 110,
+        "unit_price": 236.82,
+        "total": 26050.0
+      }
+    ]
+  }
+]

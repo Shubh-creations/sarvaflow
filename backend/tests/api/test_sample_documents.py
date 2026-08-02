@@ -91,3 +91,15 @@ def test_unified_workflow_trace() -> None:
     data = res.json()
     assert len(data["active_traces"]) == 2
     assert data["bank_connectivity_latency"]["status"] == "ONLINE_LOW_LATENCY"
+
+
+def test_sample_data_100_validation_engine() -> None:
+    res = client.get("/api/v1/sample-data/validate-100")
+    assert res.status_code == 200
+    data = res.json()
+    assert data["status"] == "VALIDATION_SUCCESSFUL"
+    assert data["all_steps_passed"] is True
+    assert len(data["results_table"]) == 8
+    assert data["step2_exception_routing"]["precision_pct"] == 100.0
+    assert data["step3_deduplication"]["precision_pct"] == 100.0
+    assert data["step4_bank_reconciliation"]["balance_discrepancy"] == 0.0

@@ -1,0 +1,1002 @@
+[
+  {
+    "record_id": "REC-2026-001",
+    "invoice_number": "INV-2026-DUP-001",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 3510.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-002",
+    "invoice_number": "INV-2026-DUP-002",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 3620.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-003",
+    "invoice_number": "INV-2026-DUP-003",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 3730.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-004",
+    "invoice_number": "INV-2026-DUP-004",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 3840.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-005",
+    "invoice_number": "INV-2026-DUP-004",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 3840.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-004",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-006",
+    "invoice_number": "INV-2026-DUP-006",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4060.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-007",
+    "invoice_number": "INV-2026-DUP-007",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4170.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-008",
+    "invoice_number": "INV-2026-DUP-008",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4280.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-009",
+    "invoice_number": "INV-2026-DUP-009",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4390.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-010",
+    "invoice_number": "INV-2026-DUP-009",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4390.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-009",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-011",
+    "invoice_number": "INV-2026-DUP-011",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4610.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-012",
+    "invoice_number": "INV-2026-DUP-012",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4720.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-013",
+    "invoice_number": "INV-2026-DUP-013",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4830.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-014",
+    "invoice_number": "INV-2026-DUP-014",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4940.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-015",
+    "invoice_number": "INV-2026-DUP-014",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 4940.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-014",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-016",
+    "invoice_number": "INV-2026-DUP-016",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 5160.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-017",
+    "invoice_number": "INV-2026-DUP-017",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 5270.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-018",
+    "invoice_number": "INV-2026-DUP-018",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 5380.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-019",
+    "invoice_number": "INV-2026-DUP-019",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 5490.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-020",
+    "invoice_number": "INV-2026-DUP-019",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 5490.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-019",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-021",
+    "invoice_number": "INV-2026-DUP-021",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 5710.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-022",
+    "invoice_number": "INV-2026-DUP-022",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 5820.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-023",
+    "invoice_number": "INV-2026-DUP-023",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 5930.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-024",
+    "invoice_number": "INV-2026-DUP-024",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6040.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-025",
+    "invoice_number": "INV-2026-DUP-024",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6040.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-024",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-026",
+    "invoice_number": "INV-2026-DUP-026",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6260.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-027",
+    "invoice_number": "INV-2026-DUP-027",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6370.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-028",
+    "invoice_number": "INV-2026-DUP-028",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6480.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-029",
+    "invoice_number": "INV-2026-DUP-029",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6590.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-030",
+    "invoice_number": "INV-2026-DUP-029",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6590.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-029",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-031",
+    "invoice_number": "INV-2026-DUP-031",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6810.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-032",
+    "invoice_number": "INV-2026-DUP-032",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 6920.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-033",
+    "invoice_number": "INV-2026-DUP-033",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7030.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-034",
+    "invoice_number": "INV-2026-DUP-034",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7140.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-035",
+    "invoice_number": "INV-2026-DUP-034",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7140.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-034",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-036",
+    "invoice_number": "INV-2026-DUP-036",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7360.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-037",
+    "invoice_number": "INV-2026-DUP-037",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7470.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-038",
+    "invoice_number": "INV-2026-DUP-038",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7580.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-039",
+    "invoice_number": "INV-2026-DUP-039",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7690.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-040",
+    "invoice_number": "INV-2026-DUP-039",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7690.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-039",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-041",
+    "invoice_number": "INV-2026-DUP-041",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 7910.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-042",
+    "invoice_number": "INV-2026-DUP-042",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8020.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-043",
+    "invoice_number": "INV-2026-DUP-043",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8130.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-044",
+    "invoice_number": "INV-2026-DUP-044",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8240.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-045",
+    "invoice_number": "INV-2026-DUP-044",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8240.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-044",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-046",
+    "invoice_number": "INV-2026-DUP-046",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8460.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-047",
+    "invoice_number": "INV-2026-DUP-047",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8570.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-048",
+    "invoice_number": "INV-2026-DUP-048",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8680.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-049",
+    "invoice_number": "INV-2026-DUP-049",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8790.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-050",
+    "invoice_number": "INV-2026-DUP-049",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 8790.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-049",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-051",
+    "invoice_number": "INV-2026-DUP-051",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9010.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-052",
+    "invoice_number": "INV-2026-DUP-052",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9120.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-053",
+    "invoice_number": "INV-2026-DUP-053",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9230.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-054",
+    "invoice_number": "INV-2026-DUP-054",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9340.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-055",
+    "invoice_number": "INV-2026-DUP-054",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9340.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-054",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-056",
+    "invoice_number": "INV-2026-DUP-056",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9560.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-057",
+    "invoice_number": "INV-2026-DUP-057",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9670.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-058",
+    "invoice_number": "INV-2026-DUP-058",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9780.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-059",
+    "invoice_number": "INV-2026-DUP-059",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9890.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-060",
+    "invoice_number": "INV-2026-DUP-059",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 9890.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-059",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-061",
+    "invoice_number": "INV-2026-DUP-061",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10110.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-062",
+    "invoice_number": "INV-2026-DUP-062",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10220.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-063",
+    "invoice_number": "INV-2026-DUP-063",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10330.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-064",
+    "invoice_number": "INV-2026-DUP-064",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10440.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-065",
+    "invoice_number": "INV-2026-DUP-064",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10440.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-064",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-066",
+    "invoice_number": "INV-2026-DUP-066",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10660.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-067",
+    "invoice_number": "INV-2026-DUP-067",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10770.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-068",
+    "invoice_number": "INV-2026-DUP-068",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10880.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-069",
+    "invoice_number": "INV-2026-DUP-069",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10990.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-070",
+    "invoice_number": "INV-2026-DUP-069",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 10990.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-069",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-071",
+    "invoice_number": "INV-2026-DUP-071",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 11210.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-072",
+    "invoice_number": "INV-2026-DUP-072",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 11320.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-073",
+    "invoice_number": "INV-2026-DUP-073",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 11430.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-074",
+    "invoice_number": "INV-2026-DUP-074",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 11540.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-075",
+    "invoice_number": "INV-2026-DUP-074",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 11540.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-074",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-076",
+    "invoice_number": "INV-2026-DUP-076",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 11760.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-077",
+    "invoice_number": "INV-2026-DUP-077",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 11870.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-078",
+    "invoice_number": "INV-2026-DUP-078",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 11980.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-079",
+    "invoice_number": "INV-2026-DUP-079",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12090.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-080",
+    "invoice_number": "INV-2026-DUP-079",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12090.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-079",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-081",
+    "invoice_number": "INV-2026-DUP-081",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12310.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-082",
+    "invoice_number": "INV-2026-DUP-082",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12420.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-083",
+    "invoice_number": "INV-2026-DUP-083",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12530.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-084",
+    "invoice_number": "INV-2026-DUP-084",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12640.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-085",
+    "invoice_number": "INV-2026-DUP-084",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12640.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-084",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-086",
+    "invoice_number": "INV-2026-DUP-086",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12860.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-087",
+    "invoice_number": "INV-2026-DUP-087",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 12970.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-088",
+    "invoice_number": "INV-2026-DUP-088",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13080.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-089",
+    "invoice_number": "INV-2026-DUP-089",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13190.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-090",
+    "invoice_number": "INV-2026-DUP-089",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13190.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-089",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-091",
+    "invoice_number": "INV-2026-DUP-091",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13410.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-092",
+    "invoice_number": "INV-2026-DUP-092",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13520.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-093",
+    "invoice_number": "INV-2026-DUP-093",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13630.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-094",
+    "invoice_number": "INV-2026-DUP-094",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13740.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-095",
+    "invoice_number": "INV-2026-DUP-094",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13740.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-094",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  },
+  {
+    "record_id": "REC-2026-096",
+    "invoice_number": "INV-2026-DUP-096",
+    "vendor_name": "Global Precision Components",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 13960.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-097",
+    "invoice_number": "INV-2026-DUP-097",
+    "vendor_name": "CloudScale SaaS Inc",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 14070.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-098",
+    "invoice_number": "INV-2026-DUP-098",
+    "vendor_name": "Hyperscale GPU Compute",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 14180.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-099",
+    "invoice_number": "INV-2026-DUP-099",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 14290.0,
+    "is_duplicate": false,
+    "is_duplicate_of": null,
+    "expected_alert": "UNIQUE"
+  },
+  {
+    "record_id": "REC-2026-100",
+    "invoice_number": "INV-2026-DUP-099",
+    "vendor_name": "Atlas Logistics Ltd",
+    "invoice_date": "2026-07-20",
+    "total_amount_usd": 14290.0,
+    "is_duplicate": true,
+    "is_duplicate_of": "INV-2026-DUP-099",
+    "expected_alert": "DUPLICATE_INVOICE_ALERT"
+  }
+]
