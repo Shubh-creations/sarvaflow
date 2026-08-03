@@ -1672,11 +1672,11 @@ function DashboardApp() {
                     Accuracy Trend by Industry Category
                   </span>
                   <div style={{ display: 'grid', gap: '6px' }}>
-                    {accuracyDashboard?.accuracy_by_category ? (
-                      Object.entries(accuracyDashboard.accuracy_by_category).map(([cat, rate]: any) => (
-                        <div key={cat} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', padding: '6px 10px', background: 'var(--input-bg)', borderRadius: '6px' }}>
-                          <span style={{ color: 'var(--text-main)' }}>{cat}</span>
-                          <span style={{ color: '#10b981', fontWeight: 700 }}>{rate}% Accuracy</span>
+                    {Array.isArray(accuracyDashboard?.accuracy_by_category) ? (
+                      accuracyDashboard.accuracy_by_category.map((item: any) => (
+                        <div key={item.category} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '12px', padding: '6px 10px', background: 'var(--input-bg)', borderRadius: '6px' }}>
+                          <span style={{ color: 'var(--text-main)' }}>{item.category}</span>
+                          <span style={{ color: '#10b981', fontWeight: 700 }}>{item.accuracy_rate_pct}% Accuracy</span>
                         </div>
                       ))
                     ) : (
