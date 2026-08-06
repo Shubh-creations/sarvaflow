@@ -286,8 +286,9 @@ function DashboardApp() {
       if (res.ok) {
         const data = await res.json()
         setIngestionParsedData(data)
+        const uniqueId = `batch-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`
         const newBatchItem = {
-          id: `batch-${Date.now()}`,
+          id: uniqueId,
           file_name: data.file_name,
           industry_domain: data.industry_domain,
           document_category: data.document_category,
@@ -298,7 +299,10 @@ function DashboardApp() {
           fields: data.fields,
           bounding_box_legend: data.bounding_box_legend
         }
-        setBatchQueue((prev) => [newBatchItem, ...prev])
+        setBatchQueue((prev) => {
+          const filtered = prev.filter((item) => item.file_name !== data.file_name)
+          return [newBatchItem, ...filtered]
+        })
 
         // FULL AUTOMATED PIPELINE EXECUTION (Downstream Automation Flowchart)
         const lowerName = fileName.toLowerCase()
@@ -346,7 +350,10 @@ function DashboardApp() {
     const files = e.target.files
     if (!files || files.length === 0) return
 
-    Array.from(files).forEach((file) => {
+    const fileList = Array.from(files)
+    e.target.value = '' // Clear input value to prevent event duplication
+
+    fileList.forEach((file) => {
       const reader = new FileReader()
       reader.onload = (event) => {
         const content = event.target?.result as string
