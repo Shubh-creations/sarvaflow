@@ -17,6 +17,7 @@ from app.api.v1.reconciliation import router as reconciliation_router
 from app.api.v1.treasury import router as treasury_router
 
 from app.api.v1.feedback import router as feedback_router
+from app.api.v1.plaid import router as plaid_router
 from app.api.v1.sample_data import router as sample_data_router
 from app.api.v1.settings import router as settings_router
 from app.api.v1.tier1_ops import router as tier1_ops_router
@@ -25,6 +26,7 @@ router = APIRouter()
 router.include_router(health_router)
 router.include_router(identity_router)
 router.include_router(connectors_router)
+router.include_router(plaid_router)
 router.include_router(forecasting_router)
 router.include_router(monitoring_router)
 router.include_router(ap_agent_router)
