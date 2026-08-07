@@ -354,12 +354,19 @@ function DashboardApp() {
     e.target.value = '' // Clear input value to prevent event duplication
 
     fileList.forEach((file) => {
+      const fn = file.name.toLowerCase()
+      const isBinary = fn.endsWith('.pdf') || fn.endsWith('.png') || fn.endsWith('.jpg') || fn.endsWith('.jpeg') || fn.endsWith('.xlsx') || fn.endsWith('.xls') || fn.endsWith('.docx') || fn.endsWith('.zip')
       const reader = new FileReader()
       reader.onload = (event) => {
         const content = event.target?.result as string
         handleUniversalFileUpload(file.name, content)
       }
-      reader.readAsText(file)
+
+      if (isBinary) {
+        reader.readAsDataURL(file)
+      } else {
+        reader.readAsText(file)
+      }
     })
   }
 
