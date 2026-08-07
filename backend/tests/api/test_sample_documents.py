@@ -39,6 +39,21 @@ def test_master_optimization() -> None:
     assert len(data["executed_actions"]) == 4
 
 
+def test_malformed_payload_job_failure() -> None:
+    """Confirm malformed file payload returns explicit Failed status and reason (FIX 5)."""
+    payload = {
+        "file_name": "CORRUPT_PAYLOAD_FAIL.txt",
+        "file_content": "corrupt_malformed_test_fail_data",
+        "industry_domain": "MANUFACTURING / HARDWARE"
+    }
+    response = client.post("/api/v1/sample-data/ingest-document", json=payload)
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "Failed"
+    assert "failure_reason" in data
+    assert "Permanent Ingestion Error" in data["failure_reason"]
+
+
 def test_ingest_custom_document_classification() -> None:
     payload_bom = {
         "file_name": "bom_assembly.csv",

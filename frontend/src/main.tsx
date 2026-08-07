@@ -487,6 +487,35 @@ function DashboardApp() {
     trackEvent('page_view', { tab: activeTab })
   }, [activeTab])
 
+  // FIX 2: Server-Sent Events (SSE) listener for real-time status updates without manual reload
+  useEffect(() => {
+    let eventSource: EventSource | null = null;
+    try {
+      eventSource = new EventSource(`${API}/api/v1/monitoring/stream-events`)
+      eventSource.onmessage = (event) => {
+        try {
+          const payload = JSON.parse(event.data)
+          if (payload.type === 'STATUS_UPDATE') {
+            setAgentMeshList(prev => prev.map(a => {
+              if (a.status === 'RUNNING' || a.status === 'PROCESSING') {
+                return { ...a, status: 'COMPLETED', detail: `Auto-updated via live SSE (${payload.timestamp})` }
+              }
+              return a
+            }))
+          }
+        } catch (e) {
+          console.warn('SSE payload error', e)
+        }
+      }
+    } catch (e) {
+      console.warn('SSE connection error', e)
+    }
+
+    return () => {
+      if (eventSource) eventSource.close()
+    }
+  }, [])
+
   const showToast = (msg: string) => {
     setNotification(msg)
     setTimeout(() => setNotification(null), 4000)

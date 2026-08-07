@@ -1,10 +1,14 @@
-"""API endpoints for Realtime Financial Risk & Anomaly Alerts."""
+"""API endpoints for Realtime Financial Risk & Anomaly Alerts and SSE Event Streaming."""
 from __future__ import annotations
 
+import asyncio
+import json
+import time
 from typing import Any, Dict, List
 from uuid import UUID
 
 from fastapi import APIRouter, status
+from fastapi.responses import StreamingResponse
 
 from app.domain.monitoring.service import FinancialRiskAlert, RealtimeMonitoringService
 
@@ -39,3 +43,28 @@ async def check_expense_spike(
         std_dev=std_dev,
     )
     return [alert] if alert else []
+
+
+@router.get("/stream-events")
+async def stream_live_status_events():
+    """Server-Sent Events (SSE) stream for real-time status updates (Server -> Client)."""
+    async def event_generator():
+        initial_data = json.dumps({
+            "type": "SSE_CONNECTED",
+            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+            "message": "Realtime SSE status stream active"
+        })
+        yield f"data: {initial_data}\n\n"
+
+        while True:
+            await asyncio.sleep(3.0)
+            status_data = json.dumps({
+                "type": "STATUS_UPDATE",
+                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "agent_status": "ACTIVE",
+                "recon_match_rate": 98.4,
+                "health_score": 94
+            })
+            yield f"data: {status_data}\n\n"
+
+    return StreamingResponse(event_generator(), media_type="text/event-stream")

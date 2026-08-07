@@ -1,0 +1,230 @@
+{
+  "correction_logs": [
+    {
+      "timestamp": "2026-08-07 16:57:29",
+      "document_type": "Manufacturing Supplier Invoice",
+      "field_key": "vendor_name",
+      "original_ai_value": "Global Precision Comp",
+      "corrected_value": "Global Precision Components Corp",
+      "confidence_at_extraction": 0.82
+    }
+  ],
+  "ingested_documents": [
+    {
+      "file_name": "bom_assembly.csv",
+      "industry_domain": "MANUFACTURING / HARDWARE",
+      "document_category": "Bill of Materials (BOM) / Hardware Component List",
+      "status": "Confirmed",
+      "is_messy_document": false,
+      "overall_confidence": 93.6,
+      "fields": [
+        {
+          "field_key": "vendor_name",
+          "field_label": "Vendor / Entity",
+          "value": "Bom Assembly Csv Entity",
+          "confidence": 0.956,
+          "category": "vendor",
+          "color_code": "#6366f1",
+          "color_label": "Indigo (Vendor)",
+          "bbox": [
+            25,
+            40,
+            65,
+            360
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "invoice_date",
+          "field_label": "Document Date",
+          "value": "2026-08-01",
+          "confidence": 0.936,
+          "category": "date",
+          "color_code": "#f59e0b",
+          "color_label": "Amber (Date)",
+          "bbox": [
+            25,
+            420,
+            65,
+            560
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "total_amount",
+          "field_label": "Total Amount (USD)",
+          "value": "$18.50",
+          "confidence": 0.965,
+          "category": "amount",
+          "color_code": "#10b981",
+          "color_label": "Green (Amount)",
+          "bbox": [
+            480,
+            380,
+            520,
+            580
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "line_items",
+          "field_label": "Line Items (1 extracted)",
+          "value": "1 Verified Item Lines",
+          "confidence": 0.888,
+          "category": "line_items",
+          "color_code": "#8b5cf6",
+          "color_label": "Violet (Line Items)",
+          "bbox": [
+            140,
+            40,
+            440,
+            580
+          ],
+          "needs_review": false
+        }
+      ],
+      "raw_text": "Component_Part_ID,Description,Quantity_Required,Unit_Cost_USD\nCMP-8819,Anodized Casing,1,18.50",
+      "total_amount_usd": 18.5,
+      "extracted_line_items": [
+        {
+          "line_number": 1,
+          "description": "CMP-8819,Anodized Casing,1,18.50",
+          "amount_usd": 18.5
+        }
+      ],
+      "bounding_box_legend": [
+        {
+          "category": "vendor",
+          "label": "Vendor / Entity",
+          "color": "#6366f1"
+        },
+        {
+          "category": "amount",
+          "label": "Audited Amount",
+          "color": "#10b981"
+        },
+        {
+          "category": "date",
+          "label": "Document Date",
+          "color": "#f59e0b"
+        },
+        {
+          "category": "line_items",
+          "label": "Structured Line Items",
+          "color": "#8b5cf6"
+        }
+      ]
+    },
+    {
+      "file_name": "gpu_cluster.json",
+      "industry_domain": "AI / COMPUTE-INTENSIVE",
+      "document_category": "GPU Compute / Data Licensing Invoice",
+      "status": "Confirmed",
+      "is_messy_document": false,
+      "overall_confidence": 93.6,
+      "fields": [
+        {
+          "field_key": "vendor_name",
+          "field_label": "Vendor / Entity",
+          "value": "Hyperscale GPU Compute Provider",
+          "confidence": 0.956,
+          "category": "vendor",
+          "color_code": "#6366f1",
+          "color_label": "Indigo (Vendor)",
+          "bbox": [
+            25,
+            40,
+            65,
+            360
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "invoice_date",
+          "field_label": "Document Date",
+          "value": "2026-08-01",
+          "confidence": 0.936,
+          "category": "date",
+          "color_code": "#f59e0b",
+          "color_label": "Amber (Date)",
+          "bbox": [
+            25,
+            420,
+            65,
+            560
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "total_amount",
+          "field_label": "Total Amount (USD)",
+          "value": "$24,576.00",
+          "confidence": 0.965,
+          "category": "amount",
+          "color_code": "#10b981",
+          "color_label": "Green (Amount)",
+          "bbox": [
+            480,
+            380,
+            520,
+            580
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "line_items",
+          "field_label": "Line Items (1 extracted)",
+          "value": "1 Verified Item Lines",
+          "confidence": 0.888,
+          "category": "line_items",
+          "color_code": "#8b5cf6",
+          "color_label": "Violet (Line Items)",
+          "bbox": [
+            140,
+            40,
+            440,
+            580
+          ],
+          "needs_review": false
+        }
+      ],
+      "raw_text": "10,240x H100 SXM5 GPU Hours (Model Fine-Tuning) @ $2.40/hour = $24,576.00",
+      "total_amount_usd": 24576.0,
+      "extracted_line_items": [
+        {
+          "line_number": 1,
+          "description": "10,240x H100 SXM5 GPU Hours (Model Fine-Tuning) @ $2.40/hour = $2",
+          "amount_usd": 24576.0
+        }
+      ],
+      "bounding_box_legend": [
+        {
+          "category": "vendor",
+          "label": "Vendor / Entity",
+          "color": "#6366f1"
+        },
+        {
+          "category": "amount",
+          "label": "Audited Amount",
+          "color": "#10b981"
+        },
+        {
+          "category": "date",
+          "label": "Document Date",
+          "color": "#f59e0b"
+        },
+        {
+          "category": "line_items",
+          "label": "Structured Line Items",
+          "color": "#8b5cf6"
+        }
+      ]
+    }
+  ],
+  "field_accuracy_weights": {
+    "vendor": 0.98,
+    "amount": 0.99,
+    "date": 0.96,
+    "line_items": 0.94
+  }
+}

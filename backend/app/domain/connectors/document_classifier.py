@@ -7,19 +7,50 @@ import time
 from typing import Any, Dict, List, Tuple
 
 
+import json
+import os
+
+DB_FILE_PATH = os.path.join(os.path.dirname(__file__), "persistent_ingestion_db.json")
+
+
 class UniversalDocumentClassifierEngine:
-    """Production-grade classifier supporting ANY file type (PDF, CSV, XLSX, JSON, EML, MT940, PNG/JPG, TXT)."""
+    """Production-grade classifier supporting ANY file type with persistent disk state across server restarts."""
 
     def __init__(self) -> None:
-        # In-memory feedback loop database
         self._correction_logs: List[Dict[str, Any]] = []
-        # Base field accuracy calibration weights (recalibrated via user corrections)
+        self._ingested_documents: List[Dict[str, Any]] = []
         self._field_accuracy_weights: Dict[str, float] = {
             "vendor": 0.98,
             "amount": 0.99,
             "date": 0.96,
             "line_items": 0.94
         }
+        self._load_persistent_state()
+
+    def _load_persistent_state(self) -> None:
+        """Loads persisted ingestion state from disk upon server startup."""
+        if os.path.exists(DB_FILE_PATH):
+            try:
+                with open(DB_FILE_PATH, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                    self._correction_logs = data.get("correction_logs", [])
+                    self._ingested_documents = data.get("ingested_documents", [])
+                    if "field_accuracy_weights" in data:
+                        self._field_accuracy_weights = data["field_accuracy_weights"]
+            except Exception as e:
+                print(f"Warning: Persistent DB load failed: {e}")
+
+    def _save_persistent_state(self) -> None:
+        """Saves ingestion state to disk to survive server restarts."""
+        try:
+            with open(DB_FILE_PATH, "w", encoding="utf-8") as f:
+                json.dump({
+                    "correction_logs": self._correction_logs,
+                    "ingested_documents": self._ingested_documents,
+                    "field_accuracy_weights": self._field_accuracy_weights
+                }, f, indent=2)
+        except Exception as e:
+            print(f"Warning: Persistent DB save failed: {e}")
 
     def _normalize_content(self, file_name: str, content: str) -> str:
         """Extracts readable text stream from text, Base64 Data URL, JSON, CSV, or raw binary payloads."""
@@ -209,7 +240,7 @@ class UniversalDocumentClassifierEngine:
         overall_status = "Needs Review" if needs_review else "Confirmed"
         overall_confidence_pct = round((sum(f["confidence"] for f in fields) / len(fields)) * 100, 1)
 
-        return {
+        result = {
             "file_name": file_name,
             "industry_domain": industry_domain,
             "document_category": doc_category,
@@ -227,6 +258,9 @@ class UniversalDocumentClassifierEngine:
                 {"category": "line_items", "label": "Structured Line Items", "color": "#8b5cf6"}
             ]
         }
+        self._ingested_documents.append(result)
+        self._save_persistent_state()
+        return result
 
     def log_field_correction(
         self,
@@ -251,6 +285,7 @@ class UniversalDocumentClassifierEngine:
         if field_key in self._field_accuracy_weights:
             self._field_accuracy_weights[field_key] = max(0.65, round(self._field_accuracy_weights[field_key] - 0.015, 3))
 
+        self._save_persistent_state()
         return {
             "status": "CORRECTION_LOGGED",
             "log_entry": log_entry,

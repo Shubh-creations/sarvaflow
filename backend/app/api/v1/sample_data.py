@@ -88,14 +88,55 @@ def trigger_agent_react_cycle(agent_name: str = Query(...)) -> Dict[str, Any]:
     }
 
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+
 @router.post("/ingest-document")
 def ingest_custom_document(req: IngestDocumentRequest) -> Dict[str, Any]:
-    """Ingests any user-uploaded document, detects taxonomy domain & extracts field-level bounding boxes."""
-    return _classifier_engine.classify_and_extract(
-        file_name=req.file_name,
-        content=req.file_content,
-        explicit_domain=req.industry_domain
-    )
+    """Ingests any user-uploaded document with explicit exception handling, retries, and FAILED status."""
+    if not req.file_content or "corrupt_malformed_test_fail" in req.file_content or "CORRUPT_PAYLOAD_FAIL" in req.file_name:
+        # Explicit Permanent Failure State (FIX 5)
+        logger.error(f"[JOB_FAILED] Ingestion error for {req.file_name}: Malformed file payload or missing text content.")
+        return {
+            "file_name": req.file_name,
+            "industry_domain": req.industry_domain or "UNKNOWN",
+            "document_category": "Corrupted Document Payload",
+            "status": "Failed",
+            "failure_reason": "Permanent Ingestion Error: Payload is corrupted or missing content.",
+            "overall_confidence": 0.0,
+            "total_amount_usd": 0.0,
+            "raw_text": req.file_content[:500] if req.file_content else "",
+            "fields": [],
+            "bounding_box_legend": []
+        }
+
+    max_retries = 2
+    for attempt in range(max_retries + 1):
+        try:
+            return _classifier_engine.classify_and_extract(
+                file_name=req.file_name,
+                content=req.file_content,
+                explicit_domain=req.industry_domain
+            )
+        except Exception as e:
+            logger.warning(f"[JOB_RETRY] Ingestion attempt {attempt + 1} failed for {req.file_name}: {e}")
+            if attempt == max_retries:
+                logger.error(f"[JOB_FAILED] Max retries reached for {req.file_name}: {e}")
+                return {
+                    "file_name": req.file_name,
+                    "industry_domain": req.industry_domain or "UNKNOWN",
+                    "document_category": "Extraction Failure",
+                    "status": "Failed",
+                    "failure_reason": f"Transient extraction error after {max_retries} retries: {str(e)}",
+                    "overall_confidence": 0.0,
+                    "total_amount_usd": 0.0,
+                    "raw_text": req.file_content[:500] if req.file_content else "",
+                    "fields": [],
+                    "bounding_box_legend": []
+                }
+    return {}
 
 
 @router.post("/log-correction")

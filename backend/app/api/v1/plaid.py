@@ -49,9 +49,15 @@ def sync_transactions(item_id: Optional[str] = Query(None)) -> Dict[str, Any]:
     return _plaid_engine.sync_transactions(item_id=item_id)
 
 
+import logging
+
+logger = logging.getLogger(__name__)
+
 @router.post("/webhook", status_code=status.HTTP_200_OK)
 def receive_plaid_webhook(payload: WebhookPayload) -> Dict[str, Any]:
     """Inbound webhook endpoint for real-time bank settlement and balance notifications."""
+    logger.info(f"[PLAID_WEBHOOK_RECEIVED] type={payload.webhook_type} code={payload.webhook_code} item_id={payload.item_id}")
+    print(f"INFO: [PLAID_WEBHOOK_RECEIVED] type={payload.webhook_type} code={payload.webhook_code} item_id={payload.item_id}")
     return _plaid_engine.handle_webhook(
         webhook_type=payload.webhook_type,
         webhook_code=payload.webhook_code,

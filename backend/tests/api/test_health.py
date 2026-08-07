@@ -13,3 +13,12 @@ def test_ready_reports_dependency_state(client):
         assert response.json()["status"] == "ok"
     else:
         assert response.json()["error"]["code"] == "dependency_unavailable"
+
+
+def test_invalid_tenant_id_returns_422(client):
+    """Confirm missing or malformed tenant_id context fails explicitly with 422 validation error."""
+    response = client.get("/api/v1/sample-data/health-scorecard?tenant_id=invalid-uuid-12345")
+    assert response.status_code == 422
+    data = response.json()
+    assert "error" in data
+    assert data["error"]["code"] == "validation_error"
