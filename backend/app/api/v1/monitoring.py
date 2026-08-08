@@ -16,6 +16,22 @@ router = APIRouter(prefix="/monitoring", tags=["Realtime Monitoring & Alerts"])
 monitoring_service = RealtimeMonitoringService()
 
 
+_entity_event_queue: List[Dict[str, Any]] = []
+
+
+def push_per_entity_event(target_card: str, doc_name: str, doc_category: str, delta_val: float, summary: str) -> None:
+    """Pushes a per-entity update event to the SSE event stream queue."""
+    _entity_event_queue.append({
+        "type": "PER_ENTITY_UPDATE",
+        "target_card": target_card,
+        "document_name": doc_name,
+        "document_category": doc_category,
+        "delta_value": delta_val,
+        "timestamp": time.strftime("%H:%M:%S"),
+        "summary": summary
+    })
+
+
 @router.post("/check-duplicates", response_model=List[FinancialRiskAlert], status_code=status.HTTP_200_OK)
 async def check_duplicate_invoices(
     tenant_id: UUID,
@@ -57,14 +73,18 @@ async def stream_live_status_events():
         yield f"data: {initial_data}\n\n"
 
         while True:
-            await asyncio.sleep(3.0)
-            status_data = json.dumps({
-                "type": "STATUS_UPDATE",
-                "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-                "agent_status": "ACTIVE",
-                "recon_match_rate": 98.4,
-                "health_score": 94
-            })
-            yield f"data: {status_data}\n\n"
+            await asyncio.sleep(1.0)
+            if _entity_event_queue:
+                evt = _entity_event_queue.pop(0)
+                yield f"data: {json.dumps(evt)}\n\n"
+            else:
+                status_data = json.dumps({
+                    "type": "STATUS_UPDATE",
+                    "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
+                    "agent_status": "ACTIVE",
+                    "recon_match_rate": 98.4,
+                    "health_score": 94
+                })
+                yield f"data: {status_data}\n\n"
 
     return StreamingResponse(event_generator(), media_type="text/event-stream")

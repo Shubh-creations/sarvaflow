@@ -115,11 +115,33 @@ def ingest_custom_document(req: IngestDocumentRequest) -> Dict[str, Any]:
     max_retries = 2
     for attempt in range(max_retries + 1):
         try:
-            return _classifier_engine.classify_and_extract(
+            res = _classifier_engine.classify_and_extract(
                 file_name=req.file_name,
                 content=req.file_content,
                 explicit_domain=req.industry_domain
             )
+            # Push granular per-entity event for Phase 2 live updates
+            target_card = "ap_ar_match"
+            if "PAYROLL" in res.get("industry_domain", "") or "payroll" in res["file_name"].lower():
+                target_card = "payroll_forecast"
+            elif "BANK" in res.get("industry_domain", "") or "bank" in res["file_name"].lower():
+                target_card = "cash_reserves"
+            elif "PURCHASE ORDER" in res.get("industry_domain", "") or "price_variance" in res["file_name"].lower():
+                target_card = "risk_containment"
+
+            try:
+                from app.api.v1.monitoring import push_per_entity_event
+                push_per_entity_event(
+                    target_card=target_card,
+                    doc_name=res["file_name"],
+                    doc_category=res["document_category"],
+                    delta_val=res.get("total_amount_usd", 0.0),
+                    summary=f"Extracted {res['document_category']} ({res['overall_confidence']}% confidence)"
+                )
+            except Exception as pe_err:
+                logger.warning(f"Failed to push per-entity event: {pe_err}")
+
+            return res
         except Exception as e:
             logger.warning(f"[JOB_RETRY] Ingestion attempt {attempt + 1} failed for {req.file_name}: {e}")
             if attempt == max_retries:

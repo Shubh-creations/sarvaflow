@@ -7,6 +7,54 @@
       "original_ai_value": "Global Precision Comp",
       "corrected_value": "Global Precision Components Corp",
       "confidence_at_extraction": 0.82
+    },
+    {
+      "timestamp": "2026-08-08 21:28:11",
+      "document_type": "Freight Invoice",
+      "field_key": "vendor_name",
+      "original_ai_value": "TransGlobal Freight Services Inc",
+      "corrected_value": "TransGlobal Freight Services Inc",
+      "confidence_at_extraction": 0.74
+    },
+    {
+      "timestamp": "2026-08-08 21:28:13",
+      "document_type": "Freight Invoice",
+      "field_key": "invoice_date",
+      "original_ai_value": "2026-07-25",
+      "corrected_value": "2026-07-25",
+      "confidence_at_extraction": 0.88
+    },
+    {
+      "timestamp": "2026-08-08 21:28:16",
+      "document_type": "Freight Invoice",
+      "field_key": "total_amount",
+      "original_ai_value": "$11,671.60",
+      "corrected_value": "$11,671.60",
+      "confidence_at_extraction": 0.82
+    },
+    {
+      "timestamp": "2026-08-08 21:28:18",
+      "document_type": "Freight Invoice",
+      "field_key": "line_items",
+      "original_ai_value": "4 Scanned Item Lines",
+      "corrected_value": "4 Scanned Item Lines",
+      "confidence_at_extraction": 0.69
+    },
+    {
+      "timestamp": "2026-08-08 21:28:28",
+      "document_type": "Purchase Order Exception",
+      "field_key": "total_amount",
+      "original_ai_value": "$14,800.00 (PO: $12,500.00)",
+      "corrected_value": "$14,800.00 (PO: $12,500.00)",
+      "confidence_at_extraction": 0.96
+    },
+    {
+      "timestamp": "2026-08-08 21:42:24",
+      "document_type": "Manufacturing Supplier Invoice",
+      "field_key": "vendor_name",
+      "original_ai_value": "Global Precision Comp",
+      "corrected_value": "Global Precision Components Corp",
+      "confidence_at_extraction": 0.82
     }
   ],
   "ingested_documents": [
@@ -819,12 +867,1424 @@
           "color": "#8b5cf6"
         }
       ]
+    },
+    {
+      "file_name": "bank_01_transactions_100.csv",
+      "industry_domain": "PAYROLL / HUMAN RESOURCES",
+      "document_category": "Employee Biweekly Payroll Run",
+      "status": "Confirmed",
+      "is_messy_document": false,
+      "overall_confidence": 95.2,
+      "fields": [
+        {
+          "field_key": "vendor_name",
+          "field_label": "Vendor / Entity",
+          "value": "JPMorgan Chase Operating Master (*9281)",
+          "confidence": 0.972,
+          "category": "vendor",
+          "color_code": "#6366f1",
+          "color_label": "Indigo (Vendor)",
+          "bbox": [
+            25,
+            40,
+            65,
+            360
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "invoice_date",
+          "field_label": "Document Date",
+          "value": "2026-03-08",
+          "confidence": 0.952,
+          "category": "date",
+          "color_code": "#f59e0b",
+          "color_label": "Amber (Date)",
+          "bbox": [
+            25,
+            420,
+            65,
+            560
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "total_amount",
+          "field_label": "Total Amount (USD)",
+          "value": "$42,950,000.00",
+          "confidence": 0.982,
+          "category": "amount",
+          "color_code": "#10b981",
+          "color_label": "Green (Amount)",
+          "bbox": [
+            480,
+            380,
+            520,
+            580
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "line_items",
+          "field_label": "Line Items (100 extracted)",
+          "value": "100 Verified Item Lines",
+          "confidence": 0.904,
+          "category": "line_items",
+          "color_code": "#8b5cf6",
+          "color_label": "Violet (Line Items)",
+          "bbox": [
+            140,
+            40,
+            440,
+            580
+          ],
+          "needs_review": false
+        }
+      ],
+      "raw_text": "date,description,reference,debit,credit,balance\r\n2026-03-08,ACH DEBIT - Subscription Fee,REF-90001,41296.65,,42458703.35\r\n2026-04-09,WIRE OUT - Vendor Payment,REF-90002,71624.81,,42387078.54\r\n2026-05-27,ACH CREDIT - Client Payment,REF-90003,,41145.4,42428223.94\r\n2026-06-15,MMF SWEEP - Auto Yield Transfer,REF-90004,26427779.69,,16000444.25\r\n2026-03-10,MMF SWEEP - Auto Yield Transfer,REF-90005,21942381.15,,-5941936.9\r\n2026-07-19,WIRE OUT - Cloud Infrastructure,REF-90006,128563.67,,-6070500.57\r\n2026-02-03,ACH CREDIT - Client Payment,REF-90007,,118787.25,-5951713.32\r\n2026-01-03,PAYROLL - Biweekly Run,REF-90008,150484.92,,-6102198.24\r\n2026-07-26,MMF SWEEP - Auto Yield Transfer,REF-90009,11309761.03,,-17411959.27\r\n2026-07-01,MMF INTEREST CREDIT,REF-90010,,178328.75,-17233630.52\r\n2026-04-07,MMF INTEREST CREDIT,REF-90011,,106239.8,-17127390.72\r\n2026-02-25,ACH DEBIT - Subscription Fee,REF-90012,115020.01,,-17242410.73\r\n2026-05-14,ACH CREDIT - Refund,REF-90013,,75885.2,-17166525.53\r\n2026-01-02,WIRE OUT - Cloud Infrastructure,REF-90014,146329.55,,-17312855.08\r\n2026-06-02,ACH DEBIT - Subscription Fee,REF-90015,140583.55,,-17453438.63\r\n2026-01-28,MMF INTEREST CREDIT,REF-90016,,74969.74,-17378468.89\r\n2026-03-12,ACH CREDIT - Refund,REF-90017,,16427.34,-17362041.55\r\n2026-03-08,ACH DEBIT - Subscription Fee,REF-90018,215442.15,,-17577483.7\r\n2026-05-13,MMF INTEREST CREDIT,REF-90019,,47495.84,-17529987.86\r\n2026-07-26,MMF SWEEP - Auto Yield Transfer,REF-90020,27492176.12,,-45022163.98\r\n2026-06-24,WIRE OUT - Cloud Infrastructure,REF-90021,165302.32,,-45187466.3\r\n2026-06-17,PAYROLL - Biweekly Run,REF-90022,180460.16,,-45367926.46\r\n2026-03-08,ACH CREDIT - Refund,REF-90023,,249368.54,-45118557.92\r\n2026-07-08,WIRE OUT - Cloud Infrastructure,REF-90024,101447.42,,-45220005.34\r\n2026-05-27,ACH CREDIT - Client Payment,REF-90025,,145964.41,-45074040.93\r\n2026-07-02,MMF SWEEP - Auto Yield Transfer,REF-90026,13579176.24,,-58653217.17\r\n2026-06-13,MMF SWEEP - Auto Yield Transfer,REF-90027,22157952.77,,",
+      "total_amount_usd": 42950000.0,
+      "extracted_line_items": [
+        {
+          "line_number": 1,
+          "description": "2026-03-08,ACH DEBIT - Subscription Fee,REF-90001,41296.65,,42458",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 2,
+          "description": "2026-04-09,WIRE OUT - Vendor Payment,REF-90002,71624.81,,42387078",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 3,
+          "description": "2026-05-27,ACH CREDIT - Client Payment,REF-90003,,41145.4,4242822",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 4,
+          "description": "2026-06-15,MMF SWEEP - Auto Yield Transfer,REF-90004,26427779.69,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 5,
+          "description": "2026-03-10,MMF SWEEP - Auto Yield Transfer,REF-90005,21942381.15,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 6,
+          "description": "2026-07-19,WIRE OUT - Cloud Infrastructure,REF-90006,128563.67,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 7,
+          "description": "2026-02-03,ACH CREDIT - Client Payment,REF-90007,,118787.25,-5951",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 8,
+          "description": "2026-01-03,PAYROLL - Biweekly Run,REF-90008,150484.92,,-6102198.2",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 9,
+          "description": "2026-07-26,MMF SWEEP - Auto Yield Transfer,REF-90009,11309761.03,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 10,
+          "description": "2026-07-01,MMF INTEREST CREDIT,REF-90010,,178328.75,-17233630.52",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 11,
+          "description": "2026-04-07,MMF INTEREST CREDIT,REF-90011,,106239.8,-17127390.72",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 12,
+          "description": "2026-02-25,ACH DEBIT - Subscription Fee,REF-90012,115020.01,,-172",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 13,
+          "description": "2026-05-14,ACH CREDIT - Refund,REF-90013,,75885.2,-17166525.53",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 14,
+          "description": "2026-01-02,WIRE OUT - Cloud Infrastructure,REF-90014,146329.55,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 15,
+          "description": "2026-06-02,ACH DEBIT - Subscription Fee,REF-90015,140583.55,,-174",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 16,
+          "description": "2026-01-28,MMF INTEREST CREDIT,REF-90016,,74969.74,-17378468.89",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 17,
+          "description": "2026-03-12,ACH CREDIT - Refund,REF-90017,,16427.34,-17362041.55",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 18,
+          "description": "2026-03-08,ACH DEBIT - Subscription Fee,REF-90018,215442.15,,-175",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 19,
+          "description": "2026-05-13,MMF INTEREST CREDIT,REF-90019,,47495.84,-17529987.86",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 20,
+          "description": "2026-07-26,MMF SWEEP - Auto Yield Transfer,REF-90020,27492176.12,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 21,
+          "description": "2026-06-24,WIRE OUT - Cloud Infrastructure,REF-90021,165302.32,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 22,
+          "description": "2026-06-17,PAYROLL - Biweekly Run,REF-90022,180460.16,,-45367926.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 23,
+          "description": "2026-03-08,ACH CREDIT - Refund,REF-90023,,249368.54,-45118557.92",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 24,
+          "description": "2026-07-08,WIRE OUT - Cloud Infrastructure,REF-90024,101447.42,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 25,
+          "description": "2026-05-27,ACH CREDIT - Client Payment,REF-90025,,145964.41,-4507",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 26,
+          "description": "2026-07-02,MMF SWEEP - Auto Yield Transfer,REF-90026,13579176.24,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 27,
+          "description": "2026-06-13,MMF SWEEP - Auto Yield Transfer,REF-90027,22157952.77,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 28,
+          "description": "2026-06-21,ACH CREDIT - Refund,REF-90028,,226678.36,-80584491.58",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 29,
+          "description": "2026-02-13,ACH DEBIT - Subscription Fee,REF-90029,127075.06,,-807",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 30,
+          "description": "2026-05-01,PAYROLL - Biweekly Run,REF-90030,73799.12,,-80785365.7",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 31,
+          "description": "2026-07-05,PAYROLL - Biweekly Run,REF-90031,185359.26,,-80970725.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 32,
+          "description": "2026-03-27,PAYROLL - Biweekly Run,REF-90032,236757.38,,-81207482.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 33,
+          "description": "2026-02-27,WIRE OUT - Vendor Payment,REF-90033,55952.25,,-8126343",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 34,
+          "description": "2026-03-26,MMF INTEREST CREDIT,REF-90034,,105407.91,-81158026.74",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 35,
+          "description": "2026-03-17,ACH DEBIT - Subscription Fee,REF-90035,65509.53,,-8122",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 36,
+          "description": "2026-05-01,ACH CREDIT - Refund,REF-90036,,212877.87,-81010658.4",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 37,
+          "description": "2026-05-30,ACH CREDIT - Client Payment,REF-90037,,216665.15,-8079",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 38,
+          "description": "2026-02-19,WIRE OUT - Vendor Payment,REF-90038,118318.81,,-809123",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 39,
+          "description": "2026-04-08,WIRE OUT - Vendor Payment,REF-90039,216940.69,,-811292",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 40,
+          "description": "2026-02-08,MMF INTEREST CREDIT,REF-90040,,103570.26,-81025682.49",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 41,
+          "description": "2026-03-29,PAYROLL - Biweekly Run,REF-90041,248090.79,,-81273773.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 42,
+          "description": "2026-04-28,WIRE OUT - Cloud Infrastructure,REF-90042,246804.3,,-8",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 43,
+          "description": "2026-07-03,PAYROLL - Biweekly Run,REF-90043,79437.67,,-81600015.2",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 44,
+          "description": "2026-05-05,PAYROLL - Biweekly Run,REF-90044,194845.82,,-81794861.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 45,
+          "description": "2026-02-15,ACH DEBIT - Subscription Fee,REF-90045,157942.68,,-819",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 46,
+          "description": "2026-01-02,ACH DEBIT - Subscription Fee,REF-90046,158807.49,,-821",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 47,
+          "description": "2026-07-14,ACH CREDIT - Refund,REF-90047,,68745.2,-82042866.04",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 48,
+          "description": "2026-02-10,PAYROLL - Biweekly Run,REF-90048,144281.59,,-82187147.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 49,
+          "description": "2026-07-19,ACH CREDIT - Refund,REF-90049,,196410.12,-81990737.51",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 50,
+          "description": "2026-04-22,WIRE OUT - Vendor Payment,REF-90050,32786.79,,-8202352",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 51,
+          "description": "2026-05-03,WIRE OUT - Cloud Infrastructure,REF-90051,101146.67,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 52,
+          "description": "2026-05-17,WIRE OUT - Cloud Infrastructure,REF-90052,1664.95,,-82",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 53,
+          "description": "2026-01-04,MMF SWEEP - Auto Yield Transfer,REF-90053,23266476.76,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 54,
+          "description": "2026-05-16,ACH DEBIT - Subscription Fee,REF-90054,189333.51,,-105",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 55,
+          "description": "2026-01-02,MMF SWEEP - Auto Yield Transfer,REF-90055,5447903.14,,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 56,
+          "description": "2026-03-30,MMF SWEEP - Auto Yield Transfer,REF-90056,10656642.78,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 57,
+          "description": "2026-04-09,MMF INTEREST CREDIT,REF-90057,,32668.23,-121654023.88",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 58,
+          "description": "2026-07-30,MMF INTEREST CREDIT,REF-90058,,42171.54,-121611852.34",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 59,
+          "description": "2026-03-16,ACH CREDIT - Client Payment,REF-90059,,74901.46,-12153",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 60,
+          "description": "2026-06-02,ACH CREDIT - Refund,REF-90060,,182094.06,-121354856.82",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 61,
+          "description": "2026-06-25,ACH DEBIT - Subscription Fee,REF-90061,108699.47,,-121",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 62,
+          "description": "2026-05-06,PAYROLL - Biweekly Run,REF-90062,86011.84,,-121549568.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 63,
+          "description": "2026-02-12,ACH DEBIT - Subscription Fee,REF-90063,187653.84,,-121",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 64,
+          "description": "2026-02-27,WIRE OUT - Cloud Infrastructure,REF-90064,5271.62,,-12",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 65,
+          "description": "2026-01-06,PAYROLL - Biweekly Run,REF-90065,53191.96,,-121795685.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 66,
+          "description": "2026-07-02,PAYROLL - Biweekly Run,REF-90066,31228.91,,-121826914.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 67,
+          "description": "2026-06-13,ACH CREDIT - Client Payment,REF-90067,,94110.51,-12173",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 68,
+          "description": "2026-06-09,MMF INTEREST CREDIT,REF-90068,,192926.79,-121539877.16",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 69,
+          "description": "2026-01-13,ACH CREDIT - Client Payment,REF-90069,,148684.05,-1213",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 70,
+          "description": "2026-01-06,WIRE OUT - Vendor Payment,REF-90070,163565.12,,-121554",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 71,
+          "description": "2026-04-17,ACH CREDIT - Client Payment,REF-90071,,172592.56,-1213",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 72,
+          "description": "2026-05-21,ACH CREDIT - Refund,REF-90072,,95373.31,-121286792.36",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 73,
+          "description": "2026-02-09,MMF INTEREST CREDIT,REF-90073,,118861.89,-121167930.47",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 74,
+          "description": "2026-06-11,MMF SWEEP - Auto Yield Transfer,REF-90074,22379800.73,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 75,
+          "description": "2026-06-19,ACH CREDIT - Client Payment,REF-90075,,75628.56,-14347",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 76,
+          "description": "2026-03-11,WIRE OUT - Vendor Payment,REF-90076,165789.5,,-1436378",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 77,
+          "description": "2026-01-27,PAYROLL - Biweekly Run,REF-90077,104997.03,,-143742889",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 78,
+          "description": "2026-07-20,WIRE OUT - Vendor Payment,REF-90078,71035.34,,-1438139",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 79,
+          "description": "2026-06-05,WIRE OUT - Vendor Payment,REF-90079,124685.9,,-1439386",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 80,
+          "description": "2026-05-14,MMF SWEEP - Auto Yield Transfer,REF-90080,24448972.91,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 81,
+          "description": "2026-04-15,MMF SWEEP - Auto Yield Transfer,REF-90081,13948045.91,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 82,
+          "description": "2026-05-21,MMF INTEREST CREDIT,REF-90082,,40513.21,-182295116.02",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 83,
+          "description": "2026-06-26,ACH CREDIT - Refund,REF-90083,,227633.98,-182067482.04",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 84,
+          "description": "2026-01-01,ACH CREDIT - Refund,REF-90084,,82985.6,-181984496.44",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 85,
+          "description": "2026-01-29,ACH CREDIT - Client Payment,REF-90085,,168072.47,-1818",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 86,
+          "description": "2026-01-24,ACH CREDIT - Refund,REF-90086,,37711.55,-181778712.42",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 87,
+          "description": "2026-01-26,WIRE OUT - Vendor Payment,REF-90087,181029.12,,-181959",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 88,
+          "description": "2026-04-27,MMF INTEREST CREDIT,REF-90088,,161262.03,-181798479.51",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 89,
+          "description": "2026-01-13,MMF INTEREST CREDIT,REF-90089,,66399.19,-181732080.32",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 90,
+          "description": "2026-01-11,WIRE OUT - Vendor Payment,REF-90090,203388.01,,-181935",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 91,
+          "description": "2026-06-23,MMF INTEREST CREDIT,REF-90091,,90373.56,-181845094.77",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 92,
+          "description": "2026-01-30,ACH DEBIT - Subscription Fee,REF-90092,106785.8,,-1819",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 93,
+          "description": "2026-01-12,WIRE OUT - Vendor Payment,REF-90093,212885.85,,-182164",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 94,
+          "description": "2026-06-19,ACH CREDIT - Client Payment,REF-90094,,213073.68,-1819",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 95,
+          "description": "2026-04-23,PAYROLL - Biweekly Run,REF-90095,82500.88,,-182034193.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 96,
+          "description": "2026-01-24,MMF INTEREST CREDIT,REF-90096,,219679.65,-181814513.97",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 97,
+          "description": "2026-02-16,ACH DEBIT - Subscription Fee,REF-90097,203833.59,,-182",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 98,
+          "description": "2026-04-27,WIRE OUT - Vendor Payment,REF-90098,100493.99,,-182118",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 99,
+          "description": "2026-06-26,MMF INTEREST CREDIT,REF-90099,,209009.23,-181909832.32",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 100,
+          "description": "2026-06-16,ACH CREDIT - Refund,REF-90100,,200074.82,-181709757.5",
+          "amount_usd": 184334.76
+        }
+      ],
+      "bounding_box_legend": [
+        {
+          "category": "vendor",
+          "label": "Vendor / Entity",
+          "color": "#6366f1"
+        },
+        {
+          "category": "amount",
+          "label": "Audited Amount",
+          "color": "#10b981"
+        },
+        {
+          "category": "date",
+          "label": "Document Date",
+          "color": "#f59e0b"
+        },
+        {
+          "category": "line_items",
+          "label": "Structured Line Items",
+          "color": "#8b5cf6"
+        }
+      ]
+    },
+    {
+      "file_name": "payroll_01_records_100.csv",
+      "industry_domain": "PAYROLL / HUMAN RESOURCES",
+      "document_category": "Employee Biweekly Payroll Run",
+      "status": "Confirmed",
+      "is_messy_document": false,
+      "overall_confidence": 95.2,
+      "fields": [
+        {
+          "field_key": "vendor_name",
+          "field_label": "Vendor / Entity",
+          "value": "Acme Enterprise Corp (Payroll Direct Deposit)",
+          "confidence": 0.972,
+          "category": "vendor",
+          "color_code": "#6366f1",
+          "color_label": "Indigo (Vendor)",
+          "bbox": [
+            25,
+            40,
+            65,
+            360
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "invoice_date",
+          "field_label": "Document Date",
+          "value": "2026-07-25",
+          "confidence": 0.952,
+          "category": "date",
+          "color_code": "#f59e0b",
+          "color_label": "Amber (Date)",
+          "bbox": [
+            25,
+            420,
+            65,
+            560
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "total_amount",
+          "field_label": "Total Amount (USD)",
+          "value": "$485,000.00",
+          "confidence": 0.982,
+          "category": "amount",
+          "color_code": "#10b981",
+          "color_label": "Green (Amount)",
+          "bbox": [
+            480,
+            380,
+            520,
+            580
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "line_items",
+          "field_label": "Line Items (100 extracted)",
+          "value": "100 Verified Item Lines",
+          "confidence": 0.904,
+          "category": "line_items",
+          "color_code": "#8b5cf6",
+          "color_label": "Violet (Line Items)",
+          "bbox": [
+            140,
+            40,
+            440,
+            580
+          ],
+          "needs_review": false
+        }
+      ],
+      "raw_text": "employee_id,name,department,gross_pay,federal_tax,state_tax,benefits_deduction,net_pay,pay_date\r\nE-1001,D. Okafor,Product,9919.54,2182.3,495.98,320.0,6921.26,2026-07-25\r\nE-1002,E. Kowalski,Treasury,13678.61,3009.29,683.93,320.0,9665.39,2026-07-25\r\nE-1003,M. Jensen,Treasury,13851.08,3047.24,692.55,320.0,9791.29,2026-07-25\r\nE-1004,M. Patel,Engineering,11615.72,2555.46,580.79,320.0,8159.47,2026-07-25\r\nE-1005,L. Rostova,Treasury,8856.57,1948.45,442.83,320.0,6145.29,2026-07-25\r\nE-1006,E. Alvarez,Finance,6448.36,1418.64,322.42,320.0,4387.3,2026-07-25\r\nE-1007,S. Alvarez,Treasury,9196.98,2023.34,459.85,320.0,6393.79,2026-07-25\r\nE-1008,D. Alvarez,Product,13357.65,2938.68,667.88,320.0,9431.09,2026-07-25\r\nE-1009,E. Kowalski,Sales,10540.48,2318.91,527.02,320.0,7374.55,2026-07-25\r\nE-1010,M. Nakamura,Sales,9951.44,2189.32,497.57,320.0,6944.55,2026-07-25\r\nE-1011,S. Silva,Engineering,6979.66,1535.53,348.98,320.0,4775.15,2026-07-25\r\nE-1012,S. Patel,Sales,12076.32,2656.79,603.82,320.0,8495.71,2026-07-25\r\nE-1013,M. Nakamura,Treasury,9833.32,2163.33,491.67,320.0,6858.32,2026-07-25\r\nE-1014,T. Nakamura,Finance,12950.57,2849.13,647.53,320.0,9133.91,2026-07-25\r\nE-1015,D. Silva,Operations,7642.17,1681.28,382.11,320.0,5258.78,2026-07-25\r\nE-1016,J. Chen,Product,13969.68,3073.33,698.48,320.0,9877.87,2026-07-25\r\nE-1017,R. Kim,Sales,8114.07,1785.1,405.7,320.0,5603.27,2026-07-25\r\nE-1018,J. Nakamura,Operations,7194.44,1582.78,359.72,320.0,4931.94,2026-07-25\r\nE-1019,M. Patel,Finance,13243.39,2913.55,662.17,320.0,9347.67,2026-07-25\r\nE-1020,E. Alvarez,Sales,9862.14,2169.67,493.11,320.0,6879.36,2026-07-25\r\nE-1021,T. Silva,Sales,12398.98,2727.78,619.95,320.0,8731.25,2026-07-25\r\nE-1022,J. Rostova,Product,9010.01,1982.2,450.5,320.0,6257.31,2026-07-25\r\nE-1023,L. Chen,Engineering,6732.61,1481.17,336.63,320.0,4594.81,2026-07-25\r\nE-1024,L. Silva,Engineering,6506.55,1431.44,325.33,320.0,4429.78,2026-07-25\r\nE-1025,R. Okafor,Product,10642.4,2341.33,532.12,320.0,7448.95,2026-07-25\r\nE-1026,M. Okafor,Sales,8817.89",
+      "total_amount_usd": 485000.0,
+      "extracted_line_items": [
+        {
+          "line_number": 1,
+          "description": "E-1001,D. Okafor,Product,9919.54,2182.3,495.98,320.0,6921.26,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 2,
+          "description": "E-1002,E. Kowalski,Treasury,13678.61,3009.29,683.93,320.0,9665.39",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 3,
+          "description": "E-1003,M. Jensen,Treasury,13851.08,3047.24,692.55,320.0,9791.29,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 4,
+          "description": "E-1004,M. Patel,Engineering,11615.72,2555.46,580.79,320.0,8159.47",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 5,
+          "description": "E-1005,L. Rostova,Treasury,8856.57,1948.45,442.83,320.0,6145.29,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 6,
+          "description": "E-1006,E. Alvarez,Finance,6448.36,1418.64,322.42,320.0,4387.3,202",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 7,
+          "description": "E-1007,S. Alvarez,Treasury,9196.98,2023.34,459.85,320.0,6393.79,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 8,
+          "description": "E-1008,D. Alvarez,Product,13357.65,2938.68,667.88,320.0,9431.09,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 9,
+          "description": "E-1009,E. Kowalski,Sales,10540.48,2318.91,527.02,320.0,7374.55,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 10,
+          "description": "E-1010,M. Nakamura,Sales,9951.44,2189.32,497.57,320.0,6944.55,202",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 11,
+          "description": "E-1011,S. Silva,Engineering,6979.66,1535.53,348.98,320.0,4775.15,",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 12,
+          "description": "E-1012,S. Patel,Sales,12076.32,2656.79,603.82,320.0,8495.71,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 13,
+          "description": "E-1013,M. Nakamura,Treasury,9833.32,2163.33,491.67,320.0,6858.32,",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 14,
+          "description": "E-1014,T. Nakamura,Finance,12950.57,2849.13,647.53,320.0,9133.91,",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 15,
+          "description": "E-1015,D. Silva,Operations,7642.17,1681.28,382.11,320.0,5258.78,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 16,
+          "description": "E-1016,J. Chen,Product,13969.68,3073.33,698.48,320.0,9877.87,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 17,
+          "description": "E-1017,R. Kim,Sales,8114.07,1785.1,405.7,320.0,5603.27,2026-07-25",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 18,
+          "description": "E-1018,J. Nakamura,Operations,7194.44,1582.78,359.72,320.0,4931.9",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 19,
+          "description": "E-1019,M. Patel,Finance,13243.39,2913.55,662.17,320.0,9347.67,202",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 20,
+          "description": "E-1020,E. Alvarez,Sales,9862.14,2169.67,493.11,320.0,6879.36,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 21,
+          "description": "E-1021,T. Silva,Sales,12398.98,2727.78,619.95,320.0,8731.25,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 22,
+          "description": "E-1022,J. Rostova,Product,9010.01,1982.2,450.5,320.0,6257.31,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 23,
+          "description": "E-1023,L. Chen,Engineering,6732.61,1481.17,336.63,320.0,4594.81,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 24,
+          "description": "E-1024,L. Silva,Engineering,6506.55,1431.44,325.33,320.0,4429.78,",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 25,
+          "description": "E-1025,R. Okafor,Product,10642.4,2341.33,532.12,320.0,7448.95,202",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 26,
+          "description": "E-1026,M. Okafor,Sales,8817.89,1939.94,440.89,320.0,6117.06,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 27,
+          "description": "E-1027,A. Chen,Product,12458.74,2740.92,622.94,320.0,8774.88,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 28,
+          "description": "E-1028,J. Kowalski,Product,11174.39,2458.37,558.72,320.0,7837.3,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 29,
+          "description": "E-1029,M. Chen,Engineering,7985.44,1756.8,399.27,320.0,5509.37,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 30,
+          "description": "E-1030,E. Silva,Engineering,6601.93,1452.42,330.1,320.0,4499.41,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 31,
+          "description": "E-1031,R. Rostova,Operations,10174.66,2238.43,508.73,320.0,7107.5",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 32,
+          "description": "E-1032,A. Patel,Finance,8492.29,1868.3,424.61,320.0,5879.38,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 33,
+          "description": "E-1033,M. Silva,Engineering,5152.02,1133.44,257.6,320.0,3440.98,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 34,
+          "description": "E-1034,D. Chen,Product,10772.8,2370.02,538.64,320.0,7544.14,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 35,
+          "description": "E-1035,M. Nakamura,Sales,10270.47,2259.5,513.52,320.0,7177.45,202",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 36,
+          "description": "E-1036,E. Kim,Engineering,5955.22,1310.15,297.76,320.0,4027.31,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 37,
+          "description": "E-1037,K. Patel,Operations,7533.66,1657.41,376.68,320.0,5179.57,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 38,
+          "description": "E-1038,J. Kowalski,Treasury,12399.1,2727.8,619.96,320.0,8731.34,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 39,
+          "description": "E-1039,S. Patel,Sales,9801.21,2156.27,490.06,320.0,6834.88,2026-0",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 40,
+          "description": "E-1040,S. Rostova,Product,7654.81,1684.06,382.74,320.0,5268.01,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 41,
+          "description": "E-1041,T. Alvarez,Sales,12982.8,2856.22,649.14,320.0,9157.44,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 42,
+          "description": "E-1042,S. Chen,Engineering,12872.9,2832.04,643.64,320.0,9077.22,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 43,
+          "description": "E-1043,D. Patel,Sales,5045.27,1109.96,252.26,320.0,3363.05,2026-0",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 44,
+          "description": "E-1044,M. Rostova,Treasury,9927.73,2184.1,496.39,320.0,6927.24,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 45,
+          "description": "E-1045,T. Okafor,Operations,11734.67,2581.63,586.73,320.0,8246.31",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 46,
+          "description": "E-1046,L. Jensen,Treasury,13150.65,2893.14,657.53,320.0,9279.98,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 47,
+          "description": "E-1047,D. Rostova,Treasury,6655.93,1464.3,332.8,320.0,4538.83,202",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 48,
+          "description": "E-1048,D. Alvarez,Sales,6031.6,1326.95,301.58,320.0,4083.07,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 49,
+          "description": "E-1049,L. Chen,Finance,9151.39,2013.31,457.57,320.0,6360.51,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 50,
+          "description": "E-1050,E. Chen,Treasury,11045.17,2429.94,552.26,320.0,7742.97,202",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 51,
+          "description": "E-1051,K. Nakamura,Finance,11530.3,2536.67,576.51,320.0,8097.12,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 52,
+          "description": "E-1052,R. Chen,Finance,6153.94,1353.87,307.7,320.0,4172.37,2026-0",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 53,
+          "description": "E-1053,R. Nakamura,Operations,10575.64,2326.64,528.78,320.0,7400.",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 54,
+          "description": "E-1054,D. Rostova,Product,9055.81,1992.28,452.79,320.0,6290.74,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 55,
+          "description": "E-1055,D. Kim,Finance,10257.53,2256.66,512.88,320.0,7167.99,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 56,
+          "description": "E-1056,A. Jensen,Engineering,12269.3,2699.25,613.47,320.0,8636.58",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 57,
+          "description": "E-1057,R. Patel,Finance,7818.93,1720.16,390.95,320.0,5387.82,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 58,
+          "description": "E-1058,S. Nakamura,Operations,12560.99,2763.42,628.05,320.0,8849.",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 59,
+          "description": "E-1059,T. Rostova,Operations,9165.64,2016.44,458.28,320.0,6370.92",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 60,
+          "description": "E-1060,S. Kim,Engineering,9965.05,2192.31,498.25,320.0,6954.49,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 61,
+          "description": "E-1061,S. Silva,Treasury,12576.14,2766.75,628.81,320.0,8860.58,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 62,
+          "description": "E-1062,M. Chen,Engineering,7369.11,1621.2,368.46,320.0,5059.45,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 63,
+          "description": "E-1063,J. Kim,Sales,12646.29,2782.18,632.31,320.0,8911.8,2026-07-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 64,
+          "description": "E-1064,D. Okafor,Engineering,8646.21,1902.17,432.31,320.0,5991.73",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 65,
+          "description": "E-1065,L. Silva,Operations,9964.35,2192.16,498.22,320.0,6953.97,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 66,
+          "description": "E-1066,S. Nakamura,Operations,10885.17,2394.74,544.26,320.0,7626.",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 67,
+          "description": "E-1067,D. Rostova,Treasury,7009.76,1542.15,350.49,320.0,4797.12,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 68,
+          "description": "E-1068,L. Chen,Operations,9182.31,2020.11,459.12,320.0,6383.08,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 69,
+          "description": "E-1069,J. Okafor,Sales,8274.79,1820.45,413.74,320.0,5720.6,2026-0",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 70,
+          "description": "E-1070,L. Jensen,Operations,11157.45,2454.64,557.87,320.0,7824.94",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 71,
+          "description": "E-1071,D. Kim,Product,6433.0,1415.26,321.65,320.0,4376.09,2026-07",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 72,
+          "description": "E-1072,S. Kowalski,Finance,12849.76,2826.95,642.49,320.0,9060.32,",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 73,
+          "description": "E-1073,K. Okafor,Engineering,5363.78,1180.03,268.19,320.0,3595.56",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 74,
+          "description": "E-1074,R. Alvarez,Product,7379.21,1623.43,368.96,320.0,5066.82,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 75,
+          "description": "E-1075,T. Patel,Operations,6860.97,1509.41,343.05,320.0,4688.51,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 76,
+          "description": "E-1076,J. Alvarez,Product,13261.12,2917.45,663.06,320.0,9360.61,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 77,
+          "description": "E-1077,L. Rostova,Product,7916.64,1741.66,395.83,320.0,5459.15,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 78,
+          "description": "E-1078,L. Kim,Treasury,7369.84,1621.36,368.49,320.0,5059.99,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 79,
+          "description": "E-1079,A. Nakamura,Sales,8389.94,1845.79,419.5,320.0,5804.65,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 80,
+          "description": "E-1080,M. Silva,Finance,10880.03,2393.61,544.0,320.0,7622.42,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 81,
+          "description": "E-1081,R. Silva,Operations,8386.96,1845.13,419.35,320.0,5802.48,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 82,
+          "description": "E-1082,T. Kowalski,Operations,8176.08,1798.74,408.8,320.0,5648.54",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 83,
+          "description": "E-1083,J. Silva,Treasury,12984.55,2856.6,649.23,320.0,9158.72,202",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 84,
+          "description": "E-1084,R. Chen,Sales,8959.09,1971.0,447.95,320.0,6220.14,2026-07-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 85,
+          "description": "E-1085,R. Jensen,Treasury,10791.29,2374.08,539.56,320.0,7557.65,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 86,
+          "description": "E-1086,D. Chen,Product,6416.22,1411.57,320.81,320.0,4363.84,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 87,
+          "description": "E-1087,T. Chen,Operations,7073.12,1556.09,353.66,320.0,4843.37,20",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 88,
+          "description": "E-1088,K. Okafor,Sales,11077.06,2436.95,553.85,320.0,7766.26,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 89,
+          "description": "E-1089,A. Alvarez,Treasury,6451.22,1419.27,322.56,320.0,4389.39,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 90,
+          "description": "E-1090,D. Kim,Treasury,5388.3,1185.43,269.42,320.0,3613.45,2026-0",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 91,
+          "description": "E-1091,L. Alvarez,Sales,6212.52,1366.75,310.63,320.0,4215.14,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 92,
+          "description": "E-1092,S. Rostova,Treasury,6321.79,1390.79,316.09,320.0,4294.91,2",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 93,
+          "description": "E-1093,A. Kim,Sales,9649.77,2122.95,482.49,320.0,6724.33,2026-07-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 94,
+          "description": "E-1094,E. Chen,Treasury,10738.6,2362.49,536.93,320.0,7519.18,2026",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 95,
+          "description": "E-1095,K. Kowalski,Treasury,9042.83,1989.42,452.14,320.0,6281.27,",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 96,
+          "description": "E-1096,A. Kim,Treasury,6974.27,1534.34,348.71,320.0,4771.22,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 97,
+          "description": "E-1097,S. Kim,Product,12151.54,2673.34,607.58,320.0,8550.62,2026-",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 98,
+          "description": "E-1098,S. Nakamura,Operations,9597.24,2111.39,479.86,320.0,6685.9",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 99,
+          "description": "E-1099,M. Okafor,Operations,10368.8,2281.14,518.44,320.0,7249.22,",
+          "amount_usd": 1038.54
+        },
+        {
+          "line_number": 100,
+          "description": "E-1100,M. Alvarez,Treasury,8469.16,1863.22,423.46,320.0,5862.48,2",
+          "amount_usd": 1038.54
+        }
+      ],
+      "bounding_box_legend": [
+        {
+          "category": "vendor",
+          "label": "Vendor / Entity",
+          "color": "#6366f1"
+        },
+        {
+          "category": "amount",
+          "label": "Audited Amount",
+          "color": "#10b981"
+        },
+        {
+          "category": "date",
+          "label": "Document Date",
+          "color": "#f59e0b"
+        },
+        {
+          "category": "line_items",
+          "label": "Structured Line Items",
+          "color": "#8b5cf6"
+        }
+      ]
+    },
+    {
+      "file_name": "bom_assembly.csv",
+      "industry_domain": "MANUFACTURING / HARDWARE",
+      "document_category": "Bill of Materials (BOM) / Hardware Component List",
+      "status": "Confirmed",
+      "is_fallback_extraction": false,
+      "is_messy_document": false,
+      "overall_confidence": 93.3,
+      "fields": [
+        {
+          "field_key": "vendor_name",
+          "field_label": "Vendor / Entity",
+          "value": "Bom Assembly Csv Entity",
+          "confidence": 0.956,
+          "category": "vendor",
+          "color_code": "#6366f1",
+          "color_label": "Indigo (Vendor)",
+          "bbox": [
+            25,
+            40,
+            65,
+            360
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "invoice_date",
+          "field_label": "Document Date",
+          "value": "2026-08-01",
+          "confidence": 0.936,
+          "category": "date",
+          "color_code": "#f59e0b",
+          "color_label": "Amber (Date)",
+          "bbox": [
+            25,
+            420,
+            65,
+            560
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "total_amount",
+          "field_label": "Total Amount (USD)",
+          "value": "$18.50",
+          "confidence": 0.965,
+          "category": "amount",
+          "color_code": "#10b981",
+          "color_label": "Green (Amount)",
+          "bbox": [
+            480,
+            380,
+            520,
+            580
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "line_items",
+          "field_label": "Line Items (1 extracted)",
+          "value": "1 Extracted Item Lines",
+          "confidence": 0.874,
+          "category": "line_items",
+          "color_code": "#8b5cf6",
+          "color_label": "Violet (Line Items)",
+          "bbox": [
+            140,
+            40,
+            440,
+            580
+          ],
+          "needs_review": false
+        }
+      ],
+      "raw_text": "Component_Part_ID,Description,Quantity_Required,Unit_Cost_USD\nCMP-8819,Anodized Casing,1,18.50",
+      "total_amount_usd": 18.5,
+      "extracted_line_items": [
+        {
+          "line_number": 1,
+          "description": "CMP-8819,Anodized Casing,1,18.50",
+          "amount_usd": 18.5
+        }
+      ],
+      "bounding_box_legend": [
+        {
+          "category": "vendor",
+          "label": "Vendor / Entity",
+          "color": "#6366f1"
+        },
+        {
+          "category": "amount",
+          "label": "Audited Amount",
+          "color": "#10b981"
+        },
+        {
+          "category": "date",
+          "label": "Document Date",
+          "color": "#f59e0b"
+        },
+        {
+          "category": "line_items",
+          "label": "Structured Line Items",
+          "color": "#8b5cf6"
+        }
+      ]
+    },
+    {
+      "file_name": "gpu_cluster.json",
+      "industry_domain": "AI / COMPUTE-INTENSIVE",
+      "document_category": "GPU Compute / Data Licensing Invoice",
+      "status": "Confirmed",
+      "is_fallback_extraction": false,
+      "is_messy_document": false,
+      "overall_confidence": 93.3,
+      "fields": [
+        {
+          "field_key": "vendor_name",
+          "field_label": "Vendor / Entity",
+          "value": "Hyperscale GPU Compute Provider",
+          "confidence": 0.956,
+          "category": "vendor",
+          "color_code": "#6366f1",
+          "color_label": "Indigo (Vendor)",
+          "bbox": [
+            25,
+            40,
+            65,
+            360
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "invoice_date",
+          "field_label": "Document Date",
+          "value": "2026-08-01",
+          "confidence": 0.936,
+          "category": "date",
+          "color_code": "#f59e0b",
+          "color_label": "Amber (Date)",
+          "bbox": [
+            25,
+            420,
+            65,
+            560
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "total_amount",
+          "field_label": "Total Amount (USD)",
+          "value": "$24,576.00",
+          "confidence": 0.965,
+          "category": "amount",
+          "color_code": "#10b981",
+          "color_label": "Green (Amount)",
+          "bbox": [
+            480,
+            380,
+            520,
+            580
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "line_items",
+          "field_label": "Line Items (1 extracted)",
+          "value": "1 Extracted Item Lines",
+          "confidence": 0.874,
+          "category": "line_items",
+          "color_code": "#8b5cf6",
+          "color_label": "Violet (Line Items)",
+          "bbox": [
+            140,
+            40,
+            440,
+            580
+          ],
+          "needs_review": false
+        }
+      ],
+      "raw_text": "10,240x H100 SXM5 GPU Hours (Model Fine-Tuning) @ $2.40/hour = $24,576.00",
+      "total_amount_usd": 24576.0,
+      "extracted_line_items": [
+        {
+          "line_number": 1,
+          "description": "10,240x H100 SXM5 GPU Hours (Model Fine-Tuning) @ $2.40/hour = $2",
+          "amount_usd": 24576.0
+        }
+      ],
+      "bounding_box_legend": [
+        {
+          "category": "vendor",
+          "label": "Vendor / Entity",
+          "color": "#6366f1"
+        },
+        {
+          "category": "amount",
+          "label": "Audited Amount",
+          "color": "#10b981"
+        },
+        {
+          "category": "date",
+          "label": "Document Date",
+          "color": "#f59e0b"
+        },
+        {
+          "category": "line_items",
+          "label": "Structured Line Items",
+          "color": "#8b5cf6"
+        }
+      ]
     }
   ],
   "field_accuracy_weights": {
     "vendor": 0.98,
     "amount": 0.99,
     "date": 0.96,
-    "line_items": 0.94
+    "line_items": 0.925
   }
 }
