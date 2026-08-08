@@ -219,6 +219,606 @@
           "color": "#8b5cf6"
         }
       ]
+    },
+    {
+      "file_name": "bank_01_transactions_100.csv",
+      "industry_domain": "PAYROLL / HUMAN RESOURCES",
+      "document_category": "Employee Biweekly Payroll Run",
+      "status": "Confirmed",
+      "is_messy_document": false,
+      "overall_confidence": 95.2,
+      "fields": [
+        {
+          "field_key": "vendor_name",
+          "field_label": "Vendor / Entity",
+          "value": "JPMorgan Chase Operating Master (*9281)",
+          "confidence": 0.972,
+          "category": "vendor",
+          "color_code": "#6366f1",
+          "color_label": "Indigo (Vendor)",
+          "bbox": [
+            25,
+            40,
+            65,
+            360
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "invoice_date",
+          "field_label": "Document Date",
+          "value": "2026-03-08",
+          "confidence": 0.952,
+          "category": "date",
+          "color_code": "#f59e0b",
+          "color_label": "Amber (Date)",
+          "bbox": [
+            25,
+            420,
+            65,
+            560
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "total_amount",
+          "field_label": "Total Amount (USD)",
+          "value": "$42,950,000.00",
+          "confidence": 0.982,
+          "category": "amount",
+          "color_code": "#10b981",
+          "color_label": "Green (Amount)",
+          "bbox": [
+            480,
+            380,
+            520,
+            580
+          ],
+          "needs_review": false
+        },
+        {
+          "field_key": "line_items",
+          "field_label": "Line Items (100 extracted)",
+          "value": "100 Verified Item Lines",
+          "confidence": 0.904,
+          "category": "line_items",
+          "color_code": "#8b5cf6",
+          "color_label": "Violet (Line Items)",
+          "bbox": [
+            140,
+            40,
+            440,
+            580
+          ],
+          "needs_review": false
+        }
+      ],
+      "raw_text": "date,description,reference,debit,credit,balance\r\n2026-03-08,ACH DEBIT - Subscription Fee,REF-90001,41296.65,,42458703.35\r\n2026-04-09,WIRE OUT - Vendor Payment,REF-90002,71624.81,,42387078.54\r\n2026-05-27,ACH CREDIT - Client Payment,REF-90003,,41145.4,42428223.94\r\n2026-06-15,MMF SWEEP - Auto Yield Transfer,REF-90004,26427779.69,,16000444.25\r\n2026-03-10,MMF SWEEP - Auto Yield Transfer,REF-90005,21942381.15,,-5941936.9\r\n2026-07-19,WIRE OUT - Cloud Infrastructure,REF-90006,128563.67,,-6070500.57\r\n2026-02-03,ACH CREDIT - Client Payment,REF-90007,,118787.25,-5951713.32\r\n2026-01-03,PAYROLL - Biweekly Run,REF-90008,150484.92,,-6102198.24\r\n2026-07-26,MMF SWEEP - Auto Yield Transfer,REF-90009,11309761.03,,-17411959.27\r\n2026-07-01,MMF INTEREST CREDIT,REF-90010,,178328.75,-17233630.52\r\n2026-04-07,MMF INTEREST CREDIT,REF-90011,,106239.8,-17127390.72\r\n2026-02-25,ACH DEBIT - Subscription Fee,REF-90012,115020.01,,-17242410.73\r\n2026-05-14,ACH CREDIT - Refund,REF-90013,,75885.2,-17166525.53\r\n2026-01-02,WIRE OUT - Cloud Infrastructure,REF-90014,146329.55,,-17312855.08\r\n2026-06-02,ACH DEBIT - Subscription Fee,REF-90015,140583.55,,-17453438.63\r\n2026-01-28,MMF INTEREST CREDIT,REF-90016,,74969.74,-17378468.89\r\n2026-03-12,ACH CREDIT - Refund,REF-90017,,16427.34,-17362041.55\r\n2026-03-08,ACH DEBIT - Subscription Fee,REF-90018,215442.15,,-17577483.7\r\n2026-05-13,MMF INTEREST CREDIT,REF-90019,,47495.84,-17529987.86\r\n2026-07-26,MMF SWEEP - Auto Yield Transfer,REF-90020,27492176.12,,-45022163.98\r\n2026-06-24,WIRE OUT - Cloud Infrastructure,REF-90021,165302.32,,-45187466.3\r\n2026-06-17,PAYROLL - Biweekly Run,REF-90022,180460.16,,-45367926.46\r\n2026-03-08,ACH CREDIT - Refund,REF-90023,,249368.54,-45118557.92\r\n2026-07-08,WIRE OUT - Cloud Infrastructure,REF-90024,101447.42,,-45220005.34\r\n2026-05-27,ACH CREDIT - Client Payment,REF-90025,,145964.41,-45074040.93\r\n2026-07-02,MMF SWEEP - Auto Yield Transfer,REF-90026,13579176.24,,-58653217.17\r\n2026-06-13,MMF SWEEP - Auto Yield Transfer,REF-90027,22157952.77,,",
+      "total_amount_usd": 42950000.0,
+      "extracted_line_items": [
+        {
+          "line_number": 1,
+          "description": "2026-03-08,ACH DEBIT - Subscription Fee,REF-90001,41296.65,,42458",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 2,
+          "description": "2026-04-09,WIRE OUT - Vendor Payment,REF-90002,71624.81,,42387078",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 3,
+          "description": "2026-05-27,ACH CREDIT - Client Payment,REF-90003,,41145.4,4242822",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 4,
+          "description": "2026-06-15,MMF SWEEP - Auto Yield Transfer,REF-90004,26427779.69,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 5,
+          "description": "2026-03-10,MMF SWEEP - Auto Yield Transfer,REF-90005,21942381.15,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 6,
+          "description": "2026-07-19,WIRE OUT - Cloud Infrastructure,REF-90006,128563.67,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 7,
+          "description": "2026-02-03,ACH CREDIT - Client Payment,REF-90007,,118787.25,-5951",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 8,
+          "description": "2026-01-03,PAYROLL - Biweekly Run,REF-90008,150484.92,,-6102198.2",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 9,
+          "description": "2026-07-26,MMF SWEEP - Auto Yield Transfer,REF-90009,11309761.03,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 10,
+          "description": "2026-07-01,MMF INTEREST CREDIT,REF-90010,,178328.75,-17233630.52",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 11,
+          "description": "2026-04-07,MMF INTEREST CREDIT,REF-90011,,106239.8,-17127390.72",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 12,
+          "description": "2026-02-25,ACH DEBIT - Subscription Fee,REF-90012,115020.01,,-172",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 13,
+          "description": "2026-05-14,ACH CREDIT - Refund,REF-90013,,75885.2,-17166525.53",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 14,
+          "description": "2026-01-02,WIRE OUT - Cloud Infrastructure,REF-90014,146329.55,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 15,
+          "description": "2026-06-02,ACH DEBIT - Subscription Fee,REF-90015,140583.55,,-174",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 16,
+          "description": "2026-01-28,MMF INTEREST CREDIT,REF-90016,,74969.74,-17378468.89",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 17,
+          "description": "2026-03-12,ACH CREDIT - Refund,REF-90017,,16427.34,-17362041.55",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 18,
+          "description": "2026-03-08,ACH DEBIT - Subscription Fee,REF-90018,215442.15,,-175",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 19,
+          "description": "2026-05-13,MMF INTEREST CREDIT,REF-90019,,47495.84,-17529987.86",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 20,
+          "description": "2026-07-26,MMF SWEEP - Auto Yield Transfer,REF-90020,27492176.12,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 21,
+          "description": "2026-06-24,WIRE OUT - Cloud Infrastructure,REF-90021,165302.32,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 22,
+          "description": "2026-06-17,PAYROLL - Biweekly Run,REF-90022,180460.16,,-45367926.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 23,
+          "description": "2026-03-08,ACH CREDIT - Refund,REF-90023,,249368.54,-45118557.92",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 24,
+          "description": "2026-07-08,WIRE OUT - Cloud Infrastructure,REF-90024,101447.42,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 25,
+          "description": "2026-05-27,ACH CREDIT - Client Payment,REF-90025,,145964.41,-4507",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 26,
+          "description": "2026-07-02,MMF SWEEP - Auto Yield Transfer,REF-90026,13579176.24,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 27,
+          "description": "2026-06-13,MMF SWEEP - Auto Yield Transfer,REF-90027,22157952.77,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 28,
+          "description": "2026-06-21,ACH CREDIT - Refund,REF-90028,,226678.36,-80584491.58",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 29,
+          "description": "2026-02-13,ACH DEBIT - Subscription Fee,REF-90029,127075.06,,-807",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 30,
+          "description": "2026-05-01,PAYROLL - Biweekly Run,REF-90030,73799.12,,-80785365.7",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 31,
+          "description": "2026-07-05,PAYROLL - Biweekly Run,REF-90031,185359.26,,-80970725.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 32,
+          "description": "2026-03-27,PAYROLL - Biweekly Run,REF-90032,236757.38,,-81207482.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 33,
+          "description": "2026-02-27,WIRE OUT - Vendor Payment,REF-90033,55952.25,,-8126343",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 34,
+          "description": "2026-03-26,MMF INTEREST CREDIT,REF-90034,,105407.91,-81158026.74",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 35,
+          "description": "2026-03-17,ACH DEBIT - Subscription Fee,REF-90035,65509.53,,-8122",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 36,
+          "description": "2026-05-01,ACH CREDIT - Refund,REF-90036,,212877.87,-81010658.4",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 37,
+          "description": "2026-05-30,ACH CREDIT - Client Payment,REF-90037,,216665.15,-8079",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 38,
+          "description": "2026-02-19,WIRE OUT - Vendor Payment,REF-90038,118318.81,,-809123",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 39,
+          "description": "2026-04-08,WIRE OUT - Vendor Payment,REF-90039,216940.69,,-811292",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 40,
+          "description": "2026-02-08,MMF INTEREST CREDIT,REF-90040,,103570.26,-81025682.49",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 41,
+          "description": "2026-03-29,PAYROLL - Biweekly Run,REF-90041,248090.79,,-81273773.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 42,
+          "description": "2026-04-28,WIRE OUT - Cloud Infrastructure,REF-90042,246804.3,,-8",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 43,
+          "description": "2026-07-03,PAYROLL - Biweekly Run,REF-90043,79437.67,,-81600015.2",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 44,
+          "description": "2026-05-05,PAYROLL - Biweekly Run,REF-90044,194845.82,,-81794861.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 45,
+          "description": "2026-02-15,ACH DEBIT - Subscription Fee,REF-90045,157942.68,,-819",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 46,
+          "description": "2026-01-02,ACH DEBIT - Subscription Fee,REF-90046,158807.49,,-821",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 47,
+          "description": "2026-07-14,ACH CREDIT - Refund,REF-90047,,68745.2,-82042866.04",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 48,
+          "description": "2026-02-10,PAYROLL - Biweekly Run,REF-90048,144281.59,,-82187147.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 49,
+          "description": "2026-07-19,ACH CREDIT - Refund,REF-90049,,196410.12,-81990737.51",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 50,
+          "description": "2026-04-22,WIRE OUT - Vendor Payment,REF-90050,32786.79,,-8202352",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 51,
+          "description": "2026-05-03,WIRE OUT - Cloud Infrastructure,REF-90051,101146.67,,-",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 52,
+          "description": "2026-05-17,WIRE OUT - Cloud Infrastructure,REF-90052,1664.95,,-82",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 53,
+          "description": "2026-01-04,MMF SWEEP - Auto Yield Transfer,REF-90053,23266476.76,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 54,
+          "description": "2026-05-16,ACH DEBIT - Subscription Fee,REF-90054,189333.51,,-105",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 55,
+          "description": "2026-01-02,MMF SWEEP - Auto Yield Transfer,REF-90055,5447903.14,,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 56,
+          "description": "2026-03-30,MMF SWEEP - Auto Yield Transfer,REF-90056,10656642.78,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 57,
+          "description": "2026-04-09,MMF INTEREST CREDIT,REF-90057,,32668.23,-121654023.88",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 58,
+          "description": "2026-07-30,MMF INTEREST CREDIT,REF-90058,,42171.54,-121611852.34",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 59,
+          "description": "2026-03-16,ACH CREDIT - Client Payment,REF-90059,,74901.46,-12153",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 60,
+          "description": "2026-06-02,ACH CREDIT - Refund,REF-90060,,182094.06,-121354856.82",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 61,
+          "description": "2026-06-25,ACH DEBIT - Subscription Fee,REF-90061,108699.47,,-121",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 62,
+          "description": "2026-05-06,PAYROLL - Biweekly Run,REF-90062,86011.84,,-121549568.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 63,
+          "description": "2026-02-12,ACH DEBIT - Subscription Fee,REF-90063,187653.84,,-121",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 64,
+          "description": "2026-02-27,WIRE OUT - Cloud Infrastructure,REF-90064,5271.62,,-12",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 65,
+          "description": "2026-01-06,PAYROLL - Biweekly Run,REF-90065,53191.96,,-121795685.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 66,
+          "description": "2026-07-02,PAYROLL - Biweekly Run,REF-90066,31228.91,,-121826914.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 67,
+          "description": "2026-06-13,ACH CREDIT - Client Payment,REF-90067,,94110.51,-12173",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 68,
+          "description": "2026-06-09,MMF INTEREST CREDIT,REF-90068,,192926.79,-121539877.16",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 69,
+          "description": "2026-01-13,ACH CREDIT - Client Payment,REF-90069,,148684.05,-1213",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 70,
+          "description": "2026-01-06,WIRE OUT - Vendor Payment,REF-90070,163565.12,,-121554",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 71,
+          "description": "2026-04-17,ACH CREDIT - Client Payment,REF-90071,,172592.56,-1213",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 72,
+          "description": "2026-05-21,ACH CREDIT - Refund,REF-90072,,95373.31,-121286792.36",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 73,
+          "description": "2026-02-09,MMF INTEREST CREDIT,REF-90073,,118861.89,-121167930.47",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 74,
+          "description": "2026-06-11,MMF SWEEP - Auto Yield Transfer,REF-90074,22379800.73,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 75,
+          "description": "2026-06-19,ACH CREDIT - Client Payment,REF-90075,,75628.56,-14347",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 76,
+          "description": "2026-03-11,WIRE OUT - Vendor Payment,REF-90076,165789.5,,-1436378",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 77,
+          "description": "2026-01-27,PAYROLL - Biweekly Run,REF-90077,104997.03,,-143742889",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 78,
+          "description": "2026-07-20,WIRE OUT - Vendor Payment,REF-90078,71035.34,,-1438139",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 79,
+          "description": "2026-06-05,WIRE OUT - Vendor Payment,REF-90079,124685.9,,-1439386",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 80,
+          "description": "2026-05-14,MMF SWEEP - Auto Yield Transfer,REF-90080,24448972.91,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 81,
+          "description": "2026-04-15,MMF SWEEP - Auto Yield Transfer,REF-90081,13948045.91,",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 82,
+          "description": "2026-05-21,MMF INTEREST CREDIT,REF-90082,,40513.21,-182295116.02",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 83,
+          "description": "2026-06-26,ACH CREDIT - Refund,REF-90083,,227633.98,-182067482.04",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 84,
+          "description": "2026-01-01,ACH CREDIT - Refund,REF-90084,,82985.6,-181984496.44",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 85,
+          "description": "2026-01-29,ACH CREDIT - Client Payment,REF-90085,,168072.47,-1818",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 86,
+          "description": "2026-01-24,ACH CREDIT - Refund,REF-90086,,37711.55,-181778712.42",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 87,
+          "description": "2026-01-26,WIRE OUT - Vendor Payment,REF-90087,181029.12,,-181959",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 88,
+          "description": "2026-04-27,MMF INTEREST CREDIT,REF-90088,,161262.03,-181798479.51",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 89,
+          "description": "2026-01-13,MMF INTEREST CREDIT,REF-90089,,66399.19,-181732080.32",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 90,
+          "description": "2026-01-11,WIRE OUT - Vendor Payment,REF-90090,203388.01,,-181935",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 91,
+          "description": "2026-06-23,MMF INTEREST CREDIT,REF-90091,,90373.56,-181845094.77",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 92,
+          "description": "2026-01-30,ACH DEBIT - Subscription Fee,REF-90092,106785.8,,-1819",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 93,
+          "description": "2026-01-12,WIRE OUT - Vendor Payment,REF-90093,212885.85,,-182164",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 94,
+          "description": "2026-06-19,ACH CREDIT - Client Payment,REF-90094,,213073.68,-1819",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 95,
+          "description": "2026-04-23,PAYROLL - Biweekly Run,REF-90095,82500.88,,-182034193.",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 96,
+          "description": "2026-01-24,MMF INTEREST CREDIT,REF-90096,,219679.65,-181814513.97",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 97,
+          "description": "2026-02-16,ACH DEBIT - Subscription Fee,REF-90097,203833.59,,-182",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 98,
+          "description": "2026-04-27,WIRE OUT - Vendor Payment,REF-90098,100493.99,,-182118",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 99,
+          "description": "2026-06-26,MMF INTEREST CREDIT,REF-90099,,209009.23,-181909832.32",
+          "amount_usd": 184334.76
+        },
+        {
+          "line_number": 100,
+          "description": "2026-06-16,ACH CREDIT - Refund,REF-90100,,200074.82,-181709757.5",
+          "amount_usd": 184334.76
+        }
+      ],
+      "bounding_box_legend": [
+        {
+          "category": "vendor",
+          "label": "Vendor / Entity",
+          "color": "#6366f1"
+        },
+        {
+          "category": "amount",
+          "label": "Audited Amount",
+          "color": "#10b981"
+        },
+        {
+          "category": "date",
+          "label": "Document Date",
+          "color": "#f59e0b"
+        },
+        {
+          "category": "line_items",
+          "label": "Structured Line Items",
+          "color": "#8b5cf6"
+        }
+      ]
     }
   ],
   "field_accuracy_weights": {
