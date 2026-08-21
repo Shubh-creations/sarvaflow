@@ -1,14 +1,14 @@
-name: SarvaFlow CI/CD Pipeline & Automated Regression Gate
+name: SarvaFlow Production CI/CD Pipeline
 
 on:
-  pull_request:
-    branches: [ main, master ]
   push:
-    branches: [ main, master ]
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
 
 jobs:
   backend-ci:
-    name: Backend Test Suite & Automated Regression Gate
+    name: Backend Pytest Suite & Security Audit
     runs-on: ubuntu-latest
 
     steps:
@@ -24,20 +24,20 @@ jobs:
       - name: Install Backend Dependencies
         working-directory: ./backend
         run: |
-          python -m pip install --upgrade pip
-          pip install poetry==1.8.5
-          poetry config virtualenvs.create false
-          poetry install --no-root
+          python -m pip install --upgrade pip setuptools wheel
+          pip install -r requirements.txt
 
-      - name: Run Full Pytest Suite & Prompt-Injection Regression Gate
+      - name: Execute Pytest Test Suite & CI Regression Gates
+        working-directory: ./backend
         env:
-          PYTHONPATH: backend
+          PYTHONPATH: .
+          APP_ENV: testing
+          LOG_LEVEL: INFO
         run: |
-          cd backend
           pytest -v
 
   frontend-ci:
-    name: Frontend Type Check & Production Bundle Build
+    name: Frontend TypeScript Verification & Bundle Build
     runs-on: ubuntu-latest
 
     steps:
@@ -52,44 +52,59 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
 
       - name: Install Frontend Dependencies
+        working-directory: ./frontend
         run: |
-          cd frontend
           npm ci || npm install
 
-      - name: Run TypeScript Verification (tsc --noEmit)
+      - name: TypeScript Type Check (tsc --noEmit)
+        working-directory: ./frontend
         run: |
-          cd frontend
           npx tsc --noEmit
 
-      - name: Build Vite Production Bundle
+      - name: Vite Production Bundle Build
+        working-directory: ./frontend
         run: |
-          cd frontend
           npx vite build
 
-  staging-deploy:
-    name: Deploy to Staging Environment (Render + Vercel)
+  build-and-push-containers:
+    name: Build & Push Docker Container Images to GHCR
     needs: [backend-ci, frontend-ci]
-    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && github.event_name == 'push'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
 
     steps:
-      - name: Trigger Render Staging Backend Deploy
-        run: |
-          echo "✓ Verification checks passed. Triggering Render Backend Staging Deploy..."
-          # curl -X POST "${{ secrets.RENDER_STAGING_DEPLOY_HOOK }}"
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Trigger Vercel Staging Frontend Deploy
-        run: |
-          echo "✓ Verification checks passed. Triggering Vercel Frontend Staging Deploy..."
-          # npx vercel --token ${{ secrets.VERCEL_TOKEN }} --env staging
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-  production-deploy:
-    name: Deploy to Production Beta Launch
-    needs: [staging-deploy]
-    if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && github.event_name == 'push'
-    runs-on: ubuntu-latest
+      - name: Log in to GitHub Container Registry (GHCR)
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-    steps:
-      - name: Trigger Production Deploy Hooks
-        run: |
-          echo "✓ Staging verification clean. Deploying to Production Beta Launch..."
+      - name: Build & Push Backend Container Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend
+          file: ./backend/Dockerfile.prod
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/sarvaflow-backend:latest
+            ghcr.io/${{ github.repository_owner }}/sarvaflow-backend:${{ github.sha }}
+
+      - name: Build & Push Frontend Container Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile.prod
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/sarvaflow-frontend:latest
+            ghcr.io/${{ github.repository_owner }}/sarvaflow-frontend:${{ github.sha }}
