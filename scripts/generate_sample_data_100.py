@@ -3,11 +3,8 @@ import json
 import os
 from pathlib import Path
 
-BASE_DIR = Path(r"c:\Users\shubh\OneDrive\Documents\SARVA Intelligence\sample-data-100")
-MIRROR_DIR = Path(r"c:\Users\shubh\OneDrive\Documents\sarvaflow\sample-data-100")
-
+BASE_DIR = Path(__file__).resolve().parent.parent / "sample-data-100"
 BASE_DIR.mkdir(parents=True, exist_ok=True)
-MIRROR_DIR.mkdir(parents=True, exist_ok=True)
 
 # 1. inv_01_clean_invoices_100.json (100 Clean Invoices)
 clean_invoices = []

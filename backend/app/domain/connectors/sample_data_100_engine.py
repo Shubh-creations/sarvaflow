@@ -5,7 +5,16 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List
 
-DATASET_DIR = Path(r"c:\Users\shubh\OneDrive\Documents\SARVA Intelligence\sample-data-100")
+def _find_dataset_dir() -> Path:
+    current = Path(__file__).resolve()
+    for parent in current.parents:
+        candidate = parent / "sample-data-100"
+        if candidate.exists():
+            return candidate
+    return Path(__file__).resolve().parents[3] / "sample-data-100"
+
+
+DATASET_DIR = _find_dataset_dir()
 
 
 class SampleData100ValidationEngine:
