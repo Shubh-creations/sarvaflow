@@ -8,9 +8,19 @@ from uuid import UUID
 class FinancialHealthScorecardEngine:
     """Calculates overall enterprise financial health rating and executes 1-click business optimization."""
 
-    def calculate_health_scorecard(self, tenant_id: UUID) -> Dict[str, Any]:
+    def calculate_health_scorecard(self, tenant_id: UUID, force_zero_state: bool = False) -> Dict[str, Any]:
+        if force_zero_state:
+            return {
+                "tenant_id": str(tenant_id),
+                "is_zero_state": True,
+                "overall_health_score": 0,
+                "rating": "EMPTY_NO_DATA",
+                "pillars": {},
+                "master_action": None
+            }
         return {
             "tenant_id": str(tenant_id),
+            "is_zero_state": False,
             "overall_health_score": 94,
             "rating": "EXCELLENT",
             "pillars": {

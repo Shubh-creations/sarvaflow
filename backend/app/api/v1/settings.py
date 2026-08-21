@@ -28,6 +28,14 @@ class NotificationPreferences(BaseModel):
     shortfall_alert_threshold_usd: float = Field(500000.0)
 
 
+class ProviderSelectRequest(BaseModel):
+    provider_id: str = Field(..., description="zoho_books, tally, quickbooks, or excel")
+    credentials: Dict[str, Any] = Field(default_factory=dict)
+
+
+_TENANT_PROVIDER_SELECTION: Dict[str, Dict[str, Any]] = {}
+
+
 _USER_PROFILE = {
     "name": "Sarah Jensen",
     "email": "sarah.jensen@acme-enterprise.com",
@@ -43,18 +51,32 @@ _TEAMMATES = [
 
 _CONNECTIONS = [
     {
-        "id": "conn-plaid-001",
-        "provider": "Plaid Bank Feed",
-        "account_name": "JPMorgan Chase Operating Checking (..3371)",
+        "id": "conn-csv-001",
+        "provider": "CSV / Excel Manual Upload",
+        "account_name": "Standard Spreadsheets (.csv, .xlsx)",
         "status": "CONNECTED",
-        "last_sync": "2026-08-02T15:30:00Z"
+        "last_sync": "Active"
     },
     {
-        "id": "conn-qbo-002",
+        "id": "conn-zoho-002",
+        "provider": "Zoho Books India",
+        "account_name": "Zoho Books OAuth2 Self-Client",
+        "status": "DISCONNECTED",
+        "last_sync": "Never"
+    },
+    {
+        "id": "conn-tally-003",
+        "provider": "Tally Prime (v1 Export)",
+        "account_name": "Tally Voucher/Ledger XML Import",
+        "status": "DISCONNECTED",
+        "last_sync": "Never"
+    },
+    {
+        "id": "conn-qbo-004",
         "provider": "QuickBooks Online",
-        "account_name": "Acme Enterprise QBO Ledger",
-        "status": "CONNECTED",
-        "last_sync": "2026-08-02T14:45:00Z"
+        "account_name": "QuickBooks Sandbox API",
+        "status": "DISCONNECTED",
+        "last_sync": "Never"
     }
 ]
 
@@ -95,6 +117,59 @@ def invite_teammate(payload: TeammateInvite) -> Dict[str, Any]:
     }
     _TEAMMATES.append(new_member)
     return {"status": "SUCCESS", "message": f"Invitation sent to {payload.email}", "teammates": _TEAMMATES}
+
+
+@router.get("/accounting-provider")
+def get_accounting_provider(tenant_id: UUID = Query(...)) -> Dict[str, Any]:
+    tid_str = str(tenant_id)
+    return _TENANT_PROVIDER_SELECTION.get(tid_str, {
+        "provider_id": "excel",
+        "provider_name": "Excel / Spreadsheets",
+        "status": "ACTIVE",
+        "region": "GLOBAL"
+    })
+
+
+@router.post("/accounting-provider")
+def select_accounting_provider(tenant_id: UUID = Query(...), payload: ProviderSelectRequest = ...) -> Dict[str, Any]:
+    tid_str = str(tenant_id)
+    names = {
+        "zoho_books": "Zoho Books India",
+        "tally": "Tally Prime v1 Export",
+        "quickbooks": "QuickBooks Online",
+        "excel": "Excel / Spreadsheets"
+    }
+    regions = {
+        "zoho_books": "INDIA",
+        "tally": "INDIA",
+        "quickbooks": "GLOBAL / US",
+        "excel": "GLOBAL"
+    }
+    provider_name = names.get(payload.provider_id, "Excel / Spreadsheets")
+    region = regions.get(payload.provider_id, "GLOBAL")
+
+    selection = {
+        "provider_id": payload.provider_id,
+        "provider_name": provider_name,
+        "status": "CONFIGURED",
+        "region": region,
+        "updated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    }
+    _TENANT_PROVIDER_SELECTION[tid_str] = selection
+
+    # Update connections state
+    for conn in _CONNECTIONS:
+        if payload.provider_id == "zoho_books" and "Zoho" in conn["provider"]:
+            conn["status"] = "CONNECTED"
+            conn["last_sync"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        elif payload.provider_id == "tally" and "Tally" in conn["provider"]:
+            conn["status"] = "CONNECTED"
+            conn["last_sync"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        elif payload.provider_id == "quickbooks" and "QuickBooks" in conn["provider"]:
+            conn["status"] = "CONNECTED"
+            conn["last_sync"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
+    return {"status": "SUCCESS", "selection": selection, "connections": _CONNECTIONS}
 
 
 @router.get("/connections")

@@ -45,9 +45,9 @@ def get_enterprise_scenario(scenario_id: str) -> Dict[str, Any]:
 
 
 @router.get("/health-scorecard")
-def get_health_scorecard(tenant_id: UUID = Query(...)) -> Dict[str, Any]:
+def get_health_scorecard(tenant_id: UUID = Query(...), zero_state: bool = Query(False)) -> Dict[str, Any]:
     """Returns overall enterprise financial health rating (0-100) & master optimization opportunity."""
-    return _health_engine.calculate_health_scorecard(tenant_id)
+    return _health_engine.calculate_health_scorecard(tenant_id, force_zero_state=zero_state)
 
 
 @router.post("/master-optimize")
