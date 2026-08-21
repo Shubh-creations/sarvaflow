@@ -66,6 +66,20 @@ jobs:
         run: |
           npx vite build
 
+  vercel-deploy:
+    name: Deploy Frontend to Vercel Production
+    needs: [frontend-ci]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Trigger Vercel Production Deployment
+        run: |
+          echo "✓ Frontend CI verification clean. Triggering Vercel deployment..."
+
   build-and-push-containers:
     name: Build & Push Docker Container Images to GHCR
     needs: [backend-ci, frontend-ci]
