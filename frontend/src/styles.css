@@ -320,6 +320,27 @@ nav a.active {
   cursor: not-allowed;
 }
 
+/* Ingestion Dropzone */
+.dropzone-box {
+  border: 2px dashed var(--border-strong);
+  background: var(--bg-surface-elevated);
+  border-radius: 10px;
+  padding: 32px 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropzone-box:hover {
+  border-color: var(--accent-positive);
+  background: var(--bg-surface-hover);
+}
+
 /* KPI Hero Cards (Stripe / Linear Treatment) */
 .cards {
   display: grid;
