@@ -1,24 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import {
-  Zap,
-  Download,
-  CheckCircle,
-  ShieldAlert,
   ArrowRight,
+  Download,
+  ChevronDown,
+  ExternalLink,
+  Shield,
   Monitor,
   Apple,
   Terminal,
-  Sparkles,
-  ChevronDown,
-  ExternalLink,
-  ShieldCheck,
-  TrendingUp,
-  Activity,
   Layers,
-  Bot,
-  Lock,
-  Globe,
-  Check
+  Cpu,
+  ArrowUpRight
 } from 'lucide-react'
 
 interface LandingPageProps {
@@ -93,63 +85,55 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
 
   return (
     <div className="landing-root">
-      {/* Top Brand Header */}
+      {/* Navigation Header */}
       <header className="landing-nav">
         <div className="landing-nav-brand">
-          <div className="landing-logo-icon">
-            <Zap size={20} />
-          </div>
           <span className="landing-brand-name">SarvaFlow</span>
-          <span className="landing-beta-pill">Enterprise Beta</span>
+          <span className="landing-beta-pill">v1.0-beta</span>
         </div>
         <div className="landing-nav-actions">
           <button className="landing-control-room-btn" onClick={onOpenAppDirectly}>
-            Enter Control Room <ArrowRight size={15} />
+            Open Control Room <ArrowUpRight size={14} />
           </button>
         </div>
       </header>
 
-      {/* Main Hero Container */}
+      {/* Hero Section */}
       <section className="landing-hero">
         <div className="landing-pill-tag">
-          <Sparkles size={14} /> Autonomous AI CFO & Treasury Operating System
+          AUTONOMOUS TREASURY & CFO OPERATING SYSTEM
         </div>
 
         <h1 className="landing-hero-title">
-          Unify Cash Forecasting, Working Capital &<br />
-          <span className="landing-hero-gradient">India-First Tax Compliance Automatically</span>
+          Unified cash forecasting and automated compliance for modern finance.
         </h1>
 
         <p className="landing-hero-sub">
-          SarvaFlow autonomously ingests financial documents, flags tax anomalies, detects duplicate invoice leaks, and monitors debt covenants in real-time across Web and Desktop.
+          Continuous financial document ingestion, 90-day probabilistic runway modeling, real-time GST tax reconciliation, and automated wire clearing across Web and Desktop.
         </p>
 
-        {/* Dual Primary CTA Container */}
+        {/* Primary Action Buttons */}
         <div className="landing-cta-group">
-          {/* Action 1: Get Started Web */}
           <button className="landing-btn-primary" onClick={onGetStarted}>
-            <Zap size={20} />
-            <span>Get Started on Web</span>
-            <ArrowRight size={18} />
+            Get Started on Web <ArrowRight size={16} />
           </button>
 
-          {/* Action 2: Download Desktop */}
           <div className="landing-dropdown-wrapper">
             <button
               className="landing-btn-secondary"
               onClick={() => setShowDownloadDropdown(!showDownloadDropdown)}
             >
-              <Download size={18} />
+              <Download size={15} />
               <span>
                 Download for {selectedOs === 'mac' ? 'macOS (.dmg)' : selectedOs === 'windows' ? 'Windows (.msi)' : 'Linux (.AppImage)'}
               </span>
-              <ChevronDown size={16} className={showDownloadDropdown ? 'rotate-180' : ''} />
+              <ChevronDown size={14} />
             </button>
 
             {/* Dropdown Options */}
             {showDownloadDropdown && (
               <div className="landing-dropdown-menu">
-                <div className="landing-dropdown-header">Select Platform Installer</div>
+                <div className="landing-dropdown-header">Select Architecture Installer</div>
 
                 {/* macOS */}
                 <a
@@ -160,9 +144,9 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
                   onClick={() => setSelectedOs('mac')}
                 >
                   <div className="item-info">
-                    <Apple size={18} color="#e2e8f0" />
+                    <Apple size={16} />
                     <div>
-                      <div className="item-title">macOS Installer</div>
+                      <div className="item-title">macOS</div>
                       <div className="item-sub">Apple Silicon & Intel (.dmg)</div>
                     </div>
                   </div>
@@ -178,10 +162,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
                   onClick={() => setSelectedOs('windows')}
                 >
                   <div className="item-info">
-                    <Monitor size={18} color="#60a5fa" />
+                    <Monitor size={16} />
                     <div>
-                      <div className="item-title">Windows Installer</div>
-                      <div className="item-sub">Windows 10/11 x64 (.msi)</div>
+                      <div className="item-title">Windows</div>
+                      <div className="item-sub">Windows 10 / 11 x64 (.msi)</div>
                     </div>
                   </div>
                   {detectedOs === 'windows' && <span className="detected-badge">Detected</span>}
@@ -196,10 +180,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
                   onClick={() => setSelectedOs('linux')}
                 >
                   <div className="item-info">
-                    <Terminal size={18} color="#34d399" />
+                    <Terminal size={16} />
                     <div>
-                      <div className="item-title">Linux Package</div>
-                      <div className="item-sub">.AppImage & .deb Package</div>
+                      <div className="item-title">Linux</div>
+                      <div className="item-sub">.AppImage & .deb Packages</div>
                     </div>
                   </div>
                   {detectedOs === 'linux' && <span className="detected-badge">Detected</span>}
@@ -207,7 +191,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
 
                 <div className="landing-dropdown-footer">
                   <a href={repoReleaseUrl} target="_blank" rel="noreferrer">
-                    View all releases on GitHub <ExternalLink size={11} />
+                    Release notes & checksums on GitHub <ExternalLink size={10} />
                   </a>
                 </div>
               </div>
@@ -215,105 +199,96 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
           </div>
         </div>
 
-        {/* Easy Switcher Sublinks */}
+        {/* Mode Switch Sublinks */}
         <div className="landing-switch-links">
           <span>
-            Prefer web?{' '}
+            Deploy in browser:{' '}
             <button onClick={onGetStarted} className="inline-link-btn">
-              Get Started directly on Web
+              Direct Web App
             </button>
           </span>
           <span className="dot-sep">•</span>
           <span>
-            Want native desktop app?{' '}
+            Offline-capable runtime:{' '}
             <button onClick={() => setShowDownloadDropdown(true)} className="inline-link-btn">
-              Download Desktop
+              Desktop Tauri Build
             </button>
           </span>
         </div>
 
-        {/* Honest Security Note Banner */}
+        {/* Security Notice */}
         <div className="landing-security-banner">
-          <ShieldAlert size={20} className="security-icon" />
+          <Shield size={16} className="security-icon" />
           <div className="security-text">
-            <strong>Pre-Release OS Security Note</strong>
-            You may see an OS security prompt (Windows SmartScreen / macOS Gatekeeper) on first launch. This is expected for a new beta release and safe to proceed ("Run Anyway" or "Open").
+            <strong>Pre-Release Binary Verification</strong>
+            Installer packages are compiled with automated GitHub Release CI checksums. Unsigned beta warnings (SmartScreen / Gatekeeper) on initial launch are safe to proceed.
           </div>
         </div>
       </section>
 
-      {/* Product Showcase Window Mockup */}
+      {/* Live Data View Preview */}
       <section className="landing-mockup-section">
         <div className="mockup-window">
           <div className="mockup-header">
             <div className="dots">
-              <span className="dot red" />
-              <span className="dot yellow" />
-              <span className="dot green" />
+              <span className="dot" />
+              <span className="dot" />
+              <span className="dot" />
             </div>
-            <div className="window-title">SarvaFlow Executive Control Room — Live Dashboard</div>
-            <div className="status-live">● System Live</div>
+            <div className="window-title">SARVAFLOW_CFO_CONTROL_ROOM — LIVE LEDGER ENGINE</div>
+            <div className="status-live">● ENGINE LIVE</div>
           </div>
           <div className="mockup-body">
             <div className="mockup-grid">
               <div className="mockup-card">
-                <div className="card-label">90-DAY PROBABILISTIC CASH RUNWAY</div>
+                <div className="card-label">90-DAY CASH RUNWAY (P50)</div>
                 <div className="card-value">$48,920,000</div>
-                <div className="card-sub text-green">↑ +$152,500 Auto-Pilot Yield Captured</div>
+                <div className="card-sub text-green">+ $152.5k Auto-Pilot Yield Captured</div>
               </div>
               <div className="mockup-card">
                 <div className="card-label">INDIA GST RECONCILIATION</div>
-                <div className="card-value">100% Compliant</div>
-                <div className="card-sub text-blue">GSTR-1 / 2B / 3B Verified</div>
+                <div className="card-value">100%</div>
+                <div className="card-sub">GSTR-1, 2B & 3B Audit Clear</div>
               </div>
               <div className="mockup-card">
                 <div className="card-label">MULTI-AGENT MESH</div>
-                <div className="card-value">4 Active Agents</div>
-                <div className="card-sub text-purple">0 Duplicate AP Wire Leaks</div>
+                <div className="card-value">4 ACTIVE</div>
+                <div className="card-sub">0 AP Duplicate Wire Leaks</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3-Column Feature Cards */}
+      {/* 3-Column Architectural Pillars */}
       <section className="landing-features">
         <div className="feature-card">
-          <div className="feature-icon blue">
-            <TrendingUp size={22} />
-          </div>
-          <h3>90-Day Quantile Forecasting</h3>
+          <h3>Probabilistic Forecasting</h3>
           <p>
-            Monte Carlo probabilistic modeling projects p10, p50, and p90 cash runways with real-time volatility bounds.
+            Monte Carlo quantile projection modeling p10, p50, and p90 treasury positions with live bank feed telemetry and payment terms variance.
           </p>
         </div>
 
         <div className="feature-card">
-          <div className="feature-icon green">
-            <ShieldCheck size={22} />
-          </div>
-          <h3>India-First GST Compliance</h3>
+          <h3>India-First Tax Sentinel</h3>
           <p>
-            Instant GSTR-1, 2B, 3B tax audit, HSN/SAC code validation, and duplicate payment leak prevention built into cash workflows.
+            Automated GSTR-1, 2B, and 3B reconciliation, HSN/SAC code classification, and duplicate payment protection embedded directly into payment rails.
           </p>
         </div>
 
         <div className="feature-card">
-          <div className="feature-icon purple">
-            <Monitor size={22} />
-          </div>
-          <h3>Tauri Native Cross-Platform</h3>
+          <h3>Unified Desktop Runtime</h3>
           <p>
-            Wraps exact production web frontend via Tauri v2 with built-in auto-updater. Zero data divergence between Web and Desktop.
+            Built on Tauri v2 with automatic background updates, native OS hardware security, and zero data divergence between Web and Desktop.
           </p>
         </div>
       </section>
 
-      {/* Simple Footer */}
+      {/* Footer */}
       <footer className="landing-footer">
-        <div>© 2026 SarvaFlow Systems. All rights reserved.</div>
+        <div>SarvaFlow Financial Technologies. All rights reserved.</div>
         <div className="footer-status">
-          <span className="green-dot" /> All Systems Operational (Supabase + Vercel)
+          <span className="green-dot" /> Operational • Production Cluster
         </div>
       </footer>
     </div>
