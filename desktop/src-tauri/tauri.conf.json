@@ -10,7 +10,7 @@
   "app": {
     "windows": [
       {
-        "title": "AI Finance OS - Executive Control Room",
+        "title": "SarvaFlow — AI Finance OS Executive Control Room",
         "width": 1440,
         "height": 900,
         "resizable": true,
@@ -18,17 +18,24 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'; connect-src 'self' http://localhost:8000 http://127.0.0.1:8000;"
+      "csp": "default-src 'self'; connect-src 'self' http://localhost:8000 http://127.0.0.1:8000 https://*.supabase.co https://api.github.com https://*.vercel.app https://*.onrender.com;"
     }
   },
   "bundle": {
     "active": true,
-    "targets": ["msi", "nsis", "dmg", "app"],
+    "targets": ["msi", "nsis", "dmg", "appimage", "deb"],
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/icon.icns",
       "icons/icon.ico"
     ]
+  },
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "https://api.github.com/repos/Shubh-creations/sarvaflow/releases/latest/download/latest.json"
+      ]
+    }
   }
 }

@@ -50,8 +50,10 @@ import {
   PieChart,
   Trash2,
   FileSpreadsheet,
-  RefreshCw
+  RefreshCw,
+  Globe
 } from 'lucide-react'
+import { LandingPage } from './components/LandingPage'
 import './styles.css'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
@@ -1833,6 +1835,9 @@ function DashboardApp() {
             <WalletCards /> SarvaFlow
           </div>
           <nav>
+            <a className={activeTab === 'landing' ? 'active' : ''} onClick={() => setActiveTab('landing')} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', marginBottom: '0.5rem', paddingBottom: '0.5rem' }}>
+              <Globe size={18} /> Public Landing Page
+            </a>
             <a className={activeTab === 'overview' ? 'active' : ''} onClick={() => setActiveTab('overview')}>
               <Activity size={18} /> Executive Overview
             </a>
@@ -1953,6 +1958,18 @@ function DashboardApp() {
                 Turn Off Demo Mode
               </button>
             </div>
+          )}
+
+          {/* PUBLIC LANDING PAGE TAB */}
+          {activeTab === 'landing' && (
+            <LandingPage
+              onGetStarted={() => {
+                setShowOnboardingModal(true)
+                setOnboardingStep(1)
+                setActiveTab('overview')
+              }}
+              onOpenAppDirectly={() => setActiveTab('overview')}
+            />
           )}
 
           {/* OVERVIEW TAB */}
