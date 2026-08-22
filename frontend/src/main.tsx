@@ -54,7 +54,8 @@ import {
   Globe
 } from 'lucide-react'
 import { LandingPage } from './components/LandingPage'
-import { AuthModal, UserSession } from './components/AuthModal'
+import { AuthModal, UserSession, AuthMode } from './components/AuthModal'
+import { supabase } from './lib/supabaseClient'
 import './styles.css'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
@@ -296,7 +297,56 @@ function DashboardApp() {
     }
   })
   const [showAuthModal, setShowAuthModal] = useState(false)
-  const [authModalInitialMode, setAuthModalInitialMode] = useState<'signin' | 'signup'>('signin')
+  const [authModalInitialMode, setAuthModalInitialMode] = useState<AuthMode>('signin')
+
+  // Supabase Auth Sync & Password Recovery Listener
+  useEffect(() => {
+    if (window.location.hash.includes('reset-password') || window.location.hash.includes('type=recovery')) {
+      setAuthModalInitialMode('reset')
+      setShowAuthModal(true)
+    }
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (session?.user) {
+        const uSession: UserSession = {
+          id: session.user.id,
+          email: session.user.email || 'user@sarvaflow.com',
+          fullName: session.user.user_metadata?.full_name || 'Enterprise Administrator',
+          enterpriseName: session.user.user_metadata?.enterprise_name || 'SarvaFlow Enterprise',
+          role: 'Admin',
+          tenantId: 'tenant_sarvaflow_prod'
+        }
+        setUserSession(uSession)
+        localStorage.setItem('sarvaflow_session', JSON.stringify(uSession))
+      }
+    }).catch(err => console.warn('Supabase getSession initial check fallback', err))
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'PASSWORD_RECOVERY') {
+        setAuthModalInitialMode('reset')
+        setShowAuthModal(true)
+      } else if (event === 'SIGNED_IN' && session?.user) {
+        const uSession: UserSession = {
+          id: session.user.id,
+          email: session.user.email || 'user@sarvaflow.com',
+          fullName: session.user.user_metadata?.full_name || 'Enterprise Administrator',
+          enterpriseName: session.user.user_metadata?.enterprise_name || 'SarvaFlow Enterprise',
+          role: 'Admin',
+          tenantId: 'tenant_sarvaflow_prod'
+        }
+        setUserSession(uSession)
+        localStorage.setItem('sarvaflow_session', JSON.stringify(uSession))
+        showToast(`✓ Authenticated as ${uSession.fullName}`)
+      } else if (event === 'SIGNED_OUT') {
+        setUserSession(null)
+        localStorage.removeItem('sarvaflow_session')
+      }
+    })
+
+    return () => {
+      subscription.unsubscribe()
+    }
+  }, [])
   const [forecastData, setForecastData] = useState<any>(isDemoMode ? DEMO_FORECAST_DATA : EMPTY_FORECAST_DATA)
   const [copilotQuery, setCopilotQuery] = useState('')
   const [copilotResponse, setCopilotResponse] = useState<any>(null)
@@ -1966,10 +2016,16 @@ function DashboardApp() {
                 {serverOnline ? '● API Live' : '○ Standalone'}
               </span>
               <button
-                onClick={() => {
+                onClick={async () => {
+                  try {
+                    await supabase.auth.signOut()
+                  } catch (err) {
+                    console.warn('SignOut fallback', err)
+                  }
                   localStorage.removeItem('sarvaflow_session')
                   setUserSession(null)
                   setActiveTab('landing')
+                  showToast('Signed out successfully.')
                 }}
                 style={{ background: 'rgba(239, 68, 68, 0.15)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#fca5a5', padding: '3px 8px', borderRadius: '6px', fontSize: '11px', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
                 title="Sign Out of SarvaFlow Control Room"
