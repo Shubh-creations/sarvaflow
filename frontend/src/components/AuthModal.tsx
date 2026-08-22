@@ -80,6 +80,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
           email,
           password,
           options: {
+            emailRedirectTo: typeof window !== 'undefined' ? window.location.origin : undefined,
             data: {
               full_name: fullName || 'Enterprise Administrator',
               enterprise_name: enterpriseName || 'SarvaFlow Enterprise',
