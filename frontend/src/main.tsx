@@ -54,6 +54,7 @@ import {
   Globe
 } from 'lucide-react'
 import { LandingPage } from './components/LandingPage'
+import { AuthModal, UserSession } from './components/AuthModal'
 import './styles.css'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
@@ -286,6 +287,16 @@ function DashboardApp() {
 
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
   const [activeTab, setActiveTab] = useState('landing')
+  const [userSession, setUserSession] = useState<UserSession | null>(() => {
+    try {
+      const saved = localStorage.getItem('sarvaflow_session')
+      return saved ? JSON.parse(saved) : null
+    } catch {
+      return null
+    }
+  })
+  const [showAuthModal, setShowAuthModal] = useState(false)
+  const [authModalInitialMode, setAuthModalInitialMode] = useState<'signin' | 'signup'>('signin')
   const [forecastData, setForecastData] = useState<any>(isDemoMode ? DEMO_FORECAST_DATA : EMPTY_FORECAST_DATA)
   const [copilotQuery, setCopilotQuery] = useState('')
   const [copilotResponse, setCopilotResponse] = useState<any>(null)
@@ -1273,6 +1284,39 @@ function DashboardApp() {
     }
   }
 
+  const handleExportSpreadsheet = () => {
+    try {
+      const headers = ['Document ID', 'File Name', 'Industry Domain', 'Document Category', 'Status', 'Amount USD', 'AI Confidence (%)', 'Prompt Injection Flag', 'Created At']
+      const exportItems = batchQueue && batchQueue.length > 0 ? batchQueue : DEMO_BATCH_QUEUE
+      const rows = exportItems.map((item: any) => [
+        `"${item.id || item.file_name}"`,
+        `"${item.file_name}"`,
+        `"${item.industry_domain}"`,
+        `"${item.document_category}"`,
+        `"${item.status}"`,
+        item.total_amount_usd || 0,
+        item.overall_confidence || 95.0,
+        item.prompt_injection_detected ? 'YES' : 'NO',
+        `"${item.created_at || new Date().toISOString()}"`
+      ])
+
+      const csvContent = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map((row: any) => row.join(','))].join('\n')
+      const encodedUri = encodeURI(csvContent)
+      const link = document.createElement('a')
+      link.setAttribute('href', encodedUri)
+      link.setAttribute('download', `SarvaFlow_Financial_Docs_${userSession?.enterpriseName?.replace(/\s+/g, '_') || 'Enterprise'}.csv`)
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+
+      showToast('📊 Spreadsheet Export (.CSV) generated and downloaded!')
+      trackFunnelEvent('export_clicked', { type: 'spreadsheet_csv' })
+    } catch (err) {
+      console.error('Spreadsheet export error', err)
+      showToast('❌ Spreadsheet export failed')
+    }
+  }
+
   const handleCopilotSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!copilotQuery) return
@@ -1356,16 +1400,35 @@ function DashboardApp() {
     ? scenarios
     : scenarios.filter(s => s.category.toUpperCase().includes(scenarioFilterCategory))
 
+  const handleControlRoomEnter = (initialMode: 'signin' | 'signup' = 'signin') => {
+    if (!userSession) {
+      setAuthModalInitialMode(initialMode)
+      setShowAuthModal(true)
+    } else {
+      setShowOnboardingModal(true)
+      setOnboardingStep(1)
+      setActiveTab('overview')
+    }
+  }
+
   if (activeTab === 'landing') {
     return (
       <ErrorBoundary>
         <LandingPage
-          onGetStarted={() => {
+          onGetStarted={() => handleControlRoomEnter('signup')}
+          onOpenAppDirectly={() => handleControlRoomEnter('signin')}
+        />
+        <AuthModal
+          isOpen={showAuthModal}
+          initialMode={authModalInitialMode}
+          onClose={() => setShowAuthModal(false)}
+          onSuccess={(session) => {
+            setUserSession(session)
+            setShowAuthModal(false)
             setShowOnboardingModal(true)
             setOnboardingStep(1)
             setActiveTab('overview')
           }}
-          onOpenAppDirectly={() => setActiveTab('overview')}
         />
       </ErrorBoundary>
     )
@@ -1887,13 +1950,33 @@ function DashboardApp() {
             </a>
           </nav>
 
-          <div className="org">
-            <strong>SARVAFLOW ENTERPRISE</strong>
-            <span>Tenant ID: {TENANT_ID.slice(0, 8)}...</span>
-            <br />
-            <span style={{ color: serverOnline ? '#10b981' : '#f59e0b', fontSize: '11px', marginTop: '6px', display: 'inline-block' }}>
-              {serverOnline ? '● API Server Live' : '○ Client Standalone (Backend Offline)'}
-            </span>
+          <div className="org" style={{ position: 'relative' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+              <UserCheck size={16} color="#34d399" />
+              <strong>{userSession?.fullName || 'Enterprise Admin'}</strong>
+            </div>
+            <div style={{ fontSize: '11px', color: '#94a3b8' }}>
+              {userSession?.enterpriseName || 'SARVAFLOW ENTERPRISE'} • <span style={{ color: '#38bdf8', fontWeight: 700 }}>{userSession?.role || 'Admin'}</span>
+            </div>
+            <div style={{ fontSize: '11px', color: '#64748b', marginTop: '2px' }}>
+              {userSession?.email || 'admin@sarvaflow.com'}
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px', paddingTop: '8px', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+              <span style={{ color: serverOnline ? '#10b981' : '#f59e0b', fontSize: '10.5px', fontWeight: 600 }}>
+                {serverOnline ? '● API Live' : '○ Standalone'}
+              </span>
+              <button
+                onClick={() => {
+                  localStorage.removeItem('sarvaflow_session')
+                  setUserSession(null)
+                  setActiveTab('landing')
+                }}
+                style={{ background: 'rgba(239, 68, 68, 0.15)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#fca5a5', padding: '3px 8px', borderRadius: '6px', fontSize: '11px', fontWeight: 700, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '4px' }}
+                title="Sign Out of SarvaFlow Control Room"
+              >
+                <LogOut size={12} /> Sign Out
+              </button>
+            </div>
           </div>
         </aside>
 
@@ -2534,15 +2617,25 @@ function DashboardApp() {
                       {!isDemoMode && batchQueue.length === 0 ? "No documents ingested yet. Browse supported document categories below." : "Select a scenario to inspect AI breakdown"}
                     </p>
                   </div>
-                  {!isDemoMode && batchQueue.length === 0 && (
+                  <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                     <button
-                      className="button ghost"
-                      style={{ fontSize: '11.5px', padding: '5px 12px' }}
-                      onClick={() => setScenarioFilterCategory('ALL')}
+                      className="button"
+                      style={{ fontSize: '11.5px', padding: '5px 12px', background: '#10b981', borderColor: '#059669', color: '#fff', fontWeight: 700 }}
+                      onClick={handleExportSpreadsheet}
+                      title="Export all uploaded document extraction results to a spreadsheet"
                     >
-                      <Layers size={13} /> Browse scenario types
+                      <FileSpreadsheet size={14} /> Export Spreadsheet (.CSV)
                     </button>
-                  )}
+                    {!isDemoMode && batchQueue.length === 0 && (
+                      <button
+                        className="button ghost"
+                        style={{ fontSize: '11.5px', padding: '5px 12px' }}
+                        onClick={() => setScenarioFilterCategory('ALL')}
+                      >
+                        <Layers size={13} /> Browse scenario types
+                      </button>
+                    )}
+                  </div>
                 </div>
 
                 <div style={{ display: 'flex', gap: '6px', marginBottom: '14px', flexWrap: 'wrap' }}>
