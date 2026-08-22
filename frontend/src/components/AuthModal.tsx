@@ -40,8 +40,12 @@ interface AuthModalProps {
  */
 export function formatAuthErrorMessage(error: any): string {
   if (!error) return 'An unexpected error occurred. Please try again.'
-  const msg = (typeof error === 'string' ? error : error.message || error.error_description || '').toLowerCase()
+  const msg = (typeof error === 'string' ? error : error.message || error.error_description || error.msg || JSON.stringify(error)).toLowerCase()
+  const status = error.status || error.statusCode || error.code
 
+  if (status === 429 || msg.includes('rate limit') || msg.includes('too many requests') || msg.includes('over_email_send_rate_limit')) {
+    return 'Email rate limit reached for Supabase default provider. Please wait a few minutes, or activate Custom SMTP in Supabase.'
+  }
   if (msg.includes('invalid login credentials') || msg.includes('invalid_grant') || msg.includes('invalid credentials')) {
     return 'Incorrect email, mobile number, or password. Please verify and try again.'
   }
@@ -50,9 +54,6 @@ export function formatAuthErrorMessage(error: any): string {
   }
   if (msg.includes('email not confirmed') || msg.includes('not verified')) {
     return 'Please confirm your email address before signing in. Check your inbox for the activation link.'
-  }
-  if (msg.includes('rate limit') || msg.includes('too many requests') || msg.includes('over_email_send_rate_limit')) {
-    return 'Too many requests. Please wait a few moments before trying again.'
   }
   if (msg.includes('password should be at least') || msg.includes('weak password')) {
     return 'Password must be at least 8 characters and include letters, numbers, and special symbols.'
@@ -64,7 +65,7 @@ export function formatAuthErrorMessage(error: any): string {
     return 'Please enter a valid business email address.'
   }
 
-  return 'Authentication request could not be completed. Please try again.'
+  return error.message || 'Authentication request could not be completed. Please try again.'
 }
 
 export const AuthModal: React.FC<AuthModalProps> = ({
