@@ -285,7 +285,7 @@ function DashboardApp() {
   }
 
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
-  const [activeTab, setActiveTab] = useState('overview')
+  const [activeTab, setActiveTab] = useState('landing')
   const [forecastData, setForecastData] = useState<any>(isDemoMode ? DEMO_FORECAST_DATA : EMPTY_FORECAST_DATA)
   const [copilotQuery, setCopilotQuery] = useState('')
   const [copilotResponse, setCopilotResponse] = useState<any>(null)
@@ -1356,6 +1356,21 @@ function DashboardApp() {
     ? scenarios
     : scenarios.filter(s => s.category.toUpperCase().includes(scenarioFilterCategory))
 
+  if (activeTab === 'landing') {
+    return (
+      <ErrorBoundary>
+        <LandingPage
+          onGetStarted={() => {
+            setShowOnboardingModal(true)
+            setOnboardingStep(1)
+            setActiveTab('overview')
+          }}
+          onOpenAppDirectly={() => setActiveTab('overview')}
+        />
+      </ErrorBoundary>
+    )
+  }
+
   return (
     <ErrorBoundary>
       {/* Top Pilot Disclaimer Banner */}
@@ -1958,18 +1973,6 @@ function DashboardApp() {
                 Turn Off Demo Mode
               </button>
             </div>
-          )}
-
-          {/* PUBLIC LANDING PAGE TAB */}
-          {activeTab === 'landing' && (
-            <LandingPage
-              onGetStarted={() => {
-                setShowOnboardingModal(true)
-                setOnboardingStep(1)
-                setActiveTab('overview')
-              }}
-              onOpenAppDirectly={() => setActiveTab('overview')}
-            />
           )}
 
           {/* OVERVIEW TAB */}
