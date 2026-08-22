@@ -1871,8 +1871,8 @@ function DashboardApp() {
             <strong>SARVAFLOW ENTERPRISE</strong>
             <span>Tenant ID: {TENANT_ID.slice(0, 8)}...</span>
             <br />
-            <span style={{ color: serverOnline ? '#10b981' : '#ef4444', fontSize: '11px', marginTop: '6px', display: 'inline-block' }}>
-              {serverOnline ? '● API Server Live (Port 8000)' : '○ API Server Offline'}
+            <span style={{ color: serverOnline ? '#10b981' : '#f59e0b', fontSize: '11px', marginTop: '6px', display: 'inline-block' }}>
+              {serverOnline ? '● API Server Live' : '○ Client Standalone (Backend Offline)'}
             </span>
           </div>
         </aside>
