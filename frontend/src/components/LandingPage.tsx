@@ -7,13 +7,18 @@ import {
   ArrowRight,
   Monitor,
   Apple,
-  HardDrive,
   Terminal,
-  Globe,
   Sparkles,
   ChevronDown,
   ExternalLink,
-  ShieldCheck
+  ShieldCheck,
+  TrendingUp,
+  Activity,
+  Layers,
+  Bot,
+  Lock,
+  Globe,
+  Check
 } from 'lucide-react'
 
 interface LandingPageProps {
@@ -36,9 +41,8 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
   const [showDownloadDropdown, setShowDownloadDropdown] = useState<boolean>(false)
   const [selectedOs, setSelectedOs] = useState<OperatingSystem>('windows')
   const [releaseAssets, setReleaseAssets] = useState<ReleaseAssets>({})
-  const [loadingAssets, setLoadingAssets] = useState<boolean>(true)
 
-  // 1. Auto-detect Visitor's Operating System from Browser UserAgent
+  // 1. Auto-detect Visitor's Operating System
   useEffect(() => {
     const ua = navigator.userAgent.toLowerCase()
     if (ua.includes('mac') || ua.includes('darwin') || ua.includes('iphone') || ua.includes('ipad')) {
@@ -53,11 +57,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
     }
   }, [])
 
-  // 2. Fetch Latest Release Download Links Dynamically from GitHub API
+  // 2. Dynamic GitHub Release Fetcher
   useEffect(() => {
     const fetchLatestRelease = async () => {
       try {
-        setLoadingAssets(true)
         const res = await fetch('https://api.github.com/repos/Shubh-creations/sarvaflow/releases/latest')
         if (res.ok) {
           const data = await res.json()
@@ -74,229 +77,137 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
           setReleaseAssets(assets)
         }
       } catch (err) {
-        console.warn('Could not fetch GitHub release assets dynamically', err)
-      } finally {
-        setLoadingAssets(false)
+        console.warn('GitHub release query fallback active', err)
       }
     }
     fetchLatestRelease()
   }, [])
 
-  // Fallback release download URLs if GitHub API rate-limited
   const repoReleaseUrl = 'https://github.com/Shubh-creations/sarvaflow/releases/latest'
   const getDownloadUrl = (os: OperatingSystem) => {
-    if (os === 'mac') return releaseAssets.macDmg || `${repoReleaseUrl}`
-    if (os === 'windows') return releaseAssets.windowsMsi || `${repoReleaseUrl}`
-    if (os === 'linux') return releaseAssets.linuxAppImage || releaseAssets.linuxDeb || `${repoReleaseUrl}`
+    if (os === 'mac') return releaseAssets.macDmg || repoReleaseUrl
+    if (os === 'windows') return releaseAssets.windowsMsi || repoReleaseUrl
+    if (os === 'linux') return releaseAssets.linuxAppImage || releaseAssets.linuxDeb || repoReleaseUrl
     return repoReleaseUrl
   }
 
   return (
-    <div className="landing-page-container" style={{ background: 'var(--bg-primary)', color: 'var(--text-primary)', minHeight: '100vh', padding: '2rem' }}>
-      {/* Top Brand Bar */}
-      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '1200px', margin: '0 auto 4rem auto' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <div style={{ background: 'var(--accent-primary)', width: '36px', height: '36px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
-            <Zap size={22} />
+    <div className="landing-root">
+      {/* Top Brand Header */}
+      <header className="landing-nav">
+        <div className="landing-nav-brand">
+          <div className="landing-logo-icon">
+            <Zap size={20} />
           </div>
-          <span style={{ fontSize: '1.4rem', fontWeight: '800', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>SarvaFlow</span>
-          <span style={{ fontSize: '0.75rem', background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', padding: '0.2rem 0.6rem', borderRadius: '12px', fontWeight: '600', marginLeft: '0.5rem' }}>Enterprise Beta</span>
+          <span className="landing-brand-name">SarvaFlow</span>
+          <span className="landing-beta-pill">Enterprise Beta</span>
         </div>
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <button className="button ghost" onClick={onOpenAppDirectly} style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-            Enter Control Room <ArrowRight size={16} style={{ marginLeft: '4px' }} />
+        <div className="landing-nav-actions">
+          <button className="landing-control-room-btn" onClick={onOpenAppDirectly}>
+            Enter Control Room <ArrowRight size={15} />
           </button>
         </div>
       </header>
 
-      {/* Main Hero Section */}
-      <main style={{ maxWidth: '1100px', margin: '0 auto', textAlign: 'center' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(16, 185, 129, 0.1)', color: '#34d399', padding: '0.4rem 1rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', marginBottom: '1.5rem' }}>
-          <Sparkles size={16} /> Autonomous AI CFO & Treasury Operating System
+      {/* Main Hero Container */}
+      <section className="landing-hero">
+        <div className="landing-pill-tag">
+          <Sparkles size={14} /> Autonomous AI CFO & Treasury Operating System
         </div>
 
-        <h1 style={{ fontSize: '3.2rem', fontWeight: '900', lineHeight: '1.15', marginBottom: '1.5rem', letterSpacing: '-0.03em' }}>
+        <h1 className="landing-hero-title">
           Unify Cash Forecasting, Working Capital &<br />
-          <span style={{ background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-            India-First Tax Compliance Automatically
-          </span>
+          <span className="landing-hero-gradient">India-First Tax Compliance Automatically</span>
         </h1>
 
-        <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', maxWidth: '800px', margin: '0 auto 3rem auto', lineHeight: '1.6' }}>
-          SarvaFlow autonomously ingests financial documents, flags tax anomalies, detects duplicate invoices, and monitors debt covenants in real-time across Web and Desktop.
+        <p className="landing-hero-sub">
+          SarvaFlow autonomously ingests financial documents, flags tax anomalies, detects duplicate invoice leaks, and monitors debt covenants in real-time across Web and Desktop.
         </p>
 
-        {/* Dual Action Buttons (Side by Side) */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '2rem' }}>
-          {/* Button 1: Get Started (Primary Web Sign-In / Flow) */}
-          <button
-            onClick={onGetStarted}
-            className="button primary"
-            style={{
-              padding: '1rem 2.2rem',
-              fontSize: '1.1rem',
-              fontWeight: '700',
-              borderRadius: '10px',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              boxShadow: '0 10px 25px -5px rgba(59, 130, 246, 0.4)',
-              cursor: 'pointer'
-            }}
-          >
-            <Zap size={22} /> Get Started on Web <ArrowRight size={18} />
+        {/* Dual Primary CTA Container */}
+        <div className="landing-cta-group">
+          {/* Action 1: Get Started Web */}
+          <button className="landing-btn-primary" onClick={onGetStarted}>
+            <Zap size={20} />
+            <span>Get Started on Web</span>
+            <ArrowRight size={18} />
           </button>
 
-          {/* Button 2: Download Desktop App (Secondary Outlined Dropdown) */}
-          <div style={{ position: 'relative' }}>
+          {/* Action 2: Download Desktop */}
+          <div className="landing-dropdown-wrapper">
             <button
+              className="landing-btn-secondary"
               onClick={() => setShowDownloadDropdown(!showDownloadDropdown)}
-              className="button secondary"
-              style={{
-                padding: '1rem 2rem',
-                fontSize: '1.1rem',
-                fontWeight: '700',
-                borderRadius: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.75rem',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                color: 'var(--text-primary)',
-                cursor: 'pointer'
-              }}
             >
-              <Download size={20} />
+              <Download size={18} />
               <span>
                 Download for {selectedOs === 'mac' ? 'macOS (.dmg)' : selectedOs === 'windows' ? 'Windows (.msi)' : 'Linux (.AppImage)'}
               </span>
-              <ChevronDown size={18} style={{ transform: showDownloadDropdown ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+              <ChevronDown size={16} className={showDownloadDropdown ? 'rotate-180' : ''} />
             </button>
 
-            {/* Dropdown Panel */}
+            {/* Dropdown Options */}
             {showDownloadDropdown && (
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '110%',
-                  right: '0',
-                  left: '0',
-                  minWidth: '320px',
-                  background: '#1e293b',
-                  border: '1px solid rgba(255, 255, 255, 0.15)',
-                  borderRadius: '12px',
-                  padding: '1rem',
-                  boxShadow: '0 20px 40px rgba(0, 0, 0, 0.5)',
-                  zIndex: 1000,
-                  textAlign: 'left'
-                }}
-              >
-                <div style={{ fontSize: '0.75rem', fontWeight: '700', textTransform: 'uppercase', color: '#94a3b8', marginBottom: '0.75rem', letterSpacing: '0.05em' }}>
-                  Select Platform Architecture
-                </div>
+              <div className="landing-dropdown-menu">
+                <div className="landing-dropdown-header">Select Platform Installer</div>
 
-                {/* macOS Option */}
+                {/* macOS */}
                 <a
                   href={getDownloadUrl('mac')}
                   target="_blank"
                   rel="noreferrer"
+                  className={`landing-dropdown-item ${selectedOs === 'mac' ? 'active' : ''}`}
                   onClick={() => setSelectedOs('mac')}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '0.75rem',
-                    borderRadius: '8px',
-                    background: selectedOs === 'mac' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
-                    border: selectedOs === 'mac' ? '1px solid #3b82f6' : '1px solid transparent',
-                    color: 'var(--text-primary)',
-                    textDecoration: 'none',
-                    marginBottom: '0.5rem'
-                  }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <Apple size={20} color="#e2e8f0" />
+                  <div className="item-info">
+                    <Apple size={18} color="#e2e8f0" />
                     <div>
-                      <div style={{ fontWeight: '600', fontSize: '0.95rem' }}>macOS Installer</div>
-                      <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>Apple Silicon & Intel (.dmg)</div>
+                      <div className="item-title">macOS Installer</div>
+                      <div className="item-sub">Apple Silicon & Intel (.dmg)</div>
                     </div>
                   </div>
-                  {detectedOs === 'mac' && (
-                    <span style={{ fontSize: '0.7rem', background: '#3b82f6', color: '#fff', padding: '0.15rem 0.5rem', borderRadius: '10px', fontWeight: '700' }}>
-                      Detected
-                    </span>
-                  )}
+                  {detectedOs === 'mac' && <span className="detected-badge">Detected</span>}
                 </a>
 
-                {/* Windows Option */}
+                {/* Windows */}
                 <a
                   href={getDownloadUrl('windows')}
                   target="_blank"
                   rel="noreferrer"
+                  className={`landing-dropdown-item ${selectedOs === 'windows' ? 'active' : ''}`}
                   onClick={() => setSelectedOs('windows')}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '0.75rem',
-                    borderRadius: '8px',
-                    background: selectedOs === 'windows' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
-                    border: selectedOs === 'windows' ? '1px solid #3b82f6' : '1px solid transparent',
-                    color: 'var(--text-primary)',
-                    textDecoration: 'none',
-                    marginBottom: '0.5rem'
-                  }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <Monitor size={20} color="#60a5fa" />
+                  <div className="item-info">
+                    <Monitor size={18} color="#60a5fa" />
                     <div>
-                      <div style={{ fontWeight: '600', fontSize: '0.95rem' }}>Windows Installer</div>
-                      <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>Windows 10/11 x64 (.msi)</div>
+                      <div className="item-title">Windows Installer</div>
+                      <div className="item-sub">Windows 10/11 x64 (.msi)</div>
                     </div>
                   </div>
-                  {detectedOs === 'windows' && (
-                    <span style={{ fontSize: '0.7rem', background: '#3b82f6', color: '#fff', padding: '0.15rem 0.5rem', borderRadius: '10px', fontWeight: '700' }}>
-                      Detected
-                    </span>
-                  )}
+                  {detectedOs === 'windows' && <span className="detected-badge">Detected</span>}
                 </a>
 
-                {/* Linux Option */}
+                {/* Linux */}
                 <a
                   href={getDownloadUrl('linux')}
                   target="_blank"
                   rel="noreferrer"
+                  className={`landing-dropdown-item ${selectedOs === 'linux' ? 'active' : ''}`}
                   onClick={() => setSelectedOs('linux')}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '0.75rem',
-                    borderRadius: '8px',
-                    background: selectedOs === 'linux' ? 'rgba(59, 130, 246, 0.15)' : 'transparent',
-                    border: selectedOs === 'linux' ? '1px solid #3b82f6' : '1px solid transparent',
-                    color: 'var(--text-primary)',
-                    textDecoration: 'none'
-                  }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <Terminal size={20} color="#34d399" />
+                  <div className="item-info">
+                    <Terminal size={18} color="#34d399" />
                     <div>
-                      <div style={{ fontWeight: '600', fontSize: '0.95rem' }}>Linux Package</div>
-                      <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>.AppImage & .deb Package</div>
+                      <div className="item-title">Linux Package</div>
+                      <div className="item-sub">.AppImage & .deb Package</div>
                     </div>
                   </div>
-                  {detectedOs === 'linux' && (
-                    <span style={{ fontSize: '0.7rem', background: '#3b82f6', color: '#fff', padding: '0.15rem 0.5rem', borderRadius: '10px', fontWeight: '700' }}>
-                      Detected
-                    </span>
-                  )}
+                  {detectedOs === 'linux' && <span className="detected-badge">Detected</span>}
                 </a>
 
-                {/* Direct Link to GitHub Releases */}
-                <div style={{ marginTop: '0.75rem', paddingTop: '0.5rem', borderTop: '1px solid rgba(255,255,255,0.1)', textAlign: 'center' }}>
-                  <a href={repoReleaseUrl} target="_blank" rel="noreferrer" style={{ fontSize: '0.75rem', color: '#60a5fa', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                    View all releases on GitHub <ExternalLink size={12} />
+                <div className="landing-dropdown-footer">
+                  <a href={repoReleaseUrl} target="_blank" rel="noreferrer">
+                    View all releases on GitHub <ExternalLink size={11} />
                   </a>
                 </div>
               </div>
@@ -304,78 +215,107 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onOpenAp
           </div>
         </div>
 
-        {/* Easy Switching Links */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
+        {/* Easy Switcher Sublinks */}
+        <div className="landing-switch-links">
           <span>
-            Prefer the web app?{' '}
-            <button onClick={onGetStarted} style={{ background: 'none', border: 'none', color: '#60a5fa', textDecoration: 'underline', cursor: 'pointer', padding: 0, fontWeight: '600' }}>
+            Prefer web?{' '}
+            <button onClick={onGetStarted} className="inline-link-btn">
               Get Started directly on Web
             </button>
           </span>
-          <span>•</span>
+          <span className="dot-sep">•</span>
           <span>
-            Want native performance?{' '}
-            <button onClick={() => setShowDownloadDropdown(true)} style={{ background: 'none', border: 'none', color: '#60a5fa', textDecoration: 'underline', cursor: 'pointer', padding: 0, fontWeight: '600' }}>
-              Download Desktop App
+            Want native desktop app?{' '}
+            <button onClick={() => setShowDownloadDropdown(true)} className="inline-link-btn">
+              Download Desktop
             </button>
           </span>
         </div>
 
-        {/* Honest Code-Signing Security Note (Part 4 Requirement) */}
-        <div
-          style={{
-            maxWidth: '680px',
-            margin: '0 auto 4rem auto',
-            background: 'rgba(245, 158, 11, 0.08)',
-            border: '1px solid rgba(245, 158, 11, 0.25)',
-            borderRadius: '10px',
-            padding: '1rem 1.25rem',
-            textAlign: 'left',
-            display: 'flex',
-            gap: '0.75rem',
-            alignItems: 'flex-start'
-          }}
-        >
-          <ShieldAlert size={20} color="#f59e0b" style={{ flexShrink: 0, marginTop: '2px' }} />
-          <div style={{ fontSize: '0.85rem', color: '#fcd34d', lineHeight: '1.5' }}>
-            <strong style={{ color: '#fbbf24', display: 'block', marginBottom: '2px' }}>Pre-Release Security Note</strong>
-            You may see an OS security prompt (Windows SmartScreen / macOS Gatekeeper) on first launch. This is expected for a brand-new beta app and completely safe to proceed ("Run Anyway" or "Open").
+        {/* Honest Security Note Banner */}
+        <div className="landing-security-banner">
+          <ShieldAlert size={20} className="security-icon" />
+          <div className="security-text">
+            <strong>Pre-Release OS Security Note</strong>
+            You may see an OS security prompt (Windows SmartScreen / macOS Gatekeeper) on first launch. This is expected for a new beta release and safe to proceed ("Run Anyway" or "Open").
           </div>
         </div>
+      </section>
 
-        {/* Key Feature Pillars */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', textAlign: 'left', margin: '2rem 0' }}>
-          <div style={{ background: 'var(--bg-secondary)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
-            <div style={{ background: 'rgba(59, 130, 246, 0.15)', color: '#60a5fa', width: '40px', height: '40px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-              <Monitor size={22} />
+      {/* Product Showcase Window Mockup */}
+      <section className="landing-mockup-section">
+        <div className="mockup-window">
+          <div className="mockup-header">
+            <div className="dots">
+              <span className="dot red" />
+              <span className="dot yellow" />
+              <span className="dot green" />
             </div>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.5rem' }}>Full Parity Web & Desktop</h3>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
-              Built with Tauri v2 wrapping the exact same production frontend API. Zero data divergence between web browsers and desktop installers.
-            </p>
+            <div className="window-title">SarvaFlow Executive Control Room — Live Dashboard</div>
+            <div className="status-live">● System Live</div>
           </div>
-
-          <div style={{ background: 'var(--bg-secondary)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
-            <div style={{ background: 'rgba(16, 185, 129, 0.15)', color: '#34d399', width: '40px', height: '40px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-              <ShieldCheck size={22} />
+          <div className="mockup-body">
+            <div className="mockup-grid">
+              <div className="mockup-card">
+                <div className="card-label">90-DAY PROBABILISTIC CASH RUNWAY</div>
+                <div className="card-value">$48,920,000</div>
+                <div className="card-sub text-green">↑ +$152,500 Auto-Pilot Yield Captured</div>
+              </div>
+              <div className="mockup-card">
+                <div className="card-label">INDIA GST RECONCILIATION</div>
+                <div className="card-value">100% Compliant</div>
+                <div className="card-sub text-blue">GSTR-1 / 2B / 3B Verified</div>
+              </div>
+              <div className="mockup-card">
+                <div className="card-label">MULTI-AGENT MESH</div>
+                <div className="card-value">4 Active Agents</div>
+                <div className="card-sub text-purple">0 Duplicate AP Wire Leaks</div>
+              </div>
             </div>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.5rem' }}>India-First GST Compliance</h3>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
-              Automated GSTR-1/2B/3B tax reconciliation, HSN/SAC code validation, and duplicate invoice detection built directly into cash workflows.
-            </p>
-          </div>
-
-          <div style={{ background: 'var(--bg-secondary)', padding: '1.5rem', borderRadius: '12px', border: '1px solid var(--border-color)' }}>
-            <div style={{ background: 'rgba(245, 158, 11, 0.15)', color: '#fcd34d', width: '40px', height: '40px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-              <Zap size={22} />
-            </div>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: '700', marginBottom: '0.5rem' }}>Instant Auto-Updates</h3>
-            <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
-              Built-in Tauri auto-updater checks GitHub Releases automatically so desktop users always receive new updates without manual downloads.
-            </p>
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* 3-Column Feature Cards */}
+      <section className="landing-features">
+        <div className="feature-card">
+          <div className="feature-icon blue">
+            <TrendingUp size={22} />
+          </div>
+          <h3>90-Day Quantile Forecasting</h3>
+          <p>
+            Monte Carlo probabilistic modeling projects p10, p50, and p90 cash runways with real-time volatility bounds.
+          </p>
+        </div>
+
+        <div className="feature-card">
+          <div className="feature-icon green">
+            <ShieldCheck size={22} />
+          </div>
+          <h3>India-First GST Compliance</h3>
+          <p>
+            Instant GSTR-1, 2B, 3B tax audit, HSN/SAC code validation, and duplicate payment leak prevention built into cash workflows.
+          </p>
+        </div>
+
+        <div className="feature-card">
+          <div className="feature-icon purple">
+            <Monitor size={22} />
+          </div>
+          <h3>Tauri Native Cross-Platform</h3>
+          <p>
+            Wraps exact production web frontend via Tauri v2 with built-in auto-updater. Zero data divergence between Web and Desktop.
+          </p>
+        </div>
+      </section>
+
+      {/* Simple Footer */}
+      <footer className="landing-footer">
+        <div>© 2026 SarvaFlow Systems. All rights reserved.</div>
+        <div className="footer-status">
+          <span className="green-dot" /> All Systems Operational (Supabase + Vercel)
+        </div>
+      </footer>
     </div>
   )
 }
