@@ -4118,11 +4118,6 @@ function DashboardApp() {
             </div>
           </div>
         )}
-
-        {/* Persistent Pilot Footer Note (Block 1) */}
-        <footer className="pilot-footer">
-          Active pilot &mdash; advanced compliance, wire clearing, and scorecard modules are demo implementations pending certification.
-        </footer>
       </main>
     </ErrorBoundary>
   )
