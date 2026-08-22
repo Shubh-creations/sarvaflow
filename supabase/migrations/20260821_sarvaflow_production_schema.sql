@@ -5,10 +5,9 @@
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE EXTENSION IF NOT EXISTS "pgcrypto";
 
--- 2. Invoices & Document Payloads Table
+-- 2. Create Base Tables
 CREATE TABLE IF NOT EXISTS public.invoices (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid(),
     created_at TIMESTAMPTZ DEFAULT NOW(),
     tenant_id TEXT NOT NULL DEFAULT 'default-tenant',
     file_name TEXT NOT NULL,
@@ -21,13 +20,8 @@ CREATE TABLE IF NOT EXISTS public.invoices (
     raw_payload JSONB DEFAULT '{}'::jsonb
 );
 
--- Ensure user_id column exists on invoices if table was created earlier without it
-ALTER TABLE public.invoices ADD COLUMN IF NOT EXISTS user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid();
-
--- 3. Audit Logs & SoD Approvals Table (Immutable Audit Trail)
 CREATE TABLE IF NOT EXISTS public.audit_logs (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid(),
     created_at TIMESTAMPTZ DEFAULT NOW(),
     tenant_id TEXT NOT NULL DEFAULT 'default-tenant',
     action_type TEXT NOT NULL,
@@ -37,13 +31,8 @@ CREATE TABLE IF NOT EXISTS public.audit_logs (
     details JSONB DEFAULT '{}'::jsonb
 );
 
--- Ensure user_id column exists on audit_logs if table was created earlier without it
-ALTER TABLE public.audit_logs ADD COLUMN IF NOT EXISTS user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid();
-
--- 4. GST Filings & Anomaly Audit Table
 CREATE TABLE IF NOT EXISTS public.gst_filings (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid(),
     created_at TIMESTAMPTZ DEFAULT NOW(),
     tenant_id TEXT NOT NULL DEFAULT 'default-tenant',
     doc_number TEXT NOT NULL,
@@ -58,15 +47,37 @@ CREATE TABLE IF NOT EXISTS public.gst_filings (
     anomalies JSONB DEFAULT '[]'::jsonb
 );
 
--- Ensure user_id column exists on gst_filings if table was created earlier without it
-ALTER TABLE public.gst_filings ADD COLUMN IF NOT EXISTS user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid();
+-- 3. Safely Add user_id Column to All Tables First
+DO $$
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema = 'public' AND table_name = 'invoices' AND column_name = 'user_id'
+    ) THEN
+        ALTER TABLE public.invoices ADD COLUMN user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid();
+    END IF;
 
--- 5. Performance Indexes
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema = 'public' AND table_name = 'audit_logs' AND column_name = 'user_id'
+    ) THEN
+        ALTER TABLE public.audit_logs ADD COLUMN user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid();
+    END IF;
+
+    IF NOT EXISTS (
+        SELECT 1 FROM information_schema.columns 
+        WHERE table_schema = 'public' AND table_name = 'gst_filings' AND column_name = 'user_id'
+    ) THEN
+        ALTER TABLE public.gst_filings ADD COLUMN user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid();
+    END IF;
+END $$;
+
+-- 4. Create Performance Indexes
 CREATE INDEX IF NOT EXISTS idx_invoices_user_id ON public.invoices(user_id);
 CREATE INDEX IF NOT EXISTS idx_audit_logs_user_id ON public.audit_logs(user_id);
 CREATE INDEX IF NOT EXISTS idx_gst_filings_user_id ON public.gst_filings(user_id);
 
--- 6. Role Permissions (Revoke Public Unauthenticated Access)
+-- 5. Role Permissions (Revoke Public Unauthenticated Access)
 REVOKE ALL ON ALL TABLES IN SCHEMA public FROM anon;
 REVOKE ALL ON ALL SEQUENCES IN SCHEMA public FROM anon;
 
@@ -75,20 +86,18 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON public.invoices TO authenticated;
 GRANT SELECT, INSERT ON public.audit_logs TO authenticated; -- Audit logs are append-only
 GRANT SELECT, INSERT, UPDATE, DELETE ON public.gst_filings TO authenticated;
 
--- 7. Strict Owner-Scoped Row Level Security (RLS) Policies
+-- 6. Strict Owner-Scoped Row Level Security (RLS) Policies
 ALTER TABLE public.invoices ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.audit_logs ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.gst_filings ENABLE ROW LEVEL SECURITY;
 
--- Remove legacy permissive policies if present
+-- Clean Legacy Policies
 DROP POLICY IF EXISTS "Allow read for all users" ON public.invoices;
 DROP POLICY IF EXISTS "Allow insert for all users" ON public.invoices;
 DROP POLICY IF EXISTS "Allow read for authenticated users" ON public.invoices;
 DROP POLICY IF EXISTS "Allow insert for authenticated users" ON public.invoices;
-
 DROP POLICY IF EXISTS "Allow read for audit logs" ON public.audit_logs;
 DROP POLICY IF EXISTS "Allow insert for audit logs" ON public.audit_logs;
-
 DROP POLICY IF EXISTS "Allow read for gst filings" ON public.gst_filings;
 DROP POLICY IF EXISTS "Allow insert for gst filings" ON public.gst_filings;
 
@@ -142,7 +151,7 @@ CREATE POLICY "Users can update own gst filings" ON public.gst_filings
     USING (auth.uid() = user_id)
     WITH CHECK (auth.uid() = user_id);
 
--- 8. Enable Supabase Realtime Publication Idempotently
+-- 7. Enable Supabase Realtime Publication Idempotently
 DO $$
 BEGIN
     IF NOT EXISTS (
