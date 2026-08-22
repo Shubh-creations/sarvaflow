@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: sarvaflow-backend
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: cd backend && pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: cd backend && python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: ALLOWED_HOSTS
+        value: sarvaflow-backend.onrender.com,localhost,127.0.0.1
+      - key: CORS_ORIGINS
+        value: https://sarvaflow.vercel.app,http://localhost:5173
+      - key: DATABASE_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
