@@ -91,7 +91,7 @@ ALTER TABLE public.invoices ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.audit_logs ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.gst_filings ENABLE ROW LEVEL SECURITY;
 
--- Clean Legacy Policies
+-- Clean Legacy Policies Idempotently
 DROP POLICY IF EXISTS "Allow read for all users" ON public.invoices;
 DROP POLICY IF EXISTS "Allow insert for all users" ON public.invoices;
 DROP POLICY IF EXISTS "Allow read for authenticated users" ON public.invoices;
