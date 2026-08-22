@@ -54,9 +54,16 @@ ALTER TABLE public.invoices ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.audit_logs ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.gst_filings ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Allow read for authenticated users" ON public.invoices;
 CREATE POLICY "Allow read for authenticated users" ON public.invoices FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Allow insert for authenticated users" ON public.invoices;
 CREATE POLICY "Allow insert for authenticated users" ON public.invoices FOR INSERT WITH CHECK (true);
+
+DROP POLICY IF EXISTS "Allow read for audit logs" ON public.audit_logs;
 CREATE POLICY "Allow read for audit logs" ON public.audit_logs FOR SELECT USING (true);
+
+DROP POLICY IF EXISTS "Allow read for gst filings" ON public.gst_filings;
 CREATE POLICY "Allow read for gst filings" ON public.gst_filings FOR SELECT USING (true);
 
 -- 6. Enable Supabase Realtime Publication
