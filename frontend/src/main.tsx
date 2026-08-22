@@ -56,6 +56,7 @@ import {
 import { LandingPage } from './components/LandingPage'
 import { AuthModal, UserSession, AuthMode } from './components/AuthModal'
 import { supabase } from './lib/supabaseClient'
+import { resilientFetch, normalizeHttpError } from './lib/apiClient'
 import './styles.css'
 
 const API = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000'
@@ -906,7 +907,7 @@ function DashboardApp() {
 
   const loadComplianceCenterData = async () => {
     try {
-      const res = await fetch(`${API}/api/v1/compliance/center-summary?tenant_id=${TENANT_ID}`)
+      const res = await resilientFetch(`${API}/api/v1/compliance/center-summary?tenant_id=${TENANT_ID}`)
       if (res.ok) {
         const data = await res.json()
         setComplianceCenterData(data)
@@ -1053,15 +1054,18 @@ function DashboardApp() {
   }
 
   const loadDashboardData = async () => {
-    setBusy(true)
     try {
-      const healthRes = await fetch(`${API}/api/v1/health`)
+      const healthRes = await resilientFetch(`${API}/api/v1/health`, {
+        timeoutMs: 15000,
+        retries: 1,
+        onWakingUp: () => showToast('⚡ Waking up telemetry engine from sleep...')
+      })
       setServerOnline(healthRes.ok)
 
       // Only run forecast call if we have a real cash position from an ingested document
       if (liquidReservesUsd > 0) {
         try {
-          const forecastRes = await fetch(`${API}/api/v1/forecasting/90-day?tenant_id=${TENANT_ID}&current_balance=${liquidReservesUsd}`, {
+          const forecastRes = await resilientFetch(`${API}/api/v1/forecasting/90-day?tenant_id=${TENANT_ID}&current_balance=${liquidReservesUsd}`, {
             method: 'POST'
           })
           if (forecastRes.ok) {
@@ -1073,24 +1077,23 @@ function DashboardApp() {
       }
 
       try {
-        const recsRes = await fetch(`${API}/api/v1/recommendations/?tenant_id=${TENANT_ID}`)
+        const recsRes = await resilientFetch(`${API}/api/v1/recommendations/?tenant_id=${TENANT_ID}`)
         if (recsRes.ok) {
           const recs = await recsRes.json()
-          // Only override if backend returns real recs (not empty)
           if (Array.isArray(recs) && recs.length > 0) setRecommendations(recs)
         }
       } catch (e) {
         console.warn('Recommendations endpoint warning', e)
       }
 
-      // Only run duplicate check against actual ingested documents, not fake payloads
+      // Only run duplicate check against actual ingested documents
       if (batchQueue.length > 0) {
         try {
           const realBills = batchQueue
             .filter(item => item.status === 'Confirmed' && item.total_amount_usd > 0)
             .map(item => ({ vendor_name: item.industry_domain, bill_number: item.file_name, total_amount: item.total_amount_usd }))
           if (realBills.length > 0) {
-            const dupRes = await fetch(`${API}/api/v1/monitoring/check-duplicates?tenant_id=${TENANT_ID}`, {
+            const dupRes = await resilientFetch(`${API}/api/v1/monitoring/check-duplicates?tenant_id=${TENANT_ID}`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ new_bills: realBills, existing_bills: [] })
@@ -1105,7 +1108,7 @@ function DashboardApp() {
         }
       }
     } catch (err) {
-      console.error('Failed to connect to backend health check', err)
+      console.warn('Backend offline or warming up', normalizeHttpError(err))
       setServerOnline(false)
     } finally {
       setBusy(false)
@@ -1114,25 +1117,25 @@ function DashboardApp() {
 
   const loadTier1OpsData = async () => {
     try {
-      const netRes = await fetch(`${API}/api/v1/tier1-ops/netting-summary?tenant_id=${TENANT_ID}`, { method: 'POST' })
+      const netRes = await resilientFetch(`${API}/api/v1/tier1-ops/netting-summary?tenant_id=${TENANT_ID}`, { method: 'POST' })
       if (netRes.ok) setNettingData(await netRes.json())
 
-      const yieldRes = await fetch(`${API}/api/v1/tier1-ops/yield-summary?tenant_id=${TENANT_ID}`)
+      const yieldRes = await resilientFetch(`${API}/api/v1/tier1-ops/yield-summary?tenant_id=${TENANT_ID}`)
       if (yieldRes.ok) setYieldData(await yieldRes.json())
 
-      const covRes = await fetch(`${API}/api/v1/tier1-ops/covenant-summary?tenant_id=${TENANT_ID}`)
+      const covRes = await resilientFetch(`${API}/api/v1/tier1-ops/covenant-summary?tenant_id=${TENANT_ID}`)
       if (covRes.ok) setCovenantData(await covRes.json())
     } catch (err) {
-      console.error('Tier 1 ops fetch error', err)
+      console.warn('Tier 1 ops fetch fallback', err)
     }
   }
 
   const loadAccuracyAndTraceData = async () => {
     try {
-      const accRes = await fetch(`${API}/api/v1/sample-data/accuracy-dashboard`)
+      const accRes = await resilientFetch(`${API}/api/v1/sample-data/accuracy-dashboard`)
       if (accRes.ok) setAccuracyDashboard(await accRes.json())
 
-      const traceRes = await fetch(`${API}/api/v1/sample-data/unified-trace`)
+      const traceRes = await resilientFetch(`${API}/api/v1/sample-data/unified-trace`)
       if (traceRes.ok) setUnifiedTraceData(await traceRes.json())
     } catch (e) {
       console.warn('Accuracy / trace endpoint warning', e)
@@ -1141,37 +1144,37 @@ function DashboardApp() {
 
   const loadScenariosAndHealth = async () => {
     try {
-      const scRes = await fetch(`${API}/api/v1/sample-data/scenarios`)
+      const scRes = await resilientFetch(`${API}/api/v1/sample-data/scenarios`)
       if (scRes.ok) {
         const scData = await scRes.json()
         setScenarios(scData)
         if (scData.length > 0) setActiveScenario(scData[0])
       }
 
-      const hRes = await fetch(`${API}/api/v1/sample-data/health-scorecard?tenant_id=${TENANT_ID}`)
+      const hRes = await resilientFetch(`${API}/api/v1/sample-data/health-scorecard?tenant_id=${TENANT_ID}`)
       if (hRes.ok) {
         setHealthScorecard(await hRes.json())
       }
     } catch (err) {
-      console.error('Scenarios load error', err)
+      console.warn('Scenarios load fallback', err)
     }
   }
 
   const loadSettingsData = async () => {
     try {
-      const profRes = await fetch(`${API}/api/v1/settings/profile`)
+      const profRes = await resilientFetch(`${API}/api/v1/settings/profile`)
       if (profRes.ok) setUserProfile(await profRes.json())
 
-      const teamRes = await fetch(`${API}/api/v1/settings/teammates`)
+      const teamRes = await resilientFetch(`${API}/api/v1/settings/teammates`)
       if (teamRes.ok && Array.isArray(await teamRes.clone().json())) setTeammates(await teamRes.json())
 
-      const connRes = await fetch(`${API}/api/v1/settings/connections`)
+      const connRes = await resilientFetch(`${API}/api/v1/settings/connections`)
       if (connRes.ok && Array.isArray(await connRes.clone().json())) setConnections(await connRes.json())
 
-      const logRes = await fetch(`${API}/api/v1/settings/audit-log`)
+      const logRes = await resilientFetch(`${API}/api/v1/settings/audit-log`)
       if (logRes.ok && Array.isArray(await logRes.clone().json())) setAuditLog(await logRes.json())
     } catch (err) {
-      console.error('Settings fetch error', err)
+      console.warn('Settings fetch fallback', err)
     }
   }
 
